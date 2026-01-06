@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arolax HTML5 Template">
+
+    <title>Golden Apple Productions Services</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
+
+
+
+
+
+    <!-- All CSS files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/progressbar.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/master-service-details.css">
+
+
+</head>
+<style>
+      body.dark .section-title,
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #caa437;;
+}
+
+  </style>
+
+<body class="font-heading-beatricetrial-regular-2 dark">
+<a
+  href="https://wa.me/917303199114"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+  style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    background: #ffffff;
+    color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    z-index: 2147483647;
+    font-size: 28px;
+    text-decoration: none;
+  "
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="container" class="container-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+
+            </div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- offcanvas start  -->
+<div class="offcanvas-3__area" style="background:#000000; color:#ffffff;">
+  <div class="offcanvas-3__inner" style="background:#000000; color:#ffffff;">
+
+    <div class="offcanvas-3__meta-wrapper" style="color:#ffffff;">
+      <div>
+        <button id="close_offcanvas"
+          class="close-button close-offcanvas"
+          onclick="hideCanvas3()"
+          style="color:#ffffff;">
+          <span style="background:#ffffff;"></span>
+          <span style="background:#ffffff;"></span>
+        </button>
+      </div>
+
+      <div>
+        <div class="offcanvas-3__meta mb-145 d-none d-md-block" style="color:#ffffff;">
+          <ul>
+            
+          </ul>
+        </div>
+
+        <div class="offcanvas-3__social d-none d-md-block" style="color:#ffffff;">
+          <p class="title" style="color:#ffffff;"></p>
+          <div class="offcanvas-3__social-links">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offcanvas-3__menu-wrapper" style="background:#000000;">
+      <nav class="nav-menu offcanvas-3__menu">
+        <ul>
+          <li><a href="/" style="color:#ffffff;">Home</a></li>
+          <li><a href="/about" style="color:#ffffff;">About</a></li>
+          <li><a href="/services" style="color:#ffffff;">Services</a></li>
+          <li><a href="/ourwork" style="color:#ffffff;">Our Work</a></li>
+          <li><a href="/blogs" style="color:#ffffff;">Blogs</a></li>
+          <li><a href="/contact" style="color:#ffffff;">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</div>
+<!-- offcanvas end  -->
+
+
+    <!-- search modal start -->
+    <div class="modal fade" id="search-template" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="search-template" aria-hidden="true">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form action="#" class="form-search">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search modal end -->
+
+    <!-- Header area start -->
+    <header class="header-area">
+        <div class="container large">
+            <div class="header-area__inner">
+                <div class="header__logo">
+                    <a href="/">
+                        <img class="show-light mt-1" src="assets/imgs/logo/logo.png" width="70px" alt="Site Logo">
+                        <img class="show-dark mt-1" src="assets/imgs/logo/logo-light.png" width="70px" alt="Site Logo">
+                    </a>
+                </div>
+                <div class="header__nav pos-center">
+                    <nav class="main-menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/services">Services</a></li>
+                            <li><a href="/ourwork">Our Work</a></li>
+                            <li><a href="/blogs">Blogs</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header__button">
+                   <a class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span data-text="Book Free Demo">Book Free Demo</span><i class="fa-solid fa-play"></i></a>
+                </div>
+                <div class="header__navicon d-xl-none">
+                    <button onclick="showCanvas3()" class="open-offcanvas">
+                        <i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header area end -->
+
+
+    <div class="has-smooth" id="has_smooth"></div>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <div class="body-wrapper body-corporate-agency">
+
+                <!-- overlay switcher close  -->
+                <div class="overlay-switcher-close"></div>
+
+                <main>
+
+                   <!-- service details area start  -->
+<section class="service-details-area">
+  <div class="container">
+
+    <!-- Hero Video -->
+    <div class="thumb-main">
+      <div class="thumb-main">
+        <video
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        >
+          <source src="https://res.cloudinary.com/dpztzthmz/video/upload/v1766583816/portfolio-videos/o5qsguqfxxacezf1ggex.mp4">
+        </video>
+
+        <script>
+          const v = document.getElementById("heroVideo");
+          document.addEventListener("click", () => {
+            v.muted = false;
+            v.play();
+          }, { once: true });
+        </script>
+      </div>
+    </div>
+
+    <!-- Title + Features -->
+    <div class="section-title-box">
+      <div class="section-title-wrapper">
+        <div class="title-wrapper">
+          <h1 class="section-title has_fade_anim" data-on-scroll="0">
+            Designer Collection <br>
+            Shoots
+          </h1>
+        </div>
+      </div>
+
+      <div class="feature-list has_fade_anim" data-on-scroll="0" data-delay="0.45">
+        <ul>
+          <li>Seasonal launches</li>
+          <li>Capsule collections</li>
+          <li>Signature designer lines</li>
+        </ul>
+        <ul>
+          <li>Couture & high fashion collections</li>
+          <li>Cohesive visual presentation</li>
+          <li>Campaign & press ready imagery</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="text-wrapper has_fade_anim">
+      <p class="text">
+        Designer collection shoots are curated to present collections with cohesion, consistency,
+        and impact. We work closely with designers to translate creative vision into structured
+        visual stories that accurately reflect the identity, philosophy, and craftsmanship of
+        each collection.
+      </p>
+
+      <p class="text">
+        Our approach ensures collections are presented clearly across campaigns, websites,
+        catalogues, and press platforms. From concept development to final delivery, we focus on
+        maintaining visual continuity, refined aesthetics, and a premium presentation that
+        elevates the perceived value of the collection.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Working Steps -->
+  <div class="steps-wrapper-box has_fade_anim">
+    <div class="container">
+      <div class="working-steps-box">
+        <div class="working-steps">
+
+          <div class="working-step">
+            <h2 class="title">
+              Creative Alignment <br>
+              & Concept
+            </h2>
+            <p class="text">
+              Understanding the designer’s vision, collection narrative, and visual direction
+              to establish a cohesive creative foundation.
+            </p>
+          </div>
+
+          <div class="working-step">
+            <h2 class="title">
+              Collection Structuring <br>
+              & Planning
+            </h2>
+            <p class="text">
+              Organizing looks, silhouettes, styling details, and shoot flow to ensure clarity
+              and consistency across the entire collection.
+            </p>
+          </div>
+
+          <div class="working-step">
+            <h2 class="title">
+              Shoot Execution <br>
+              & Direction
+            </h2>
+            <p class="text">
+              Executing the shoot with precision lighting, composition, and direction to highlight
+              craftsmanship, construction, and design details.
+            </p>
+          </div>
+
+          <div class="working-step">
+            <h2 class="title">
+              Post-Production <br>
+              & Final Delivery
+            </h2>
+            <p class="text">
+              High-end retouching, color accuracy, and final asset optimization for campaigns,
+              catalogues, websites, and press distribution.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="container">
+    <div class="thumb-gallery has_fade_anim">
+      <img src="assets/imgs/gallery/img-s-89.webp" alt="image">
+      <img src="assets/imgs/gallery/img-s-90.webp" alt="image">
+      <img src="assets/imgs/gallery/img-s-91.webp" alt="image">
+    </div>
+  </div>
+
+</section>
+<!-- service details area end  -->
+
+
+
+
+
+                
+
+
+
+
+                </main>
+
+
+                <!-- footer area start  -->
+                <footer class="footer-area">
+                    <div class="container">
+                        <div class="footer-area-inner  ">
+
+                            <div class="footer-cta">
+                                <div class="footer-widget-wrapper">
+                                    <h2 class="title">London</h2>
+                                    <ul class="footer-nav-list">
+                                        <li>Baltia Squar, Mark Street, <br>
+                                            London</li>
+                                    </ul>
+                                </div>
+                                <div class="footer-widget-wrapper">
+                                    <h2 class="title">New York</h2>
+                                    <ul class="footer-nav-list">
+                                        <li>Nenuya Centre, Elia Street <br>
+                                            New York, USA</li>
+                                    </ul>
+                                </div>
+                                <div class="footer-widget-wrapper newsletter">
+                                     <form action="/book-demo" method="post" class="subscribe-form" id="subscribeForm">
+  <div class="input-field">
+    <input
+      type="tel"
+      name="mobile"
+      id="subscribeMobile"
+      placeholder="Enter your mobile number"
+      maxlength="10"
+      inputmode="numeric"
+      required
+    >
+
+    <button type="submit" class="subscribe-btn">
+      <img src="/assets/imgs/icon/arrow-light.webp" alt="icon">
+    </button>
+  </div>
+
+  <p id="subscribeError" style="color:red;font-size:13px;display:none;"></p>
+  <p id="subscribeSuccess" style="color:green;font-size:13px;display:none;"></p>
+</form>
+<script>
+  const form = document.getElementById("subscribeForm");
+  const mobileInput = document.getElementById("subscribeMobile");
+  const errorEl = document.getElementById("subscribeError");
+  const successEl = document.getElementById("subscribeSuccess");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // stop default form submit
+
+    const mobile = mobileInput.value.trim();
+
+    errorEl.style.display = "none";
+    successEl.style.display = "none";
+
+    // ✅ SIMPLE validation: number + 10 digits only
+    if (!/^[6-9]\d{9}$/.test(mobile)) {
+      errorEl.innerText = "Enter valid 10 digit mobile number";
+      errorEl.style.display = "block";
+      return;
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ mobile })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Submission failed");
+      }
+
+      // ✅ success from backend
+      successEl.innerText = data.message || "Submitted successfully";
+      successEl.style.display = "block";
+      mobileInput.value = "";
+
+    } catch (err) {
+      errorEl.innerText = err.message || "Server error";
+      errorEl.style.display = "block";
+    }
+  });
+</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright-area">
+                        <div class="container">
+                            <div class="copyright-area-inner">
+                                <div class="copyright-text">
+                                    <p class="text">© 2022 - 2025 | Alrights reserved <br>
+                                        Golden Apple Production
+                                </div>
+                                <ul class="footer-nav-list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about">About</a></li>
+                                    <li><a href="/services">Services</a></li>
+                                    <li><a href="/ourwork">Our Work</a></li>
+                                    <li><a href="/blogs">Blogs</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/terms" >terms</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- footer area end  -->
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- All JS files -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/progressbar.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/backToTop.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/error-handling.js"></script>
+    <script src="assets/js/offcanvas.js"></script>
+
+    <script>
+
+        // testimonial slider
+        if (('.testimonial-slider').length) {
+            var testimonial_slider = new Swiper(".testimonial-slider", {
+                loop: false,
+                slidesPerView: 1,
+                spaceBetween: 60,
+                speed: 1800,
+                watchSlidesProgress: true,
+                navigation: {
+                    prevEl: ".testimonial-button-prev",
+                    nextEl: ".testimonial-button-next",
+                },
+            });
+        }
+
+
+        // client slider 
+        if ('.client-slider-active') {
+            var client_slider_active = new Swiper(".client-slider-active", {
+                slidesPerView: 'auto',
+                loop: true,
+                autoplay: true,
+                spaceBetween: 130,
+                speed: 3000,
+                autoplay: {
+                    delay: 1,
+                },
+            });
+        }
+
+    </script>
+<!-- Book Free Demo Popup -->
+<div id="demoPopupOverlay" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483646;
+">
+
+  <div style="
+    background: #ffffff;
+    width: 90%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 14px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    z-index: 2147483647;
+    font-family: inherit;
+  ">
+
+    <!-- Close Icon -->
+    <span onclick="closeDemoPopup()" style="
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #999;
+    ">✕</span>
+
+    <h3 style="
+      margin-bottom: 20px;
+      color: #000;
+      font-size: 22px;
+      font-weight: 600;
+    ">
+      Book Free Demo
+    </h3>
+
+    <input
+      type="tel"
+      id="demoMobile"
+      placeholder="Enter mobile number"
+      maxlength="10"
+      style="
+        width: 100%;
+        padding: 14px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        outline: none;
+        margin-bottom: 10px;
+      "
+    />
+
+    <p id="demoError" style="
+      color: red;
+      font-size: 14px;
+      display: none;
+      margin-bottom: 10px;
+    ">
+      Please enter a valid 10-digit mobile number
+    </p>
+
+    <p id="demoSuccess" style="
+      color: green;
+      font-size: 14px;
+      display: none;
+      margin-bottom: 10px;
+    ">
+    </p>
+
+    <button
+      id="demoSubmitBtn"
+      onclick="submitDemo()"
+      style="
+        width: 100%;
+        padding: 14px;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+      ">
+      Submit
+    </button>
+
+  </div>
+</div>
+
+<script>
+  function openDemoPopup() {
+    document.getElementById("demoPopupOverlay").style.display = "flex";
+  }
+
+  function closeDemoPopup() {
+    document.getElementById("demoPopupOverlay").style.display = "none";
+    document.getElementById("demoError").style.display = "none";
+    document.getElementById("demoSuccess").style.display = "none";
+    document.getElementById("demoMobile").value = "";
+  }
+
+  async function submitDemo() {
+    const mobile = document.getElementById("demoMobile").value.trim();
+    const error = document.getElementById("demoError");
+    const success = document.getElementById("demoSuccess");
+    const btn = document.getElementById("demoSubmitBtn");
+
+    error.style.display = "none";
+    success.style.display = "none";
+
+    // Frontend validation
+    if (!/^[6-9]\d{9}$/.test(mobile)) {
+      error.innerText = "Please enter a valid 10-digit mobile number";
+      error.style.display = "block";
+      return;
+    }
+
+    btn.innerText = "Submitting...";
+    btn.disabled = true;
+
+    try {
+      const res = await fetch("/book-demo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ mobile })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      if (data.success) {
+        success.innerText = data.message;
+        success.style.display = "block";
+
+        setTimeout(() => {
+          closeDemoPopup();
+        }, 2000);
+      } else {
+        error.innerText = data.message || "Already registered";
+        error.style.display = "block";
+      }
+
+    } catch (err) {
+      error.innerText = err.message || "Server error. Try again.";
+      error.style.display = "block";
+    } finally {
+      btn.innerText = "Submit";
+      btn.disabled = false;
+    }
+  }
+</script>
+</body>
+
+</html>
