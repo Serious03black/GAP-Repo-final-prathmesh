@@ -223,7 +223,7 @@ body.dark h3 {
                     </ul>
                   </div>
                   <div class="contact-wrap has_fade_anim" data-delay="0.30">
-   <form id="contactForm" action="/contact" method="POST" style="background-color:#222222; padding:50px; border: 1px solid gold; color:white;">
+   <form id="contactForm" action="/contact" method="POST" style="background-color:#ffffff; padding:50px; border: 1px solid gold; color:rgb(0, 0, 0);">
 
     <div class="contact-formwrap">
 
@@ -269,7 +269,7 @@ body.dark h3 {
     </div>
 
     <div class="submit-btn">
-      <button type="submit" class="wc-btn wc-btn-primary btn-text-flip">
+      <button type="submit" class="wc-btn wc-btn-primary btn-text-flip" style="background-color: black;color: #ffffff;">
         <span data-text="Send Message">Send Message</span>
       </button>
     </div>
@@ -278,7 +278,27 @@ body.dark h3 {
 </div>
 <style>
   /* Dropdown (Select) Styling */
-  
+  /* FORM BACKGROUND PURE WHITE */
+#contactForm {
+  background: #ffffff !important;
+}
+
+
+/* PLACEHOLDER SIZE INCREASE */
+input::placeholder,
+textarea::placeholder {
+  font-size: 17px;   /* increase size */
+  color: #606860;
+  opacity: 0.8;
+}
+
+
+
+/* underline clean */
+.contact-formfield {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 select {
   width: 100%;
   padding: 14px 16px;

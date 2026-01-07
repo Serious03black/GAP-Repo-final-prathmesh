@@ -694,7 +694,7 @@ input[type="submit"]:hover {
                 </div>
          <div class="contact-wrap has_fade_anim" data-delay="0.30">
                 <form id="contactForm" action="/contact" method="POST"
-                  style="background-color:#222222; padding:50px; border: 1px solid gold; color:white;">
+                  style="background-color:#ffffff; padding:50px; border: 1px solid gold; color:rgb(0, 0, 0);">
 
                   <div class="contact-formwrap">
 
@@ -763,6 +763,32 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
+}
+input,
+textarea,
+select {
+  background: #ffffff !important;
+  color: #000;
+}
+
+/* PLACEHOLDER SIZE INCREASE */
+input::placeholder,
+textarea::placeholder {
+  font-size: 17px;   /* increase size */
+  color: #606860;
+  opacity: 0.8;
+}
+
+/* OPTIONAL: focus clarity */
+input:focus,
+textarea:focus,
+select:focus {
+  background: #ffffff !important;
+}
+
+/* underline clean */
+.contact-formfield {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 /* Optional: placeholder color */
