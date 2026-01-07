@@ -301,24 +301,32 @@
 </head>
 <body>
     <!-- Sidebar (from dashboard, Reels + Blogs only) -->
-    <aside class="sidebar">
+     <aside class="sidebar">
         <div class="logo">
-            <h2><span>Admin Pro</span></h2>
+            <h2>Admin Pro</h2>
         </div>
-        
+
         <nav class="nav-menu">
-            <a href="/admin/dashboard" class="nav-item">
+            <a href="#reels" class="nav-item active">
                 <i class="fas fa-film"></i>
                 <span>Reels</span>
             </a>
-            <a href="/admin/dashboard#blogs" class="nav-item">
+            <a href="#blogs" class="nav-item">
                 <i class="fas fa-blog"></i>
                 <span>Blogs</span>
             </a>
-            
+            <a href="#contacts" class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contacts</span>
+            </a>
+            <a href="#demo-requests" class="nav-item">
+                <i class="fas fa-phone-volume"></i>
+                <span>Demo Requests</span>
+            </a>
+
             <div class="nav-divider"></div>
-            
-            <a href="/admin/videos/add/reel" class="nav-item active">
+
+            <a href="/admin/videos/add/reel" class="nav-item">
                 <i class="fas fa-plus-circle"></i>
                 <span>Add Reel</span>
             </a>
@@ -327,7 +335,7 @@
                 <span>Add Blog</span>
             </a>
         </nav>
-        
+
         <a href="/admin/logout" class="logout-btn">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
