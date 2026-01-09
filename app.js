@@ -213,7 +213,7 @@ app.post("/contact", async (req, res) => {
 
     // Success Thank You Page
     return res.send(`
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -260,6 +260,10 @@ app.post("/contact", async (req, res) => {
       opacity: 0.8;
     }
 
+    .actions {
+      margin: 40px 0;
+    }
+
     .back-link {
       display: inline-block;
       background: #caa437;
@@ -270,12 +274,32 @@ app.post("/contact", async (req, res) => {
       text-decoration: none;
       font-size: 1.1rem;
       transition: all 0.3s ease;
+      margin-bottom: 30px;
     }
 
     .back-link:hover {
       background: #d4b850;
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(202, 164, 55, 0.4);
+    }
+
+    /* Social links */
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      margin: 0 15px;
+      color: #caa437;
+      font-size: 2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: #f0d48a;
+      transform: translateY(-5px);
+      filter: drop-shadow(0 0 10px rgba(202, 164, 55, 0.6));
     }
 
     /* Celebration particles animation */
@@ -343,9 +367,21 @@ app.post("/contact", async (req, res) => {
       Our team will review your inquiry and get back to you as soon as possible.
     </p>
 
-    <a href="/" class="back-link">← Back to Home</a>
+    <div class="actions">
+      <a href="/" class="back-link">← Back to Home</a>
+      
+      <div class="social-links" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <a href="https://www.instagram.com/goldenappleproductions/" target="_blank" aria-label="Follow us on Instagram">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <h1>@GAP</h1>
+      </div>
+    </div>
   </div>
-
   <script>
     // Celebration particles (golden confetti effect)
     const particlesContainer = document.getElementById('particles');

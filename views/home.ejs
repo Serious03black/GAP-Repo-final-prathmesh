@@ -125,7 +125,7 @@ input[type="submit"]:hover {
 
 </style>
 
-<body class="font-heading-khand-bold dark">
+<body class="font-heading-khand-bold dark" style="font-family:'Montserrat', sans-serif !important">
 
   <!-- Preloader -->
   <div id="preloader">
@@ -133,14 +133,14 @@ input[type="submit"]:hover {
       <div class="animation-preloader">
         <div class="spinner"></div>
         <div class="txt-loading">
-
         </div>
       </div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
     </div>
   </div>
-<a
+  <div>
+<!-- <a
   href="https://wa.me/917303199114"
   target="_blank"
   aria-label="Chat on WhatsApp"
@@ -164,10 +164,49 @@ input[type="submit"]:hover {
 >
   <i class="fa-brands fa-whatsapp"></i>
 </a>
+<a
+  href="https://wa.me/917303199114"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+  style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    background: #ffffff;
+    color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    z-index: 2147483647;
+    font-size: 28px;
+    text-decoration: none;
+  "
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a> -->
+<!-- Fixed WhatsApp & Call Buttons -->
+  <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
+    <!-- WhatsApp Button - Replace +911234567890 with your number -->
+    <a href="https://wa.me/+911234567890" target="_blank" aria-label="Chat on WhatsApp" 
+       style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#25D366; color:white; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-.992-.222-.373a9.863 9.863 0 01-1.57-5.021c.002-5.45 4.44-9.87 9.87-9.87a9.87 9.87 0 015.018 1.378l.362.214 3.741-.982-1 .992.222.373a9.863 9.863 0 011.57 5.021c-.002 5.45-4.44 9.87-9.87 9.87M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+      </svg>
+    </a>
 
-
-
-
+    <!-- Call Now Button - Replace +911234567890 with your number -->
+    <a href="tel:+911234567890" aria-label="Call Now" 
+       style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+  </div>
+  </div>
   <!-- offcanvas start  -->
 <div class="offcanvas-3__area" style="background:#000000; color:#ffffff;">
   <div class="offcanvas-3__inner" style="background:#000000; color:#ffffff;">
@@ -500,10 +539,11 @@ input[type="submit"]:hover {
           <section class="about-area">
             <div class="container">
               <div class="about-area-inner section-spacing-top overflow-hidden">
-                <div class="section-title-image has_fade_anim" data-fade-from="bottom" data-fade-offset="50">
-                  <img class="show-light" src="assets/imgs/shape/img-s-38.webp" alt="shape image">
-                  <img class="show-dark" src="assets/imgs/shape/img-s-38-light.webp" alt="shape image">
-                </div>
+                <a class="section-title-image has_fade_anim" data-fade-from="bottom" data-fade-offset="50">
+                  <!-- <img class="show-light" src="assets/imgs/shape/img-s-38.webp" alt="shape image">
+                  <img class="show-dark" src="assets/imgs/shape/img-s-38-light.webp" alt="shape image" height="200px" width="600px" style="margin-left: 0; margin-top: 0;"> -->
+                  <a href="/about" style="color: white; font-size: 500%; font-weight: bolder;"> ------- ABOUT US</a>
+                </a>
                 <div class="section-content">
                   <div class="section-thumb">
                     <div class="about-thumb has_fade_anim" data-fade-from="top" data-ease="bounce"
@@ -533,12 +573,12 @@ input[type="submit"]:hover {
   </div>
 
   <div class="text-wrapper">
-    <p class="text has_fade_anim" data-fade-from="left">
+    <P class="text has_fade_anim" data-fade-from="left" style="color: white; font-size: x-large;">
       We deliver high-end fashion and brand production powered by a curated creative team on demand. From concept
       development to shoot execution and post-production, we build, produce, and scale visual stories with efficiency
       and precision. Our true measure of success is long-term collaboration—many of our clients return to create
       multiple campaigns with us.
-    </p>
+    </P>
   </div>
 
   <div class="btn-wrapper has_fade_anim" data-fade-from="left">
@@ -667,7 +707,7 @@ input[type="submit"]:hover {
         <section class="contact-area mt-5" style="background-color:#121212;">
           <div class="container">
             <div class="contact-area-inner section-spacing">
-              <div class="section-header">
+              <div class="section-header" style="display: flex;">
                 <div class="section-title-wrapper">
                   <div class="title-wrapper">
                     <h2 class="section-title large has_fade_anim" style="color: #caa437;">We’ve been
@@ -694,7 +734,7 @@ input[type="submit"]:hover {
                 </div>
          <div class="contact-wrap has_fade_anim" data-delay="0.30">
                 <form id="contactForm" action="/contact" method="POST"
-                  style="background-color:#ffffff; padding:50px; border: 1px solid gold; color:rgb(0, 0, 0);">
+                  style="background-color:#ebe5d9f5; padding:50px; border: 1px solid gold; color:rgb(0, 0, 0);">
 
                   <div class="contact-formwrap">
 
@@ -728,15 +768,14 @@ input[type="submit"]:hover {
                     <div class="contact-formfield">
                       <input type="text" name="membership" id="membership" placeholder="GAP Membership (optional)">
                     </div>
-                    <div class="contact-formfield">
+                                <div class="contact-formfield">
                       <input type="url" name="website" id="Website" placeholder="Website / Instagram Link">
                     </div>
-
-                    <div class="contact-formfield messages">
-                      <textarea name="message" id="Message" placeholder="Your Requirment*" required></textarea>
-                    </div>
-                    <div class="contact-formfield messages">
+                    <div class="contact-formfield">
                       <input name="location" id="location" placeholder="Your location"></input>
+                    </div>
+                                 <div class="contact-formfield messages">
+                      <textarea name="message" id="Message" placeholder="Your Requirment*" required></textarea>
                     </div>
 
                   </div>
@@ -755,7 +794,7 @@ select {
   width: 100%;
   padding: 14px 16px;
   font-size: 15px;
-  color: #606860;
+  color: #070807;
   background-color: transparent;
   border: none !important;
   outline: none !important;
@@ -775,7 +814,7 @@ select {
 input::placeholder,
 textarea::placeholder {
   font-size: 17px;   /* increase size */
-  color: #606860;
+  color: #000000;
   opacity: 0.8;
 }
 
@@ -783,7 +822,7 @@ textarea::placeholder {
 input:focus,
 textarea:focus,
 select:focus {
-  background: #ffffff !important;
+  background: #d84d4d !important;
 }
 
 /* underline clean */
@@ -793,7 +832,7 @@ select:focus {
 
 /* Optional: placeholder color */
 select option[value=""] {
-  color: #999;
+  color: #000000;
 }
 
 /* Remove focus border completely */
@@ -813,7 +852,7 @@ select {
   width: 100%;
   padding: 14px 16px;
   font-size: 15px;
-  color: #606860;
+  color: #000000;
   background: transparent;
   border: none !important;
   outline: none !important;
@@ -824,7 +863,7 @@ select {
 /* Placeholder color */
 input::placeholder,
 textarea::placeholder {
-  color: #606860;
+  color: #000000;
   opacity: 0.7;
 }
 
@@ -858,83 +897,115 @@ textarea {
     <!-- contact area end  -->
 
 <style>
-        .clients-area {
-          padding: 80px 0;
-            background-color: #0f0f0f; /* dark background */
-        }
+       .clients-logos.marquee-container {
+  overflow: hidden;
+  padding: 40px 0; /* Adjust vertical padding as needed */
+  white-space: nowrap;
+  position: relative;
+}
 
-        .clients-logos {
-          margin-top:50px;
-          display: flex;
-          flex-direction: column;
-          gap: 30px;
-        }
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  animation: scroll-logos 40s linear infinite; /* Adjust 40s for speed (lower = faster) */
+  gap: 60px; /* Space between logos – adjust as needed */
+}
 
-        .logo-row {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 30px;
-        }
+.marquee-track img {
+  height: 80px; /* Set a uniform height for logos – adjust to fit your design */
+  max-width: none; /* Prevent shrinking */
+  flex-shrink: 0;
+  object-fit: contain;
+}
 
-        .logo-row img {
-          width: 140px;
-          height: 140px;
-          object-fit: contain;
-          display: block;
-          transition: all 0.3s ease;
-        }
+/* Pause on hover (optional but recommended for accessibility) */
+.clients-logos.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
 
+/* Smooth infinite scroll keyframes */
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-        /* Mobile */
-        @media (max-width: 768px) {
-          .logo-row img {
-            width: 120px;
-          }
-        }
+/* Optional: Fade edges for a polished look */
+.clients-logos.marquee-container::before,
+.clients-logos.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.clients-logos.marquee-container::before {
+  left: 0;
+}
+
+.clients-logos.marquee-container::after {
+  right: 0;
+}
 
 </style>
 
           <!-- clients area start  -->
-          <section class="clients-area ">
-            <div class="container">
-              <div class="clinets-area-inner section-spacing-top">
-                <div class="section-header">
-                  <div class="section-title-wrapper">
-                    <div class="title-wrapper">
-                      <h2 class="section-title has_fade_anim" data-fade-from="bottom" data-fade-offset="50">We Worked
-                        with top agency
-                        world-wide</h2>
-                    </div>
-                  </div>
-                </div>
-                 <div class="clients-logos">
 
-              <!-- Row 1 -->
-              <div class="logo-row">
-                <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
-                <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
-                <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM">
-                <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
-                <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking">
-                <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
-              </div>
+<section class="clients-area" style="background-color: black;">
+  <div class="container">
+    <div class="clinets-area-inner section-spacing-top">
+      <div class="section-header">
+        <div class="section-title-wrapper">
+          <div class="title-wrapper">
+            <h2 class="section-title has_fade_anim" data-fade-from="bottom" data-fade-offset="50">
+              We Worked with top agency world-wide
+            </h2>
+          </div>
+        </div>
+      </div>
 
-              <!-- Row 2 -->
-              <div class="logo-row">
-                <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
-                <img src="assets/imgs/cligo/Manjinder.png.jpg" alt="Manjinder">
-                <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
-                <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
-                <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
-                <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
-              </div>
+      <!-- Combined into one infinite scrolling row -->
+      <div class="clients-logos marquee-container">
+        <div class="marquee-track">
+          <!-- Original logos -->
+          <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
+          <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
+          <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
+          <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
+          <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
+          <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
+          <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
+          <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
+          <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
+          <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
+          <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
+          <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
 
-            </div>
-              </div>
-            </div>
-          </section>
+          <!-- Duplicated logos for seamless infinite loop -->
+          <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
+          <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
+          <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
+          <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
+          <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
+          <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
+          <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
+          <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
+          <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
+          <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
+          <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
+          <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
           <!-- clients area end  -->
 
 

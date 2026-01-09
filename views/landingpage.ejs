@@ -32,7 +32,7 @@
 
 
 <body class="font-heading-beatricetrial-regular-2 dark"
-  style="background-color:#121212 !important; color: #fff !important;"></body>
+  style="background-color:#121212 !important; color: #fff !important; font-family:'Montserrat', sans-serif !important"></body>
 
 <!-- Preloader -->
 <div id="preloader">
@@ -245,6 +245,8 @@
 
 </div>
 
+
+
                 <div class="contact-wrap has_fade_anim" data-delay="0.30">
                       <form id="contactForm" action="/contact" method="POST" style="background-color:#ffffff; padding:50px; border: 1px solid gold; color:rgb(0, 0, 0);">
 
@@ -281,12 +283,12 @@
       <div class="contact-formfield">
         <input type="url" name="website" id="Website" placeholder="Website / Instagram Link">
       </div>
+      <div class="contact-formfield">
+        <input name="location" id="location" placeholder="Your location" ></input>
+      </div>
 
       <div class="contact-formfield messages">
         <textarea name="message" id="Message" placeholder="Your Requirment*" required></textarea>
-      </div>
-      <div class="contact-formfield messages">
-        <input name="location" id="location" placeholder="Your location" ></input>
       </div>
 
     </div>
@@ -382,46 +384,122 @@ textarea {
     </section>
     <!-- contact area end  -->
     <!-- work details area start  -->
-    <section class="work-details-area">
-      <div class="hero-area">
-        <div class="area-bg">
-          <img src="assets/imgs/landingpage/l1.png" alt="image">
-        </div>
-        <div class="container">
-          <div class="hero-area-inner">
-            <div class="section-content">
-              <div class="section-title-wrapper">
-                <div class="title-wrapper">
-                  <h1 class="section-title has_fade_anim" style="color: 
-#072036;">Golden Apple<br>
-                    Productions
-                  </h1>
-                </div>
-              </div>
-              <ul class="work-meta has_fade_anim" data-on-scroll="0">
-                <li>
-                  <span class="title" style="color: 
-#072036;">Date</span>
-                  <span class="text" style="color: 
-#072036;">15 Aug – 2024</span>
-                </li>
-                <li>
-                  <span class="title" style="color: 
-#072036;">Client</span>
-                  <span class="text" style="color: 
-#072036;">Fashion Brand Campaign, Editorial Shoot</span>
-                </li>
+<section class="work-details-area">
+  <div class="hero-area">
+    <!-- Carousel Slider -->
+    <div class="carousel-slider">
+      <!-- Add as many images as you want for this project -->
+      <div class="carousel-slide">
+        <img src="assets/imgs/landingpage/l1.png" alt="Golden Apple Productions 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/imgs/landingpage/l2.jpg" alt="Golden Apple Productions 2"> <!-- Replace with actual images -->
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/imgs/landingpage/l3.jpg" alt="Golden Apple Productions 3"> <!-- Replace with actual images -->
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/imgs/landingpage/l4.jpg" alt="Golden Apple Productions 4"> <!-- Add more if needed -->
+      </div>
+    </div>
 
-                <li>
-                  <a href="/" class="wc-btn wc-btn-normal btn-text-flip"><span data-text="( View website )">(
-                      View website )</span></a>
-                </li>
-              </ul>
+    <!-- Overlay Content (Title + Meta) -->
+    <div class="container">
+      <div class="hero-area-inner">
+        <div class="section-content">
+          <div class="section-title-wrapper">
+            <div class="title-wrapper">
+              <h1 class="section-title has_fade_anim" style="color: #fbfbfb;">
+                Golden Apple<br>Productions
+              </h1>
             </div>
           </div>
+          <ul class="work-meta has_fade_anim" data-on-scroll="0">
+            <li>
+              <span class="title" style="color: #072036;">Date</span>
+              <span class="text" style="color: #072036;">15 Aug – 2024</span>
+            </li>
+            <li>
+              <span class="title" style="color: #072036;">Client</span>
+              <span class="text" style="color: #072036;">Fashion Brand Campaign, Editorial Shoot</span>
+            </li>
+            <li>
+              <a href="/" class="wc-btn wc-btn-normal btn-text-flip">
+                <span data-text="( View website )">( View website )</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+<style>.work-details-area .hero-area {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh; /* Adjust height as needed */
+}
+
+.carousel-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  object-fit: cover;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area nicely */
+}
+
+.carousel-slide:nth-child(1) {
+  opacity: 1; /* First slide visible initially */
+}
+
+/* Auto-scroll animation (adjust duration for speed) */
+@keyframes carouselFade {
+  0%, 25%   { opacity: 1; }
+  33.33%, 100% { opacity: 0; }
+}
+
+/* Apply animation to each slide with delay */
+.carousel-slide:nth-child(1) { animation: carouselFade 16s infinite; } /* 4 slides × 4s each = 16s */
+.carousel-slide:nth-child(2) { animation: carouselFade 16s infinite; animation-delay: 4s; }
+.carousel-slide:nth-child(3) { animation: carouselFade 16s infinite; animation-delay: 8s; }
+.carousel-slide:nth-child(4) { animation: carouselFade 16s infinite; animation-delay: 12s; }
+
+/* Content overlay */
+.hero-area-inner {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0; /* Adjust vertical spacing */
+}
+
+/* Optional: Dark overlay for better text readability */
+.hero-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark tint – adjust opacity as needed */
+  z-index: 1;
+}</style>
     <!-- work details area end  -->
 
     <div class="problem-area">
@@ -460,10 +538,6 @@ textarea {
           </div>
           <div class="results-wrapper-box has_fade_anim">
             <div class="results-wrapper">
-              <div class="result-box">
-                <span class="number" style="color: #caa437;">₹35K–₹50K</span>
-                <p class="text">Average production cost per shoot for fashion and brand campaigns.</p>
-              </div>
               <div class="result-box">
                 <span class="number" style="color: #caa437;">40+</span>
                 <p class="text">Fashion shoots and brand projects executed annually.</p>
