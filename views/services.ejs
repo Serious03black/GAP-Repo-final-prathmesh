@@ -38,7 +38,8 @@ body.dark h3 {
   </style>
 
 <body class="font-heading-beatricetrial-regular-2 dark" style="font-family:'Montserrat', sans-serif !important">
-<a
+ <div>
+<!-- <a
   href="https://wa.me/917303199114"
   target="_blank"
   aria-label="Chat on WhatsApp"
@@ -62,6 +63,64 @@ body.dark h3 {
 >
   <i class="fa-brands fa-whatsapp"></i>
 </a>
+<a
+  href="https://wa.me/917303199114"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+  style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    background: #ffffff;
+    color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    z-index: 2147483647;
+    font-size: 28px;
+    text-decoration: none;
+  "
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a> -->
+<!-- Fixed WhatsApp & Call Buttons -->
+  <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
+    <!-- WhatsApp Button - Replace +911234567890 with your number -->
+    <a href="https://wa.me/917303199114"
+   aria-label="WhatsApp Chat"
+   style="
+     width:60px;
+     height:60px;
+     border-radius:50%;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     background:#22ae06;
+     color:#000;
+     box-shadow:0 6px 20px rgba(0,0,0,0.4);
+     text-decoration:none;
+     transition:all 0.3s ease;
+     font-size:30px;
+   "
+   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,0,0,0.45)'"
+   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.4)'"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+    <!-- Call Now Button - Replace +911234567890 with your number -->
+    <a href="tel:++91 73031 99114" aria-label="Call Now" 
+       style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+  </div>
+  </div>
 
   <!-- Preloader -->
   <div id="preloader">
@@ -241,112 +300,121 @@ body.dark h3 {
     <div class="services-wrapper-box">
       <div class="services-grid">
 
-        <!-- Service 1 : CINZEL -->
-        <a href="/service1" style="text-decoration:none;color:inherit;">
-          <div class="service-item has_fade_anim" data-delay="0.15">
-            <div class="icon">
-              <i class="fa-solid fa-camera-retro" style="color:#caa437;font-size:32px;"></i>
-            </div>
-            <h2 class="title">Ethnic Fashion <br> Shoots</h2>
-            <ul class="service-features">
-              <li style="color:white;">Bridal and couture <span style="margin-left: 24px;">productions</span> </li>
-              <li style="color:white;">Festive and occasion wear</li>
-              <li style="color:white;">Heritage inspired storytelling</li>
-              <li style="color:white;">Embroidery, textile, and craftsmanship detailing</li>
-              <li style="color:white;">Editorial and campaign ready visuals</li>
-            </ul>
-          </div>
-        </a>
+ <!-- Service 1 : CINZEL -->
+<a href="/service1" style="text-decoration:none;color:inherit;">
+  <div class="service-item has_fade_anim" data-delay="0.15">
+    <div class="icon">
+      <i class="fa-solid fa-camera-retro" style="color:#caa437;font-size:32px;"></i>
+    </div>
+    <h2 class="title">Ethnic FashionShoots</h2>
+    <ul class="service-features">
+     <ul>
+  <li class="item">Bridal and couture <span>productions</span></li>
+  <li class="item">Festive and occasion <span>wear</span></li>
+  <li class="item">Heritage inspired <span>storytelling</span></li>
+  <li class="item">Embroidery, textile, and craftsmanship <span>detailing</span></li>
+  <li class="item">Editorial and campaign ready <span>visuals</span></li>
+</ul>
+    </ul>
+  </div>
+</a>
+<style>
+.item {
+color: white !important;
+}
+.item span {
+  margin-left: 24px;
+  display: inline-block;
+}
+</style>
+<!-- Service 2 : PLAYFAIR DISPLAY -->
+<a href="/service2" style="text-decoration:none;color:inherit;">
+  <div class="service-item has_fade_anim" data-delay="0.30">
+    <div class="icon">
+      <i class="fa-solid fa-shirt" style="color:#caa437;font-size:32px;"></i>
+    </div>
+    <h2 class="title">Western & <br><span style="margin-left: 24px;">Indo-Western Shoots</span></h2>
+    <ul class="service-features">
+      <li style="color:white;">Contemporary fashion shoots</li>
+      <li style="color:white;">Fusion silhouettes blending tradition and modernity</li>
+      <li style="color:white;">Clean silhouettes and modern styling</li>
+      <li style="color:white;">Structured compositions and refined narratives</li>
+      <li style="color:white;">Campaign and lookbook ready imagery</li>
+      <li style="color:white;">Global campaign aesthetics</li>
+    </ul>
+  </div>
+</a>
 
-        <!-- Service 2 : PLAYFAIR DISPLAY -->
-        <a href="/service2" style="text-decoration:none;color:inherit;">
-          <div class="service-item has_fade_anim" data-delay="0.30">
-            <div class="icon">
-              <i class="fa-solid fa-shirt" style="color:#caa437;font-size:32px;"></i>
-            </div>
-            <h2 class="title"">Western & <br> Indo-Western Shoots</h2>
-            <ul class="service-features">
-              <li style="color:white;">Contemporary fashion shoots</li>
-              <li style="color:white;">Fusion silhouettes blending tradition and modernity</li>
-              <li style="color:white;">Clean silhouettes and modern styling</li>
-              <li style="color:white;">Structured compositions and refined narratives</li>
-              <li style="color:white;">Campaign and lookbook ready imagery</li>
-              <li style="color:white;">Global campaign aesthetics</li>
-            </ul>
-          </div>
-        </a>
+<!-- Service 3 : MONTSERRAT -->
+<a href="/service3" style="text-decoration:none;color:inherit;">
+  <div class="service-item has_fade_anim" data-delay="0.45">
+    <div class="icon">
+      <i class="fa-solid fa-crown" style="color:#caa437;font-size:32px;"></i>
+    </div>
+    <h2 class="title">Designer Collection <br><span style="margin-left: 24px;">Shoots</span></h2>
+    <ul class="service-features">
+      <li style="color:white;">Seasonal launches</li>
+      <li style="color:white;">Capsule and signature collections</li>
+      <li style="color:white;">Couture and high fashion lines</li>
+      <li style="color:white;">Cohesive collection presentation</li>
+      <li style="color:white;">Brand aligned storytelling</li>
+    </ul>
+  </div>
+</a>
 
-        <!-- Service 3 : MONTSERRAT -->
-        <a href="/service3" style="text-decoration:none;color:inherit;">
-          <div class="service-item has_fade_anim" data-delay="0.45" >
-            <div class="icon">
-              <i class="fa-solid fa-crown" style="color:#caa437;font-size:32px;"></i>
-            </div>
-            <h2 class="title">Designer Collection <br> Shoots</h2>
-            <ul class="service-features">
-              <li style="color:white;">Seasonal launches</li>
-              <li style="color:white;">Capsule and signature collections</li>
-              <li style="color:white;">Couture and high fashion lines</li>
-              <li style="color:white;">Cohesive collection presentation</li>
-              <li style="color:white;">Brand aligned storytelling</li>
-            </ul>
-          </div>
-        </a>
+<!-- Service 4 : POPPINS -->
+<a href="/service4" style="text-decoration:none;color:inherit;">
+  <div class="service-item has_fade_anim" data-delay="0.60">
+    <div class="icon">
+      <i class="fa-solid fa-store" style="color:#caa437;font-size:32px;"></i>
+    </div>
+    <h2 class="title">Retail, Store & <br><span style="margin-left: 24px;">Catalogue Shoots</span></h2>
+    <ul class="service-features">
+      <li style="color:white;">E-commerce ready imagery</li>
+      <li style="color:white;">Designer catalogues</li>
+      <li style="color:white;">Lookbooks and line sheets</li>
+      <li style="color:white;">Showroom presentation</li>
+      <li style="color:white;">Merchandising focused visuals</li>
+      <li style="color:white;">Color, fabric and fit accuracy</li>
+      <li style="color:white;">Jewelry and bags shoots</li>
+    </ul>
+  </div>
+</a>
 
-        <!-- Service 4 : POPPINS -->
-        <a href="/service4" style="text-decoration:none;color:inherit;">
-          <div class="service-item has_fade_anim" data-delay="0.60" >
-            <div class="icon">
-              <i class="fa-solid fa-store" style="color:#caa437;font-size:32px;"></i>
-            </div>
-            <h2 class="title">Retail, Store & <br> Catalogue Shoots</h2>
-            <ul class="service-features">
-              <li style="color:white;">E-commerce ready imagery</li>
-              <li style="color:white;">Designer catalogues</li>
-              <li style="color:white;">Lookbooks and line sheets</li>
-              <li style="color:white;">Showroom presentation</li>
-              <li style="color:white;">Merchandising focused visuals</li>
-              <li style="color:white;">Color, fabric and fit accuracy</li>
-              <li style="color:white;">Jewelry and bags shoots</li>
-            </ul>
-          </div>
-        </a>
+<!-- Service 5 : LORA -->
+<a href="/service5" style="text-decoration:none;color:inherit;">
+  <div class="service-item has_fade_anim" data-delay="0.75">
+    <div class="icon">
+      <i class="fa-solid fa-bullhorn" style="color:#caa437;font-size:32px;"></i>
+    </div>
+    <h2 class="title">Brand Campaigns, <br><span style="margin-left: 24px;">Editorials & Digital</span></h2>
+    <ul class="service-features">
+      <li style="color:white;">Concept driven campaigns</li>
+      <li style="color:white;">Fashion editorials</li>
+      <li style="color:white;">Creative storytelling</li>
+      <li style="color:white;">Premium Instagram reels</li>
+      <li style="color:white;">Influencer led content</li>
+      <li style="color:white;">Behind the scenes coverage</li>
+    </ul>
+  </div>
+</a>
 
-        <!-- Service 5 : LORA -->
-        <a href="/service5" style="text-decoration:none;color:inherit;">
-          <div class="service-item has_fade_anim" data-delay="0.75">
-            <div class="icon">
-              <i class="fa-solid fa-bullhorn" style="color:#caa437;font-size:32px;"></i>
-            </div>
-            <h2 class="title" >Brand Campaigns, <br> Editorials & Digital</h2>
-            <ul class="service-features">
-              <li style="color:white;">Concept driven campaigns</li>
-              <li style="color:white;">Fashion editorials</li>
-              <li style="color:white;">Creative storytelling</li>
-              <li style="color:white;">Premium Instagram reels</li>
-              <li style="color:white;">Influencer led content</li>
-              <li style="color:white;">Behind the scenes coverage</li>
-            </ul>
-          </div>
-        </a>
-
-        <!-- Service 6 : RALEWAY -->
-        <a href="/service6" style="text-decoration:none;color:inherit;">
-          <div class="service-item has_fade_anim" data-delay="0.90" >
-            <div class="icon">
-              <i class="fa-solid fa-sliders" style="color:#caa437;font-size:32px;"></i>
-            </div>
-            <h2 class="title">Post-Production <br> & Delivery</h2>
-            <ul class="service-features">
-              <li style="color:white;">High end photo retouching</li>
-              <li style="color:white;">Advanced color grading</li>
-              <li style="color:white;">Video editing and finishing</li>
-              <li style="color:white;">Final asset optimization</li>
-              <li style="color:white;">Platform specific delivery</li>
-            </ul>
-          </div>
-        </a>
-
+<!-- Service 6 : RALEWAY -->
+<a href="/service6" style="text-decoration:none;color:inherit;">
+  <div class="service-item has_fade_anim" data-delay="0.90">
+    <div class="icon">
+      <i class="fa-solid fa-sliders" style="color:#caa437;font-size:32px;"></i>
+    </div>
+    <h2 class="title">Post-Production <br><span style="margin-left: 24px;">& Delivery</span></h2>
+    <ul class="service-features">
+      <li style="color:white;">High end photo retouching</li>
+      <li style="color:white;">Advanced color grading</li>
+      <li style="color:white;">Video editing and finishing</li>
+      <li style="color:white;">Final asset optimization</li>
+      <li style="color:white;">Platform specific delivery</li>
+    </ul>
+  </div>
+</a>
       </div>
     </div>
   </div>
