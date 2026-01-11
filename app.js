@@ -212,216 +212,156 @@ app.post("/contact", async (req, res) => {
     console.log("New contact saved successfully:", { name, email, budget: finalBudget, membership, location });
 
     // Success Thank You Page
-    return res.send(`
+   return res.send(`
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You - Golden Apple Productions</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #000000; /* Pure black background */
-      color: #caa437; /* Golden color */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .thankyou-container {
-      text-align: center;
-      padding: 40px;
-      position: relative;
-    }
-
-    /* Cursive Thank You Text using SVG */
-    .thankyou-svg {
-      width: 90%;
-      max-width: 900px;
-      margin: 0 auto 40px;
-    }
-
-    .subtitle {
-      font-size: 1.8rem;
-      margin: 30px 0;
-      opacity: 0.9;
-      line-height: 1.5;
-    }
-
-    .message {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      opacity: 0.8;
-    }
-
-    .actions {
-      margin: 40px 0;
-    }
-
-    .back-link {
-      display: inline-block;
-      background: #caa437;
-      color: #000;
-      font-weight: bold;
-      padding: 14px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      margin-bottom: 30px;
-    }
-
-    .back-link:hover {
-      background: #d4b850;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(202, 164, 55, 0.4);
-    }
-
-    /* Social links */
-    .social-links {
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      margin: 0 15px;
-      color: #caa437;
-      font-size: 2rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-
-    .social-links a:hover {
-      color: #f0d48a;
-      transform: translateY(-5px);
-      filter: drop-shadow(0 0 10px rgba(202, 164, 55, 0.6));
-    }
-
-    /* Celebration particles animation */
-    .particles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: #caa437;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: celebrate 4s infinite ease-out;
-    }
-
-    @keyframes celebrate {
-      0% {
-        transform: translateY(100vh) scale(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100px) scale(1);
-        opacity: 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - Golden Apple Productions</title>
 </head>
-<body>
 
-  <div class="particles" id="particles"></div>
+<body style="
+  margin:0;
+  padding:0;
+  height:100vh;
+  background:#000;
+  color:#caa437;
+  font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+">
 
-  <div class="thankyou-container">
-    <!-- Elegant Cursive "Thank You" in SVG -->
-    <svg class="thankyou-svg" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#f0d48a;" />
-          <stop offset="50%" style="stop-color:#caa437;" />
-          <stop offset="100%" style="stop-color:#f0d48a;" />
-        </linearGradient>
-      </defs>
+<!-- PARTICLES -->
+<div id="particles" style="
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+"></div>
 
-      <text x="500" y="180" 
-            font-family="Brush Script MT, cursive" 
-            font-size="140" 
-            fill="url(#goldGradient)" 
-            text-anchor="middle"
-            style="filter: drop-shadow(0 0 20px rgba(202,164,55,0.6));">
-        Thank You
-      </text>
-    </svg>
+<div style="text-align:center; padding:40px; position:relative;">
 
-    <h2 class="subtitle">Your message has been sent successfully!</h2>
-    
-    <p class="message">
-      We truly appreciate you reaching out to Golden Apple Productions.<br>
-      Our team will review your inquiry and get back to you as soon as possible.
-    </p>
+  <!-- THANK YOU SVG -->
+  <svg viewBox="0 0 1000 300" style="width:90%; max-width:900px; margin-bottom:40px;">
+    <defs>
+      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f0d48a"/>
+        <stop offset="50%" stop-color="#caa437"/>
+        <stop offset="100%" stop-color="#f0d48a"/>
+      </linearGradient>
+    </defs>
+    <text x="500" y="180"
+      font-family="Brush Script MT, cursive"
+      font-size="140"
+      fill="url(#goldGradient)"
+      text-anchor="middle"
+      style="filter:drop-shadow(0 0 20px rgba(202,164,55,0.6));">
+      Thank You
+    </text>
+  </svg>
 
-    <div class="actions">
-      <a href="/" class="back-link">← Back to Home</a>
-      
-      <div class="social-links" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-        <a href="https://www.instagram.com/goldenappleproductions/" target="_blank" aria-label="Follow us on Instagram">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <circle cx="12" cy="12" r="4"></circle>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </a>
-        <h1>@GAP</h1>
-      </div>
-    </div>
+  <h2 style="font-size:1.8rem; margin:30px 0; color:#caa437;">
+    Your message has been sent successfully!
+  </h2>
+
+  <p style="
+    font-size:1.3rem;
+    max-width:700px;
+    margin:0 auto 40px;
+    opacity:0.85;
+    line-height:1.6;
+  ">
+    We truly appreciate you reaching out to Golden Apple Productions.<br>
+    Our team will review your inquiry and get back to you as soon as possible.
+  </p>
+
+  <!-- BACK BUTTON -->
+  <a href="/" style="
+    display:inline-block;
+    background:#caa437;
+    color:#000;
+    font-weight:bold;
+    padding:14px 32px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:1.1rem;
+    margin-bottom:40px;
+    transition:all 0.3s ease;
+  "
+  onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(202,164,55,0.4)'"
+  onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+    ← Back to Home
+  </a>
+
+  <!-- INSTAGRAM -->
+  <div style="margin-top:30px;">
+    <a href="https://www.instagram.com/golden.apple.productions/"
+       target="_blank"
+       style="
+         display:flex;
+         align-items:center;
+         justify-content:center;
+         gap:14px;
+         color:#caa437;
+         text-decoration:none;
+         font-size:1.4rem;
+         transition:all 0.3s ease;
+       "
+       onmouseover="this.style.color='#f0d48a';this.style.transform='translateY(-3px)'"
+       onmouseout="this.style.color='#caa437';this.style.transform='none'">
+
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+
+      <span>golden.apple.productions</span>
+    </a>
   </div>
-  <script>
-    // Celebration particles (golden confetti effect)
-    const particlesContainer = document.getElementById('particles');
-    
-    function createParticle() {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-      
-      // Random horizontal position
-      particle.style.left = Math.random() * 100 + 'vw';
-      
-      // Random animation duration & delay
-      particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      particle.style.animationDelay = Math.random() * 2 + 's';
-      
-      // Random size
-      const size = Math.random() * 6 + 4;
-      particle.style.width = size + 'px';
-      particle.style.height = size + 'px';
-      
-      particlesContainer.appendChild(particle);
-      
-      // Remove after animation ends
-      setTimeout(() => {
-        particle.remove();
-      }, 6000);
-    }
 
-    // Create particles continuously
-    setInterval(createParticle, 300);
-    
-    // Initial burst
-    for (let i = 0; i < 30; i++) {
-      setTimeout(createParticle, i * 100);
-    }
-  </script>
+</div>
+
+<!-- PARTICLE SCRIPT -->
+<script>
+  const particles = document.getElementById('particles');
+
+  function createParticle() {
+    const p = document.createElement('div');
+    p.style.position = 'absolute';
+    p.style.width = Math.random() * 6 + 4 + 'px';
+    p.style.height = p.style.width;
+    p.style.background = '#caa437';
+    p.style.borderRadius = '50%';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.top = '100vh';
+    p.style.opacity = '0.8';
+    p.style.transition = 'transform 4s ease-out, opacity 4s';
+
+    particles.appendChild(p);
+
+    setTimeout(() => {
+      p.style.transform = 'translateY(-110vh)';
+      p.style.opacity = '0';
+    }, 50);
+
+    setTimeout(() => p.remove(), 5000);
+  }
+
+  setInterval(createParticle, 300);
+</script>
 
 </body>
 </html>
-    `);
+`);
+
 
   } catch (err) {
     console.error("CONTACT FORM ERROR:", err);
