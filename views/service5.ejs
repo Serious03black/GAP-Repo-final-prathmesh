@@ -318,13 +318,97 @@ body.dark h3 {
   </div>
 
   <!-- Gallery -->
-   <div class="container">
-    <div class="thumb-gallery has_fade_anim">
-      <img src="assets/imgs/Pictures/Brand Campaign & Edit..jpg" alt="image">
-      <img src="assets/imgs/Pictures/Brand Campaign & Editorial.jpg" alt="image">
-      <img src="assets/imgs/Pictures/Brand Campaign & Editorial(1).jpg" alt="image">
-    </div>
+<div class="image-scroller-wrapper">
+  <div class="image-scroller-track">
+    <!-- Your 8–10 images (you can add more) -->
+    <img src="assets/imgs/Pictures/Ethnic.jpg" alt="Ethnic Fashion 1" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(1).jpg" alt="Ethnic Fashion 2" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(2).jpg" alt="Ethnic Fashion 3" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(3).jpg" alt="Ethnic Fashion 4" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(4).jpg" alt="Ethnic Fashion 5" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(5).jpg" alt="Ethnic Fashion 6" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(6).jpg" alt="Ethnic Fashion 7" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(7).jpg" alt="Ethnic Fashion 8" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(8).jpg" alt="Ethnic Fashion 9" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(9).jpg" alt="Ethnic Fashion 10" loading="lazy">
+
+    <!-- Duplicate set for perfect infinite loop -->
+    <img src="assets/imgs/Pictures/Ethnic.jpg" alt="Ethnic Fashion 1" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(1).jpg" alt="Ethnic Fashion 2" loading="lazy">
+    <img src="assets/imgs/Pictures/Ethnic(2).jpg" alt="Ethnic Fashion 3" loading="lazy">
+    <!-- You can stop duplicating after 10–12 total if you want shorter code -->
   </div>
+</div>
+
+<style>
+  .image-scroller-wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin: 3rem 0;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.image-scroller-track {
+  display: flex;
+  gap: 2rem;
+  animation: infiniteScroll 60s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+.image-scroller-track img {
+  height: 340px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+  transition: all 0.4s ease;
+  background: #111; /* fallback color */
+}
+
+.image-scroller-track img:hover {
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Infinite smooth scrolling */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause when hovering the whole container */
+.image-scroller-wrapper:hover .image-scroller-track {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .image-scroller-track img {
+    height: 280px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-scroller-track img {
+    height: 220px;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-scroller-track img {
+    height: 180px;
+  }
+}
+</style>
 
 </section>
 <!-- service details area end  -->

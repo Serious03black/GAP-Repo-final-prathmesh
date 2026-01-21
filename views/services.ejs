@@ -5,773 +5,753 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Golden Apple Productions HTML5 Template">
-
-  <title>Golden Apple Productions Services</title>
+  <title>Golden Apple Productions - Premium Fashion Services</title>
 
   <!-- Fav Icon -->
   <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
 
-
-
-
-
   <!-- All CSS files -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/css/progressbar.css">
-  <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-  <link rel="stylesheet" href="assets/css/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/master-services.css">
 
+  <style>
+    /* Premium Fashion Design */
+    :root {
+      --gold: #caa437;
+      --gold-light: #e6c672;
+      --gold-dark: #9c8126;
+      --black: #000000;
+      --charcoal: #121212;
+      --dark-gray: #1a1a1a;
+      --light-gray: #2a2a2a;
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+    }
 
-</head>
-<style>
-      body.dark .section-title,
-body.dark h1,
-body.dark h2,
-body.dark h3 {
-  color: #caa437;;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Luxury Header */
+    .luxury-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(202, 164, 55, 0.2);
+    }
+
+    .luxury-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .luxury-logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .luxury-menu {
+      display: flex;
+      gap: 40px;
+    }
+
+    .luxury-menu a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .luxury-menu a:hover {
+      color: var(--gold);
+    }
+
+    .luxury-menu a.active {
+      color: var(--gold);
+    }
+
+    .luxury-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .book-demo-btn {
+      background: var(--gold);
+      color: var(--black);
+      padding: 12px 28px;
+      border-radius: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .book-demo-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .luxury-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 0 40px;
+      margin-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-title {
+      font-size: 5.5rem;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--gold);
+      max-width: 600px;
+      line-height: 1.6;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+
+    .hero-accent {
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    /* Services Grid - Ultra Premium */
+    .premium-services {
+      padding: 120px 40px;
+      background: var(--black);
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .services-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 80px;
+      color: var(--gold);
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .services-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* Service Card Design */
+    .service-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 120px;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    .service-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card:nth-child(even) .service-image {
+      order: 2;
+    }
+
+    .service-card:nth-child(even) .service-content {
+      order: 1;
+      text-align: right;
+    }
+
+    .service-image {
+      position: relative;
+      overflow: hidden;
+      height: 600px;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.05);
+    }
+
+    .service-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(202, 164, 55, 0.1), transparent);
+      pointer-events: none;
+    }
+
+    .service-number {
+      font-size: 14px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+
+    .service-card-title {
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .service-card-subtitle {
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      line-height: 1.6;
+    }
+
+    .service-features-list {
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .service-features-list li {
+      color: var(--off-white);
+      margin-bottom: 15px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      position: relative;
+      padding-left: 25px;
+      line-height: 1.6;
+    }
+
+    .service-features-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .service-card:nth-child(even) .service-features-list li {
+      padding-left: 0;
+      padding-right: 25px;
+    }
+
+    .service-card:nth-child(even) .service-features-list li::before {
+      left: auto;
+      right: 0;
+    }
+
+    .service-action-btn {
+      display: inline-block;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gold);
+      transition: all 0.3s ease;
+    }
+
+    .service-action-btn:hover {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold-light);
+      padding-right: 20px;
+    }
+
+    .service-card:nth-child(even) .service-action-btn:hover {
+      padding-left: 20px;
+      padding-right: 0;
+    }
+
+    /* Fixed Call to Action */
+    .fixed-cta {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .cta-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--black);
+      text-decoration: none;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+    }
+
+    .call-btn {
+      background: var(--gold);
+    }
+
+    .cta-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .service-card {
+        gap: 40px;
+      }
+      
+      .service-card-title {
+        font-size: 2.5rem;
+      }
+      
+      .service-image {
+        height: 500px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .service-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .service-card:nth-child(even) .service-image {
+        order: 1;
+      }
+      
+      .service-card:nth-child(even) .service-content {
+        order: 2;
+        text-align: left;
+      }
+      
+      .service-card:nth-child(even) .service-features-list li {
+        padding-left: 25px;
+        padding-right: 0;
+      }
+      
+      .service-card:nth-child(even) .service-features-list li::before {
+        left: 0;
+        right: auto;
+      }
+      
+      .service-image {
+        height: 400px;
+      }
+      
+      .hero-title {
+        font-size: 4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .luxury-nav {
+        padding: 15px 20px;
+      }
+      
+      .luxury-menu {
+        display: none;
+      }
+      
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .premium-services {
+        padding: 80px 20px;
+      }
+      
+      .service-card-title {
+        font-size: 2rem;
+      }
+      
+      .service-image {
+        height: 350px;
+      }
+      
+      .fixed-cta {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Loading Animation */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--black);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loading-text {
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: 3px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Gold Accent Elements */
+    .gold-accent {
+      color: var(--gold);
+    }
+
+    .gold-border {
+      border: 1px solid var(--gold);
+    }
+
+    .gold-bg {
+      background: var(--gold);
+    }
   </style>
+</head>
 
-<body class="font-heading-beatricetrial-regular-2 dark" style="font-family:'Montserrat', sans-serif !important">
- <div>
-<!-- <a
-  href="https://wa.me/917303199114"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
-  style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 58px;
-    height: 58px;
-    background: #ffffff;
-    color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    z-index: 2147483647;
-    font-size: 28px;
-    text-decoration: none;
-  "
->
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-<a
-  href="https://wa.me/917303199114"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
-  style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 58px;
-    height: 58px;
-    background: #ffffff;
-    color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    z-index: 2147483647;
-    font-size: 28px;
-    text-decoration: none;
-  "
->
-  <i class="fa-brands fa-whatsapp"></i>
-</a> -->
-<!-- Fixed WhatsApp & Call Buttons -->
-  <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
-    <!-- WhatsApp Button - Replace +911234567890 with your number -->
-    <a href="https://wa.me/917303199114"
-   aria-label="WhatsApp Chat"
-   style="
-     width:60px;
-     height:60px;
-     border-radius:50%;
-     display:flex;
-     align-items:center;
-     justify-content:center;
-     background:#22ae06;
-     color:#000;
-     box-shadow:0 6px 20px rgba(0,0,0,0.4);
-     text-decoration:none;
-     transition:all 0.3s ease;
-     font-size:30px;
-   "
-   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,0,0,0.45)'"
-   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.4)'"
->
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-text">GOLDEN APPLE PRODUCTIONS</div>
+  </div>
 
-    <!-- Call Now Button - Replace +911234567890 with your number -->
-    <a href="tel:++91 73031 99114" aria-label="Call Now" 
-       style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
-      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
-        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-      </svg>
+  <!-- Luxury Header -->
+  <header class="luxury-header">
+    <nav class="luxury-nav">
+      <a href="/" class="luxury-logo">GOLDEN APPLE</a>
+      <div class="luxury-menu">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services" class="active">Services</a>
+        <a href="/ourwork">Portfolio</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <button class="book-demo-btn" onclick="openDemoPopup()">Book Session</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="luxury-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        PREMIUM <span class="hero-accent">FASHION</span><br>
+        PRODUCTION SERVICES
+      </h1>
+      <p class="hero-subtitle">
+        Exclusive fashion production services for designers, labels, and luxury brands. 
+        Precision, elegance, and editorial excellence in every frame.
+      </p>
+    </div>
+  </section>
+
+  <!-- Premium Services -->
+  <section class="premium-services">
+    <h2 class="services-title">Our Services</h2>
+
+    <!-- Service 1 -->
+    <div class="service-card" id="service1">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Ethnic Fashion Shoots">
+      </div>
+      <div class="service-content">
+        <div class="service-number">01</div>
+        <h3 class="service-card-title">Ethnic Fashion Shoots</h3>
+        <p class="service-card-subtitle">Traditional elegance meets contemporary vision</p>
+        <ul class="service-features-list">
+          <li>Bridal and couture productions with heritage detailing</li>
+          <li>Festive and occasion wear storytelling</li>
+          <li>Embroidery, textile, and craftsmanship focus</li>
+          <li>Editorial and campaign-ready visuals</li>
+          <li>Traditional jewelry and accessory styling</li>
+        </ul>
+        <a href="/service1" class="service-action-btn">View Portfolio →</a>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card" id="service2">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Western Fashion Shoots">
+      </div>
+      <div class="service-content">
+        <div class="service-number">02</div>
+        <h3 class="service-card-title">Western & Indo-Western</h3>
+        <p class="service-card-subtitle">Modern silhouettes with global appeal</p>
+        <ul class="service-features-list">
+          <li>Contemporary fashion shoots with clean aesthetics</li>
+          <li>Fusion silhouettes blending tradition and modernity</li>
+          <li>Structured compositions and refined narratives</li>
+          <li>Campaign and lookbook ready imagery</li>
+          <li>Global campaign aesthetics</li>
+        </ul>
+        <a href="/service2" class="service-action-btn">View Portfolio →</a>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card" id="service3">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Designer Collections">
+      </div>
+      <div class="service-content">
+        <div class="service-number">03</div>
+        <h3 class="service-card-title">Designer Collections</h3>
+        <p class="service-card-subtitle">Showcasing signature designer lines</p>
+        <ul class="service-features-list">
+          <li>Seasonal launches and signature collections</li>
+          <li>Couture and high fashion lines presentation</li>
+          <li>Cohesive collection storytelling</li>
+          <li>Brand-aligned creative direction</li>
+          <li>Exclusive designer showcases</li>
+        </ul>
+        <a href="/service3" class="service-action-btn">View Portfolio →</a>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-card" id="service4">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Retail & Catalog">
+      </div>
+      <div class="service-content">
+        <div class="service-number">04</div>
+        <h3 class="service-card-title">Retail & Catalog Shoots</h3>
+        <p class="service-card-subtitle">Commercial excellence for retail</p>
+        <ul class="service-features-list">
+          <li>E-commerce ready product imagery</li>
+          <li>Designer catalogues and line sheets</li>
+          <li>Showroom and retail presentation</li>
+          <li>Merchandising-focused visuals</li>
+          <li>Jewelry and accessory detailing</li>
+        </ul>
+        <a href="/service4" class="service-action-btn">View Portfolio →</a>
+      </div>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-card" id="service5">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Brand Campaigns">
+      </div>
+      <div class="service-content">
+        <div class="service-number">05</div>
+        <h3 class="service-card-title">Brand Campaigns</h3>
+        <p class="service-card-subtitle">Strategic brand storytelling</p>
+        <ul class="service-features-list">
+          <li>Concept-driven brand campaigns</li>
+          <li>Fashion editorials for publications</li>
+          <li>Premium Instagram reels and content</li>
+          <li>Influencer-led campaign execution</li>
+          <li>Behind-the-scenes documentary</li>
+        </ul>
+        <a href="/service5" class="service-action-btn">View Portfolio →</a>
+      </div>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-card" id="service6">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Post Production">
+      </div>
+      <div class="service-content">
+        <div class="service-number">06</div>
+        <h3 class="service-card-title">Post-Production</h3>
+        <p class="service-card-subtitle">Final polish and delivery</p>
+        <ul class="service-features-list">
+          <li>High-end photo retouching and color grading</li>
+          <li>Advanced video editing and finishing</li>
+          <li>Final asset optimization for all platforms</li>
+          <li>Brand-consistent editing style</li>
+          <li>Timely delivery management</li>
+        </ul>
+        <a href="/service6" class="service-action-btn">View Portfolio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fixed CTA Buttons -->
+  <div class="fixed-cta">
+    <a href="https://wa.me/917303199114" class="cta-button whatsapp-btn" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+917303199114" class="cta-button call-btn" aria-label="Call">
+      <i class="fas fa-phone"></i>
     </a>
   </div>
-  </div>
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div id="container" class="container-preloader">
-      <div class="animation-preloader">
-        <div class="spinner"></div>
-        <div class="txt-loading">
-
-
-        </div>
-      </div>
-      <div class="loader-section section-left"></div>
-      <div class="loader-section section-right"></div>
-    </div>
-  </div>
-
-
-    <!-- offcanvas start  -->
-<div class="offcanvas-3__area" style="background:#000000; color:#ffffff;">
-  <div class="offcanvas-3__inner" style="background:#000000; color:#ffffff;">
-
-    <div class="offcanvas-3__meta-wrapper" style="color:#ffffff;">
-      <div>
-        <button id="close_offcanvas"
-          class="close-button close-offcanvas"
-          onclick="hideCanvas3()"
-          style="color:#ffffff;">
-          <span style="background:#ffffff;"></span>
-          <span style="background:#ffffff;"></span>
-        </button>
-      </div>
-
-      <div>
-        <div class="offcanvas-3__meta mb-145 d-none d-md-block" style="color:#ffffff;">
-          <ul>
-            
-          </ul>
-        </div>
-
-        <div class="offcanvas-3__social d-none d-md-block" style="color:#ffffff;">
-          <p class="title" style="color:#ffffff;"></p>
-          <div class="offcanvas-3__social-links">
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="offcanvas-3__menu-wrapper" style="background:#000000;">
-      <nav class="nav-menu offcanvas-3__menu">
-        <ul>
-          <li><a href="/" style="color:#ffffff;">Home</a></li>
-          <li><a href="/about" style="color:#ffffff;">About</a></li>
-          <li><a href="/services" style="color:#ffffff;">Services</a></li>
-          <li><a href="/ourwork" style="color:#ffffff;">Our Work</a></li>
-          <li><a href="/blogs" style="color:#ffffff;">Blogs</a></li>
-          <li><a href="/contact" style="color:#ffffff;">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-
-  </div>
-</div>
-<!-- offcanvas end  -->
-
-
-  <!-- search modal start -->
-  <div class="modal fade" id="search-template" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="search-template" aria-hidden="true">
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body">
-          <form action="#" class="form-search">
-            <input type="text" placeholder="Search">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- search modal end -->
-
-  <!-- Header area start -->
-  <header class="header-area">
-    <div class="container large">
-      <div class="header-area__inner">
-        <div class="header__logo">
-          <a href="/">
-            <img class="show-light mt-1" src="assets/imgs/logo/logo.png" width="70px" alt="Site Logo">
-            <img class="show-dark mt-1" src="assets/imgs/logo/logo-light.png" width="70px" alt="Site Logo">
-          </a>
-        </div>
-        <div class="header__nav pos-center">
-          <nav class="main-menu">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/ourwork">Our Work</a></li>
-              <li><a href="/blogs">Blogs</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="header__button">
-          <a class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span data-text="Book Free Demo">Book Free Demo</span><i class="fa-solid fa-play"></i></a>
-        </div>
-        <div class="header__navicon d-xl-none">
-          <button onclick="showCanvas3()" class="open-offcanvas">
-            <i class="fa-solid fa-bars"></i></button>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- Header area end -->
-  <div class="has-smooth" id="has_smooth"></div>
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-      <div class="body-wrapper body-corporate-agency">
-        <!-- overlay switcher close  -->
-        <div class="overlay-switcher-close"></div>
-        <main>
-          <!-- hero area start 
-          <section class="hero-area">
-            <div class="container">
-              <div class="hero-area-inner">
-                <div class="section-content">
-                  <div class="section-title-wrapper">
-                    <div class="title-wrapper">
-                      <h1 class="section-title large has_text_move_anim">We make
-                        design that
-                        lead and
-                        inspire.</h1>
-                    </div>
-                  </div>
-                  <div class="text-wrapper">
-                    <p class="text has_fade_anim">We take a similar approach to design commercial we do impactfully
-                      approache, over
-                      the flowchart of user friendly wireframe.</p>
-                  </div>
-                  <div class="icon has_fade_anim" data-on-scroll="0">
-                    <img class="show-light" src="assets/imgs/shape/img-s-82.webp" alt="image">
-                    <img class="show-dark" src="assets/imgs/shape/img-s-82-light.webp" alt="image">
-                  </div>
-                </div>
-                <div class="thumb">
-                  <img src="assets/imgs/gallery/img-s-86.webp" class="has_fade_anim" data-fade-offset="0"
-                    data-delay="0.45" alt="image">
-                </div>
-              </div>
-            </div>
-          </section>
-           -->
-          <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500&family=Poppins:wght@400;500&family=Lora:wght@400;500&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-
-
-<!-- service area start -->
-<section class="service-area section-spacing mt-5">
-  <div class="container">
-    <div class="service-top-wrapper">
-      <div class="section-heading">
-        <h2 class="section-title has_text_move_anim" >
-          Our exclusive services
-        </h2>
-      </div>
-      <BR></BR>
-      <div class="content" style="margin-top: 2%;">
-        <p class="text has_fade_anim" style="color: white;font-size: x-large;">
-          We collaborate with designers, fashion labels, and creative brands to deliver
-          structured, premium fashion production services with clarity, consistency,
-          and editorial excellence.
-        </p>
-      </div>
-    </div>
-    <div class="services-wrapper-box">
-      <div class="services-grid">
-
- <!-- Service 1 : CINZEL -->
-<a href="/service1" style="text-decoration:none;color:inherit;">
-  <div class="service-item has_fade_anim" data-delay="0.15">
-    <div class="icon">
-      <i class="fa-solid fa-camera-retro" style="color:#caa437;font-size:32px;"></i>
-    </div>
-    <h2 class="title">Ethnic Fashion Shoots</h2>
-    <ul class="service-features">
-     <ul>
-  <li class="item">Bridal and couture <span>productions</span></li>
-  <li class="item">Festive and occasion <span>wear</span></li>
-  <li class="item">Heritage inspired <span>storytelling</span></li>
-  <li class="item">Embroidery, textile,  <span class="a1">and  craftsmanshipdetailing</span></li>
-  <li class="item">Editorial and <span class="a1"> campaign ready visuals</span></li>
-</ul>
-    </ul>
-  </div>
-</a>
-<style>
-.item {
-color: white !important;
-}
-.item span {
-  margin-left: 24px;
-  display: inline-block;
-}
-@media (max-width:1000px) {
-  .item span {
-    margin-left: 0;
-  }
-  .item .a1{
-    margin-left: 24px;
-  }
-  
-}
-</style>
-<!-- Service 2 : PLAYFAIR DISPLAY -->
-<a href="/service2" style="text-decoration:none;color:inherit;">
-  <div class="service-item has_fade_anim" data-delay="0.30">
-    <div class="icon">
-      <i class="fa-solid fa-shirt" style="color:#caa437;font-size:32px;"></i>
-    </div>
-    <h2 class="title">Western & <br>Indo-Western Shoots</h2>
-    <ul class="service-features item">
-      <li style="color:white;">Contemporary <span>fashion shoots</span></li>
-      <li style="color:white;">Fusion silhouettes <span class="a1"> blending tradition and modernity</span></li>
-      <li style="color:white;">Clean silhouettes <span class="a1">and modern styling</span> </li>
-      <li style="color:white;">Structured <span class="a1"> compositions and refined narratives</span></li>
-      <li style="color:white;">Campaign and <span class="a1">lookbook ready imagery</span></li>
-      <li style="color:white;">Global campaign <span> aesthetics</span></li>
-    </ul>
-  </div>
-</a>
-
-<!-- Service 3 : MONTSERRAT -->
-<a href="/service3" style="text-decoration:none;color:inherit;">
-  <div class="service-item has_fade_anim" data-delay="0.45">
-    <div class="icon">
-      <i class="fa-solid fa-crown" style="color:#caa437;font-size:32px;"></i>
-    </div>
-    <h2 class="title ">Designer Collection <br>Shoots</h2>
-    <ul class="service-features item">
-      <li style="color:white;">Seasonal launches</li>
-      <li style="color:white;">Capsule and <span>signature collections</span> </li>
-      <li style="color:white;">Couture and high <span>fashion lines</span> </li>
-      <li style="color:white;">Cohesive collection  <span>presentation</span></li>
-      <li style="color:white;">Brand aligned <span>storytelling</span> </li>
-    </ul>
-  </div>
-</a>
-
-<!-- Service 4 : POPPINS -->
-<a href="/service4" style="text-decoration:none;color:inherit;">
-  <div class="service-item has_fade_anim" data-delay="0.60">
-    <div class="icon">
-      <i class="fa-solid fa-store" style="color:#caa437;font-size:32px;"></i>
-    </div>
-    <h2 class="title">Retail, Store & <br>Catalogue Shoots</h2>
-    <ul class="service-features item " style="width: 100% !important;">
-      <li style="color:white;">E-commerce ready <span> imagery</span></li>
-      <li style="color:white;">Designer catalogues</li>
-      <li style="color:white;">Lookbooks and line <span> sheets</span></li>
-      <li style="color:white;">Showroom <span>presentation</span></li>
-      <li style="color:white;">Merchandising <span>focused visuals</span> </li>
-      <li style="color:white;">Color, fabric and fit <span> accuracy</span> </li>
-      <li style="color:white;">Jewelry and bags <span>shoots</span> </li>
-    </ul>
-  </div>
-</a>
-
-<!-- Service 5 : LORA -->
-<a href="/service5" style="text-decoration:none;color:inherit;">
-  <div class="service-item has_fade_anim" data-delay="0.75">
-    <div class="icon">
-      <i class="fa-solid fa-bullhorn" style="color:#caa437;font-size:32px;"></i>
-    </div>
-    <h2 class="title">Brand Campaigns, <br>Editorials & Digital</h2>
-    <ul class="service-features item">
-      <li style="color:white;">Concept driven <span> campaigns</span></li>
-      <li style="color:white;">Fashion editorials</li>
-      <li style="color:white;">Creative storytelling</li>
-      <li style="color:white;">Premium Instagram <span> reels</span></li>
-      <li style="color:white;">Influencer led content</li>
-      <li style="color:white;">Behind the scenes <span> coverage</span></li>
-    </ul>
-  </div>
-</a>
-
-<!-- Service 6 : RALEWAY -->
-<a href="/service6" style="text-decoration:none;color:inherit;">
-  <div class="service-item has_fade_anim" data-delay="0.90">
-    <div class="icon">
-      <i class="fa-solid fa-sliders" style="color:#caa437;font-size:32px;"></i>
-    </div>
-    <h2 class="title">Post-Production <br>& Delivery</h2>
-    <ul class="service-features item">
-      <li style="color:white;">High end photo <span>retouching</span> </li>
-      <li style="color:white;">Advanced color <span>grading</span></li>
-      <li style="color:white;">Video editing and <span>finishing</span></li>
-      <li style="color:white;">Final asset <span>optimization</span></li>
-      <li style="color:white;">Platform specific <span>delivery</span> </li>
-    </ul>
-  </div>
-</a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- service area end -->
-
-
-         
-
-
-
-
-
-        </main>
-
-        <!-- footer area start  -->
-        <footer class="footer-area">
-          <div class="container">
-            <div class="footer-area-inner  ">
-
-              <div class="footer-cta">
-                <div class="footer-widget-wrapper">
-                  <h2 class="title">London</h2>
-                  <ul class="footer-nav-list">
-                    <li>Baltia Squar, Mark Street, <br>
-                      London</li>
-                  </ul>
-                </div>
-                <div class="footer-widget-wrapper">
-                  <h2 class="title">New York</h2>
-                  <ul class="footer-nav-list">
-                    <li>Nenuya Centre, Elia Street <br>
-                      New York, USA</li>
-                  </ul>
-                </div>
-                <div class="footer-widget-wrapper newsletter">
-                   <form action="/book-demo" method="post" class="subscribe-form" id="subscribeForm">
-  <div class="input-field">
-    <input
-      type="tel"
-      name="mobile"
-      id="subscribeMobile"
-      placeholder="Enter your mobile number"
-      maxlength="10"
-      inputmode="numeric"
-      required
-    >
-
-    <button type="submit" class="subscribe-btn">
-      <img src="/assets/imgs/icon/arrow-light.webp" alt="icon">
-    </button>
-  </div>
-
-  <p id="subscribeError" style="color:red;font-size:13px;display:none;"></p>
-  <p id="subscribeSuccess" style="color:green;font-size:13px;display:none;"></p>
-</form>
-<script>
-  const form = document.getElementById("subscribeForm");
-  const mobileInput = document.getElementById("subscribeMobile");
-  const errorEl = document.getElementById("subscribeError");
-  const successEl = document.getElementById("subscribeSuccess");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // stop default form submit
-
-    const mobile = mobileInput.value.trim();
-
-    errorEl.style.display = "none";
-    successEl.style.display = "none";
-
-    // ✅ SIMPLE validation: number + 10 digits only
-    if (!/^[6-9]\d{9}$/.test(mobile)) {
-      errorEl.innerText = "Enter valid 10 digit mobile number";
-      errorEl.style.display = "block";
-      return;
-    }
-
-    try {
-      const res = await fetch(form.action, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ mobile })
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || "Submission failed");
-      }
-
-      // ✅ success from backend
-      successEl.innerText = data.message || "Submitted successfully";
-      successEl.style.display = "block";
-      mobileInput.value = "";
-
-    } catch (err) {
-      errorEl.innerText = err.message || "Server error";
-      errorEl.style.display = "block";
-    }
-  });
-</script>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="copyright-area">
-            <div class="container">
-              <div class="copyright-area-inner">
-                <div class="copyright-text">
-                  <p class="text">© 2022 - 2025 | Alrights reserved <br>
-                    Golden Apple Production
-                </div>
-                <ul class="footer-nav-list">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/services">Services</a></li>
-                  <li><a href="/ourwork">Our Work</a></li>
-                  <li><a href="/blogs">Blogs</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                  <li><a href="/terms" >terms</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <!-- footer area end  -->
-
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- All JS files -->
-  <script src="assets/js/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/swiper-bundle.min.js"></script>
-  <script src="assets/js/counter.js"></script>
-  <script src="assets/js/progressbar.js"></script>
-  <script src="assets/js/gsap.min.js"></script>
-  <script src="assets/js/ScrollSmoother.min.js"></script>
-  <script src="assets/js/ScrollToPlugin.min.js"></script>
-  <script src="assets/js/ScrollTrigger.min.js"></script>
-  <script src="assets/js/SplitText.min.js"></script>
-  <script src="assets/js/jquery.meanmenu.min.js"></script>
-  <script src="assets/js/backToTop.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/error-handling.js"></script>
-  <script src="assets/js/offcanvas.js"></script>
 
   <script>
-
-    // testimonial slider
-    if (('.testimonial-slider').length) {
-      var testimonial_slider = new Swiper(".testimonial-slider", {
-        loop: false,
-        slidesPerView: 1,
-        spaceBetween: 60,
-        speed: 1800,
-        watchSlidesProgress: true,
-        navigation: {
-          prevEl: ".testimonial-button-prev",
-          nextEl: ".testimonial-button-next",
-        },
-      });
-    }
-
-
-    // client slider 
-    if ('.client-slider-active') {
-      var client_slider_active = new Swiper(".client-slider-active", {
-        slidesPerView: 'auto',
-        loop: true,
-        autoplay: true,
-        spaceBetween: 130,
-        speed: 3000,
-        autoplay: {
-          delay: 1,
-        },
-      });
-    }
-
-  </script>
-
-<!-- Book Free Demo Popup -->
-<div id="demoPopupOverlay" style="
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2147483646;
-">
-
-  <div style="
-    background: #ffffff;
-    width: 90%;
-    max-width: 420px;
-    padding: 30px;
-    border-radius: 14px;
-    position: relative;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    z-index: 2147483647;
-    font-family: inherit;
-  ">
-
-    <!-- Close Icon -->
-    <span onclick="closeDemoPopup()" style="
-      position: absolute;
-      top: 12px;
-      right: 14px;
-      font-size: 18px;
-      cursor: pointer;
-      color: #999;
-    ">✕</span>
-
-    <h3 style="
-      margin-bottom: 20px;
-      color: #000;
-      font-size: 22px;
-      font-weight: 600;
-    ">
-      Book Free Demo
-    </h3>
-
-    <input
-      type="tel"
-      id="demoMobile"
-      placeholder="Enter mobile number"
-      maxlength="10"
-      style="
-        width: 100%;
-        padding: 14px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-        outline: none;
-        margin-bottom: 10px;
-      "
-    />
-
-    <p id="demoError" style="
-      color: red;
-      font-size: 14px;
-      display: none;
-      margin-bottom: 10px;
-    ">
-      Please enter a valid 10-digit mobile number
-    </p>
-
-    <p id="demoSuccess" style="
-      color: green;
-      font-size: 14px;
-      display: none;
-      margin-bottom: 10px;
-    ">
-    </p>
-
-    <button
-      id="demoSubmitBtn"
-      onclick="submitDemo()"
-      style="
-        width: 100%;
-        padding: 14px;
-        background: #000;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-      ">
-      Submit
-    </button>
-
-  </div>
-</div>
-
-<script>
-  function openDemoPopup() {
-    document.getElementById("demoPopupOverlay").style.display = "flex";
-  }
-
-  function closeDemoPopup() {
-    document.getElementById("demoPopupOverlay").style.display = "none";
-    document.getElementById("demoError").style.display = "none";
-    document.getElementById("demoSuccess").style.display = "none";
-    document.getElementById("demoMobile").value = "";
-  }
-
-  async function submitDemo() {
-    const mobile = document.getElementById("demoMobile").value.trim();
-    const error = document.getElementById("demoError");
-    const success = document.getElementById("demoSuccess");
-    const btn = document.getElementById("demoSubmitBtn");
-
-    error.style.display = "none";
-    success.style.display = "none";
-
-    // Frontend validation
-    if (!/^[6-9]\d{9}$/.test(mobile)) {
-      error.innerText = "Please enter a valid 10-digit mobile number";
-      error.style.display = "block";
-      return;
-    }
-
-    btn.innerText = "Submitting...";
-    btn.disabled = true;
-
-    try {
-      const res = await fetch("/book-demo", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ mobile })
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || "Something went wrong");
-      }
-
-      if (data.success) {
-        success.innerText = data.message;
-        success.style.display = "block";
-
+    // Loading Screen
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').style.opacity = '0';
         setTimeout(() => {
-          closeDemoPopup();
-        }, 2000);
-      } else {
-        error.innerText = data.message || "Already registered";
-        error.style.display = "block";
-      }
+          document.getElementById('loadingScreen').style.display = 'none';
+        }, 500);
+      }, 1000);
+    });
 
-    } catch (err) {
-      error.innerText = err.message || "Server error. Try again.";
-      error.style.display = "block";
-    } finally {
-      btn.innerText = "Submit";
-      btn.disabled = false;
+    // Scroll Animation for Service Cards
+    function checkScroll() {
+      const cards = document.querySelectorAll('.service-card');
+      const triggerBottom = window.innerHeight * 0.8;
+
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        
+        if (cardTop < triggerBottom) {
+          card.classList.add('visible');
+        }
+      });
     }
-  }
-</script>
 
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+
+    // Smooth Scrolling for Navigation
+    document.querySelectorAll('.luxury-menu a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        } else {
+          window.location.href = targetId;
+        }
+      });
+    });
+
+    // Book Demo Popup
+    function openDemoPopup() {
+      // Your existing demo popup code here
+      alert('Opening booking form...');
+    }
+
+    // Parallax Effect
+    window.addEventListener('scroll', function() {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.luxury-hero');
+      const rate = scrolled * 0.5;
+      
+      if (hero) {
+        hero.style.transform = `translate3d(0, ${rate}px, 0)`;
+      }
+    });
+
+    // Mouse Move Parallax on Images
+    document.querySelectorAll('.service-image').forEach(image => {
+      image.addEventListener('mousemove', function(e) {
+        const width = this.offsetWidth;
+        const height = this.offsetHeight;
+        const mouseX = e.offsetX;
+        const mouseY = e.offsetY;
+        
+        const moveX = (mouseX - width / 2) * 0.01;
+        const moveY = (mouseY - height / 2) * 0.01;
+        
+        this.style.transform = `perspective(1000px) rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
+      });
+      
+      image.addEventListener('mouseleave', function() {
+        this.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+      });
+    });
+  </script>
 </body>
-
 </html>
