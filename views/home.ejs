@@ -101,13 +101,13 @@
 
   /* Text inside span (for btn-text-flip) */
   .wc-btn span {
-    color: #000000 !important;
+    color: #f7f4f4 !important;
     transition: color 0.3s ease !important;
   }
 
   /* Icon color */
   .wc-btn i {
-    color: #000000 !important;
+    color: #f8f5f5 !important;
     transition: color 0.3s ease !important;
   }
 
@@ -313,7 +313,7 @@
         </div>
         <div class="header__button">
           <a class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span
-              data-text="Book Free Demo">Book Free Demo</span><i class="fa-solid fa-play"></i></a>
+              data-text="Book Free Demo" style="color:white;">Book Free Demo</span><i class="fa-solid fa-play"></i></a>
         </div>
         <div class="header__navicon d-xl-none">
           <button onclick="showCanvas3()" class="open-offcanvas">
@@ -335,72 +335,72 @@
         <main>
 
           <!-- hero area start -->
-          <section class="hero-area">
-            <!-- Video Background -->
-            <div class="hero-video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/VQfgtUw4Vtc?autoplay=1&mute=1&loop=1&playlist=VQfgtUw4Vtc&controls=0&modestbranding=1&rel=0&iv_load_policy=3&fs=0&playsinline=1"
-                title="Golden Apple Productions Background Video" frameborder="0" allow="autoplay; encrypted-media"
-                allowfullscreen></iframe>
-            </div>
+          <!-- hero area start -->
+<section class="hero-area">
+  <!-- Video Background -->
+  <div class="hero-video-wrapper">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-label="Golden Apple Productions Background Video">
+      <source src="assets/videos/heroVideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-            <!-- Dark Overlay -->
-            <div class="hero-overlay"></div>
-          </section>
+  <!-- Dark Overlay -->
+  <div class="hero-overlay"></div>
+</section>
+<!-- hero area end -->
+
           <!-- hero area end -->
           <style>
             /* ===== HERO VIDEO FULL FIX ===== */
-            .hero-area {
-              position: relative;
-              width: 100%;
-              height: 100vh;
-              /* IMPORTANT: height, not min-height */
-              overflow: hidden;
-              background: #000;
-              margin: 0;
-              padding: 0;
-            }
+.hero-area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  margin: 0;
+  padding: 0;
+}
 
-            /* Video container */
-            .hero-video-wrapper {
-              position: absolute;
-              inset: 0;
-              overflow: hidden;
-              z-index: 0;
-            }
+/* Video wrapper */
+.hero-video-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 
-            /* YouTube iframe – object-fit cover simulation */
-            .hero-video-wrapper iframe {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              width: 120vw;
-              height: 120vh;
-              transform: translate(-50%, -50%);
-              pointer-events: none;
-              border: 0;
-            }
+/* Video element */
+.hero-video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* IMPORTANT */
+  pointer-events: none; /* Disable interactions */
+}
 
-            /* MOBILE FIX – force full coverage */
-            @media (max-width: 768px) {
-              .hero-area {
-                height: 100svh;
-                /* modern mobile viewport */
-              }
+/* Mobile viewport fix */
+@media (max-width: 768px) {
+  .hero-area {
+    height: 100svh; /* modern mobile viewport */
+  }
+}
 
-              .hero-video-wrapper iframe {
-                width: 220vw;
-                height: 220vh;
-              }
-            }
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 
-            /* Dark overlay */
-            .hero-overlay {
-              position: absolute;
-              inset: 0;
-              background: rgba(0, 0, 0, 0.5);
-              z-index: 1;
-            }
           </style>
 
           <!-- text slider area start  -->
@@ -554,54 +554,14 @@
               </div>
             </div>
           </section>
-          <section class="clients-area" style="background-color:  #121212">
-        <div class="container">
-          <div class="clinets-area-inner section-spacing-top">
-            <div class="section-header">
-              <div class="section-title-wrapper">
-                <div class="title-wrapper">
-                  <h2 class="section-title has_fade_anim" data-fade-from="bottom" data-fade-offset="50">
-                    We Worked with top agency world-wide
-                  </h2>
-                </div>
-              </div>
-            </div>
-
-            <!-- Combined into one infinite scrolling row -->
-            <div class="clients-logos marquee-container" >
-              <div class="marquee-track">
-                <!-- Original logos -->
-                <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
-                <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
-                <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
-                <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
-                <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
-                <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
-                <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
-                <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
-                <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
-                <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
-
-                <!-- Duplicated logos for seamless infinite loop -->
-                <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
-                <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
-                <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
-                <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
-                <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
-                <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
-                <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
-                <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
-                <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
-                <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          <style>
+          @media (max-width: 400px) {
+    .title-overlay {
+        font-size: 30px !important;
+    }
+}
+           
+          </style>
           <!-- about area start  -->
           <section class="about-area">
             <div class="container">
@@ -609,7 +569,7 @@
                 <a class="" data-fade-from="bottom" data-fade-offset="50">
                   <!-- <img class="show-light" src="assets/imgs/shape/img-s-38.webp" alt="shape image">
                   <img class="show-dark" src="assets/imgs/shape/img-s-38-light.webp" alt="shape image" height="200px" width="600px" style="margin-left: 0; margin-top: 0;"> -->
-                  <a href="/about" style="color: white; font-size: 700%; font-weight: bolder;"> ABOUT US</a>
+                  <a href="/about" style="color: white; font-size: 10vw; font-weight: bolder;"> ABOUT US</a>
                 </a>
                 <div class="section-content">
                   <div class="section-thumb">
@@ -925,7 +885,7 @@
                 }
 
                 .wc-btn-primary:hover {
-                  background: #fff !important;
+                  background: #030303 !important;
                   color: #000 !important;
                 }
               </style>
@@ -1002,7 +962,54 @@
 
       <!-- clients area start  -->
 
-      
+      <section class="clients-area" style="background-color: black;">
+        <div class="container">
+          <div class="clinets-area-inner section-spacing-top">
+            <div class="section-header">
+              <div class="section-title-wrapper">
+                <div class="title-wrapper">
+                  <h2 class="section-title has_fade_anim" data-fade-from="bottom" data-fade-offset="50">
+                    We Worked with top agency world-wide
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- Combined into one infinite scrolling row -->
+            <div class="clients-logos marquee-container">
+              <div class="marquee-track">
+                <!-- Original logos -->
+                <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
+                <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
+                <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
+                <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
+                <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
+                <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
+                <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
+                <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
+                <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
+                <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
+                <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
+                <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
+
+                <!-- Duplicated logos for seamless infinite loop -->
+                <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
+                <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
+                <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
+                <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
+                <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
+                <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
+                <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
+                <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
+                <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
+                <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
+                <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
+                <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- clients area end  -->
 

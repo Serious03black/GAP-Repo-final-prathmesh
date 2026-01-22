@@ -5,235 +5,130 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Apple Productions - Premium Fashion Services</title>
+  <meta name="description" content="Golden Apple Productions HTML5 Template">
 
-  <!-- Fav Icon -->
+  <title>Golden Apple Productions Services</title>
+
   <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
 
-  <!-- All CSS files -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/progressbar.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/master-services.css">
 
   <style>
-    /* Premium Fashion Design */
-    :root {
-      --gold: #caa437;
-      --gold-light: #e6c672;
-      --gold-dark: #9c8126;
-      --black: #000000;
-      --charcoal: #121212;
-      --dark-gray: #1a1a1a;
-      --light-gray: #2a2a2a;
-      --white: #ffffff;
-      --off-white: #f5f5f5;
+    .golden-gradient {
+      background: linear-gradient(135deg, #caa437 0%, #ffd700 50%, #caa437 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .golden-border {
+      border: 2px solid #caa437;
     }
 
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      overflow-x: hidden;
+    .golden-bg {
+      background: #caa437;
+      color: #000 !important;
     }
 
-    /* Luxury Header */
-    .luxury-header {
-      position: fixed;
+    .golden-bg:hover {
+      background: #ffd700;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(202, 164, 55, 0.3);
+    }
+
+    .service-zigzag {
+      position: relative;
+      padding: 100px 0;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .service-zigzag::before {
+      content: '';
+      position: absolute;
       top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.95);
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(202, 164, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(202, 164, 55, 0.05) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .service-item-zigzag {
+      background: rgba(20, 20, 20, 0.9);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 100px;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(202, 164, 55, 0.2);
+      transition: all 0.4s ease;
       backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(202, 164, 55, 0.2);
     }
 
-    .luxury-nav {
+    .service-item-zigzag:hover {
+      transform: translateY(-10px);
+      border-color: #caa437;
+      box-shadow: 0 20px 40px rgba(202, 164, 55, 0.15);
+    }
+
+    .service-item-zigzag:nth-child(even) {
+      margin-left: 50px;
+    }
+
+    .service-item-zigzag:nth-child(odd) {
+      margin-right: 50px;
+    }
+
+    .service-row {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
-      padding: 20px 40px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .luxury-logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--gold);
-      text-decoration: none;
-      letter-spacing: 2px;
-    }
-
-    .luxury-menu {
-      display: flex;
       gap: 40px;
     }
 
-    .luxury-menu a {
-      color: var(--off-white);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 1px;
-      font-size: 14px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
+    .service-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .service-image-wrapper {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
       position: relative;
     }
 
-    .luxury-menu a:hover {
-      color: var(--gold);
-    }
-
-    .luxury-menu a.active {
-      color: var(--gold);
-    }
-
-    .luxury-menu a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .book-demo-btn {
-      background: var(--gold);
-      color: var(--black);
-      padding: 12px 28px;
-      border-radius: 0;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .book-demo-btn:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    /* Hero Section */
-    .luxury-hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
-                  url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-      padding: 0 40px;
-      margin-top: 80px;
-    }
-
-    .hero-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-title {
-      font-size: 5.5rem;
-      font-weight: 300;
-      line-height: 1;
-      margin-bottom: 20px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: var(--gold);
-      max-width: 600px;
-      line-height: 1.6;
-      letter-spacing: 1px;
-      margin-bottom: 40px;
-    }
-
-    .hero-accent {
-      color: var(--gold);
-      font-weight: 400;
-    }
-
-    /* Services Grid - Ultra Premium */
-    .premium-services {
-      padding: 120px 40px;
-      background: var(--black);
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    .services-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 300;
-      letter-spacing: 3px;
-      margin-bottom: 80px;
-      color: var(--gold);
-      text-transform: uppercase;
-      position: relative;
-    }
-
-    .services-title::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    /* Service Card Design */
-    .service-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 120px;
-      align-items: center;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease;
-    }
-
-    .service-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .service-card:nth-child(even) .service-image {
-      order: 2;
-    }
-
-    .service-card:nth-child(even) .service-content {
-      order: 1;
-      text-align: right;
+    .service-image-wrapper::before {
+      content: "";
+      display: block;
+      padding-top: 75%;          /* ≈4:3 ratio – change to 56.25% for 16:9 if you prefer wider */
     }
 
     .service-image {
-      position: relative;
-      overflow: hidden;
-      height: 600px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .service-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.5s ease;
     }
 
-    .service-card:hover .service-image img {
+    .service-item-zigzag:hover .service-image img {
       transform: scale(1.05);
     }
 
@@ -248,510 +143,496 @@
       pointer-events: none;
     }
 
-    .service-number {
-      font-size: 14px;
-      color: var(--gold);
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
-
-    .service-card-title {
-      font-size: 3rem;
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 30px;
-      color: var(--white);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .service-card-subtitle {
-      font-size: 1.1rem;
-      color: var(--gold);
-      margin-bottom: 30px;
-      letter-spacing: 1px;
-      line-height: 1.6;
-    }
-
-    .service-features-list {
-      list-style: none;
-      margin-bottom: 40px;
-    }
-
-    .service-features-list li {
-      color: var(--off-white);
-      margin-bottom: 15px;
-      font-size: 15px;
-      letter-spacing: 0.5px;
-      position: relative;
-      padding-left: 25px;
-      line-height: 1.6;
-    }
-
-    .service-features-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
-
-    .service-card:nth-child(even) .service-features-list li {
-      padding-left: 0;
-      padding-right: 25px;
-    }
-
-    .service-card:nth-child(even) .service-features-list li::before {
-      left: auto;
-      right: 0;
-    }
-
-    .service-action-btn {
-      display: inline-block;
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--gold);
-      transition: all 0.3s ease;
-    }
-
-    .service-action-btn:hover {
-      color: var(--gold-light);
-      border-bottom-color: var(--gold-light);
-      padding-right: 20px;
-    }
-
-    .service-card:nth-child(even) .service-action-btn:hover {
-      padding-left: 20px;
-      padding-right: 0;
-    }
-
-    /* Fixed Call to Action */
-    .fixed-cta {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .cta-button {
-      width: 60px;
-      height: 60px;
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(202, 164, 55, 0.1);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--black);
-      text-decoration: none;
-      font-size: 20px;
+      margin-bottom: 25px;
+      border: 2px solid #caa437;
+    }
+
+    .service-icon i {
+      font-size: 32px;
+      color: #caa437;
+    }
+
+    .service-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #caa437;
+      font-weight: 600;
+    }
+
+    .service-features-zigzag {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+    }
+
+    .service-features-zigzag li {
+      color: #fff;
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 25px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .service-features-zigzag li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #caa437;
+      font-size: 14px;
+    }
+
+    .service-cta-btn {
+      background: transparent;
+      color: #caa437;
+      border: 2px solid #caa437;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
     }
 
-    .whatsapp-btn {
-      background: #25D366;
+    .service-cta-btn:hover {
+      background: #caa437;
+      color: #000;
+      transform: translateX(5px);
     }
 
-    .call-btn {
-      background: var(--gold);
+    .main-cta-section {
+      background: linear-gradient(135deg, #000 0%, #111 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      margin-top: 50px;
     }
 
-    .cta-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1200px) {
-      .service-card {
-        gap: 40px;
-      }
-      
-      .service-card-title {
-        font-size: 2.5rem;
-      }
-      
-      .service-image {
-        height: 500px;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .service-card {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .service-card:nth-child(even) .service-image {
-        order: 1;
-      }
-      
-      .service-card:nth-child(even) .service-content {
-        order: 2;
-        text-align: left;
-      }
-      
-      .service-card:nth-child(even) .service-features-list li {
-        padding-left: 25px;
-        padding-right: 0;
-      }
-      
-      .service-card:nth-child(even) .service-features-list li::before {
-        left: 0;
-        right: auto;
-      }
-      
-      .service-image {
-        height: 400px;
-      }
-      
-      .hero-title {
-        font-size: 4rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .luxury-nav {
-        padding: 15px 20px;
-      }
-      
-      .luxury-menu {
-        display: none;
-      }
-      
-      .hero-title {
-        font-size: 3rem;
-      }
-      
-      .premium-services {
-        padding: 80px 20px;
-      }
-      
-      .service-card-title {
-        font-size: 2rem;
-      }
-      
-      .service-image {
-        height: 350px;
-      }
-      
-      .fixed-cta {
-        bottom: 20px;
-        right: 20px;
-      }
-    }
-
-    /* Animation Keyframes */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Loading Animation */
-    .loading-screen {
-      position: fixed;
+    .main-cta-section::before {
+      content: '';
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: var(--black);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0,50 Q250,0 500,50 T1000,50" fill="none" stroke="%23caa437" stroke-width="0.5" opacity="0.1"/></svg>');
+      background-size: cover;
     }
 
-    .loading-text {
-      color: var(--gold);
-      font-size: 14px;
-      letter-spacing: 3px;
-      animation: pulse 2s infinite;
+    .main-cta-title {
+      font-size: 42px;
+      color: #fff;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
+    .main-cta-subtitle {
+      font-size: 18px;
+      color: #aaa;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
     }
 
-    /* Gold Accent Elements */
-    .gold-accent {
-      color: var(--gold);
+    .main-cta-button {
+      background: linear-gradient(135deg, #caa437 0%, #ffd700 100%);
+      color: #000;
+      padding: 18px 45px;
+      border-radius: 35px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(202, 164, 55, 0.3);
     }
 
-    .gold-border {
-      border: 1px solid var(--gold);
+    .main-cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(202, 164, 55, 0.4);
+      color: #000;
     }
 
-    .gold-bg {
-      background: var(--gold);
+    /* Mobile fixes */
+    @media (max-width: 991px) {
+      .service-item-zigzag {
+        padding: 30px;
+        margin-bottom: 80px;
+      }
+
+      .service-item-zigzag:nth-child(even),
+      .service-item-zigzag:nth-child(odd) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .service-row {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .service-title {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .service-item-zigzag {
+        padding: 25px 20px;
+      }
+
+      .service-title {
+        font-size: 24px;
+      }
+    }
+
+    .section-header {
+      text-align: center;
+      padding: 80px 0 50px;
+      background: #000;
+    }
+
+    .section-title-main {
+      font-size: 48px;
+      color: #caa437;
+      margin-bottom: 20px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title-main::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #caa437, transparent);
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
     }
   </style>
 </head>
 
-<body>
-  <!-- Loading Screen -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loading-text">GOLDEN APPLE PRODUCTIONS</div>
+<body class="font-heading-beatricetrial-regular-2 dark" style="font-family:'Montserrat', sans-serif !important">
+
+  <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
+    <a href="https://wa.me/917303199114"
+       aria-label="WhatsApp Chat"
+       style="
+         width:60px;
+         height:60px;
+         border-radius:50%;
+         display:flex;
+         align-items:center;
+         justify-content:center;
+         background:#22ae06;
+         color:#000;
+         box-shadow:0 6px 20px rgba(0,0,0,0.4);
+         text-decoration:none;
+         transition:all 0.3s ease;
+         font-size:30px;
+       ">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a href="tel:+917303199114" aria-label="Call Now" 
+       style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
   </div>
 
-  <!-- Luxury Header -->
-  <header class="luxury-header">
-    <nav class="luxury-nav">
-      <a href="/" class="luxury-logo">GOLDEN APPLE</a>
-      <div class="luxury-menu">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services" class="active">Services</a>
-        <a href="/ourwork">Portfolio</a>
-        <a href="/contact">Contact</a>
+  <div id="preloader">
+    <div id="container" class="container-preloader">
+      <div class="animation-preloader">
+        <div class="spinner"></div>
+        <div class="txt-loading"></div>
       </div>
-      <button class="book-demo-btn" onclick="openDemoPopup()">Book Session</button>
-    </nav>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  </div>
+
+  <header class="header-area">
+    <div class="container large">
+      <div class="header-area__inner">
+        <div class="header__logo">
+          <a href="/">
+            <img class="show-light mt-1" src="assets/imgs/logo/logo.png" width="70px" alt="Site Logo">
+            <img class="show-dark mt-1" src="assets/imgs/logo/logo-light.png" width="70px" alt="Site Logo">
+          </a>
+        </div>
+        <div class="header__nav pos-center">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/ourwork">Our Work</a></li>
+              <li><a href="/blogs">Blogs</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__button">
+          <a class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()">
+            <span data-text="Book Free Demo">Book Free Demo</span><i class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="luxury-hero">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        PREMIUM <span class="hero-accent">FASHION</span><br>
-        PRODUCTION SERVICES
-      </h1>
-      <p class="hero-subtitle">
-        Exclusive fashion production services for designers, labels, and luxury brands. 
-        Precision, elegance, and editorial excellence in every frame.
-      </p>
+  <div class="has-smooth" id="has_smooth mt-5"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="body-wrapper body-corporate-agency">
+        <main>
+
+          <section class="section-header">
+            <div class="container">
+              <h1 class="section-title-main golden-gradient">Our exclusive services</h1>
+              <p class="section-subtitle">
+                We collaborate with designers, fashion labels, and creative brands to deliver structured, premium fashion production services with clarity, consistency, and editorial excellence.
+              </p>
+            </div>
+          </section>
+
+          <section class="service-zigzag">
+            <div class="container">
+
+              <div class="row align-items-center service-item-zigzag">
+                <div class="col-lg-12">
+                  <div class="service-row">
+                    <div class="service-content">
+                      <div class="service-icon">
+                        <i class="fa-solid fa-camera-retro"></i>
+                      </div>
+                      <h2 class="service-title">Ethnic Fashion Shoots</h2>
+                      <ul class="service-features-zigzag">
+                        <li>Bridal and couture productions</li>
+                        <li>Festive and occasion wear</li>
+                        <li>Heritage inspired storytelling</li>
+                        <li>Embroidery, textile, and craftsmanship detailing</li>
+                        <li>Editorial and campaign ready visuals</li>
+                      </ul>
+                      <a href="/service/ethnic-fashion-shoots" class="service-cta-btn">Explore Service →</a>
+                    </div>
+                    <div class="service-image-wrapper">
+                      <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?auto=format&fit=crop&w=800&q=80" alt="Ethnic Bridal Couture Shoot">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row align-items-center service-item-zigzag flex-lg-row-reverse">
+                <div class="col-lg-12">
+                  <div class="service-row">
+                    <div class="service-content">
+                      <div class="service-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                      </div>
+                      <h2 class="service-title">Western & Indo-Western Shoots</h2>
+                      <ul class="service-features-zigzag">
+                        <li>Contemporary fashion shoots</li>
+                        <li>Fusion silhouettes blending tradition and modernity</li>
+                        <li>Clean silhouettes and modern styling</li>
+                        <li>Structured compositions and refined narratives</li>
+                        <li>Campaign and lookbook ready imagery</li>
+                        <li>Global campaign aesthetics</li>
+                      </ul>
+                      <a href="/service/western-indo-western" class="service-cta-btn">Explore Service →</a>
+                    </div>
+                    <div class="service-image-wrapper">
+                      <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80" alt="Indo-Western Fusion Fashion">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row align-items-center service-item-zigzag">
+                <div class="col-lg-12">
+                  <div class="service-row">
+                    <div class="service-content">
+                      <div class="service-icon">
+                        <i class="fa-solid fa-crown"></i>
+                      </div>
+                      <h2 class="service-title">Designer Collection Shoots</h2>
+                      <ul class="service-features-zigzag">
+                        <li>Seasonal launches</li>
+                        <li>Capsule and signature collections</li>
+                        <li>Couture and high fashion lines</li>
+                        <li>Cohesive collection presentation</li>
+                        <li>Brand aligned storytelling</li>
+                      </ul>
+                      <a href="/service/designer-collections" class="service-cta-btn">Explore Service →</a>
+                    </div>
+                    <div class="service-image-wrapper">
+                      <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1566174053879-31528523f9ae?auto=format&fit=crop&w=800&q=80" alt="Designer Couture Collection">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row align-items-center service-item-zigzag flex-lg-row-reverse">
+                <div class="col-lg-12">
+                  <div class="service-row">
+                    <div class="service-content">
+                      <div class="service-icon">
+                        <i class="fa-solid fa-store"></i>
+                      </div>
+                      <h2 class="service-title">Retail, Store & Catalogue Shoots</h2>
+                      <ul class="service-features-zigzag">
+                        <li>E-commerce ready imagery</li>
+                        <li>Designer catalogues</li>
+                        <li>Lookbooks and line sheets</li>
+                        <li>Showroom presentation</li>
+                        <li>Merchandising focused visuals</li>
+                        <li>Color, fabric and fit accuracy</li>
+                        <li>Jewelry and bags shoots</li>
+                      </ul>
+                      <a href="/service/retail-catalogue" class="service-cta-btn">Explore Service →</a>
+                    </div>
+                    <div class="service-image-wrapper">
+                      <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Fashion Catalogue E-commerce Shoot">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row align-items-center service-item-zigzag">
+                <div class="col-lg-12">
+                  <div class="service-row">
+                    <div class="service-content">
+                      <div class="service-icon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                      </div>
+                      <h2 class="service-title">Brand Campaigns, Editorials & Digital</h2>
+                      <ul class="service-features-zigzag">
+                        <li>Concept driven campaigns</li>
+                        <li>Fashion editorials</li>
+                        <li>Creative storytelling</li>
+                        <li>Premium Instagram reels</li>
+                        <li>Influencer led content</li>
+                        <li>Behind the scenes coverage</li>
+                      </ul>
+                      <a href="/service/brand-campaigns-editorials" class="service-cta-btn">Explore Service →</a>
+                    </div>
+                    <div class="service-image-wrapper">
+                      <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Fashion Brand Editorial Campaign">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row align-items-center service-item-zigzag flex-lg-row-reverse">
+                <div class="col-lg-12">
+                  <div class="service-row">
+                    <div class="service-content">
+                      <div class="service-icon">
+                        <i class="fa-solid fa-sliders"></i>
+                      </div>
+                      <h2 class="service-title">Post-Production & Delivery</h2>
+                      <ul class="service-features-zigzag">
+                        <li>High end photo retouching</li>
+                        <li>Advanced color grading</li>
+                        <li>Video editing and finishing</li>
+                        <li>Final asset optimization</li>
+                        <li>Platform specific delivery</li>
+                      </ul>
+                      <a href="/service/post-production" class="service-cta-btn">Explore Service →</a>
+                    </div>
+                    <div class="service-image-wrapper">
+                      <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-bf19c9cb1085?auto=format&fit=crop&w=800&q=80" alt="Photo Retouching Post Production">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="main-cta-section " style="margin-left:20px; margin-right:20px;">
+            <div class="container">
+              <h2 class="main-cta-title">Ready to Elevate Your Brand?</h2>
+              <p class="main-cta-subtitle">
+                Let's collaborate to create stunning fashion visuals that tell your brand's story. 
+                Our team of experts is ready to bring your vision to life with premium production quality.
+              </p>
+              <a href="javascript:void(0)" onclick="openDemoPopup()" class="main-cta-button">
+                Start Your Project Today
+              </a>
+            </div>
+          </section>
+
+        </main>
+
+        <footer class="footer-area">
+          <div class="container">
+            <div class="footer-area-inner">
+              <p>© 2022 - 2025 | All rights reserved | Golden Apple Production</p>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Premium Services -->
-  <section class="premium-services">
-    <h2 class="services-title">Our Services</h2>
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
 
-    <!-- Service 1 -->
-    <div class="service-card" id="service1">
-      <div class="service-image">
-        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Ethnic Fashion Shoots">
-      </div>
-      <div class="service-content">
-        <div class="service-number">01</div>
-        <h3 class="service-card-title">Ethnic Fashion Shoots</h3>
-        <p class="service-card-subtitle">Traditional elegance meets contemporary vision</p>
-        <ul class="service-features-list">
-          <li>Bridal and couture productions with heritage detailing</li>
-          <li>Festive and occasion wear storytelling</li>
-          <li>Embroidery, textile, and craftsmanship focus</li>
-          <li>Editorial and campaign-ready visuals</li>
-          <li>Traditional jewelry and accessory styling</li>
-        </ul>
-        <a href="/service1" class="service-action-btn">View Portfolio →</a>
-      </div>
-    </div>
-
-    <!-- Service 2 -->
-    <div class="service-card" id="service2">
-      <div class="service-image">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Western Fashion Shoots">
-      </div>
-      <div class="service-content">
-        <div class="service-number">02</div>
-        <h3 class="service-card-title">Western & Indo-Western</h3>
-        <p class="service-card-subtitle">Modern silhouettes with global appeal</p>
-        <ul class="service-features-list">
-          <li>Contemporary fashion shoots with clean aesthetics</li>
-          <li>Fusion silhouettes blending tradition and modernity</li>
-          <li>Structured compositions and refined narratives</li>
-          <li>Campaign and lookbook ready imagery</li>
-          <li>Global campaign aesthetics</li>
-        </ul>
-        <a href="/service2" class="service-action-btn">View Portfolio →</a>
-      </div>
-    </div>
-
-    <!-- Service 3 -->
-    <div class="service-card" id="service3">
-      <div class="service-image">
-        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Designer Collections">
-      </div>
-      <div class="service-content">
-        <div class="service-number">03</div>
-        <h3 class="service-card-title">Designer Collections</h3>
-        <p class="service-card-subtitle">Showcasing signature designer lines</p>
-        <ul class="service-features-list">
-          <li>Seasonal launches and signature collections</li>
-          <li>Couture and high fashion lines presentation</li>
-          <li>Cohesive collection storytelling</li>
-          <li>Brand-aligned creative direction</li>
-          <li>Exclusive designer showcases</li>
-        </ul>
-        <a href="/service3" class="service-action-btn">View Portfolio →</a>
-      </div>
-    </div>
-
-    <!-- Service 4 -->
-    <div class="service-card" id="service4">
-      <div class="service-image">
-        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Retail & Catalog">
-      </div>
-      <div class="service-content">
-        <div class="service-number">04</div>
-        <h3 class="service-card-title">Retail & Catalog Shoots</h3>
-        <p class="service-card-subtitle">Commercial excellence for retail</p>
-        <ul class="service-features-list">
-          <li>E-commerce ready product imagery</li>
-          <li>Designer catalogues and line sheets</li>
-          <li>Showroom and retail presentation</li>
-          <li>Merchandising-focused visuals</li>
-          <li>Jewelry and accessory detailing</li>
-        </ul>
-        <a href="/service4" class="service-action-btn">View Portfolio →</a>
-      </div>
-    </div>
-
-    <!-- Service 5 -->
-    <div class="service-card" id="service5">
-      <div class="service-image">
-        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Brand Campaigns">
-      </div>
-      <div class="service-content">
-        <div class="service-number">05</div>
-        <h3 class="service-card-title">Brand Campaigns</h3>
-        <p class="service-card-subtitle">Strategic brand storytelling</p>
-        <ul class="service-features-list">
-          <li>Concept-driven brand campaigns</li>
-          <li>Fashion editorials for publications</li>
-          <li>Premium Instagram reels and content</li>
-          <li>Influencer-led campaign execution</li>
-          <li>Behind-the-scenes documentary</li>
-        </ul>
-        <a href="/service5" class="service-action-btn">View Portfolio →</a>
-      </div>
-    </div>
-
-    <!-- Service 6 -->
-    <div class="service-card" id="service6">
-      <div class="service-image">
-        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Post Production">
-      </div>
-      <div class="service-content">
-        <div class="service-number">06</div>
-        <h3 class="service-card-title">Post-Production</h3>
-        <p class="service-card-subtitle">Final polish and delivery</p>
-        <ul class="service-features-list">
-          <li>High-end photo retouching and color grading</li>
-          <li>Advanced video editing and finishing</li>
-          <li>Final asset optimization for all platforms</li>
-          <li>Brand-consistent editing style</li>
-          <li>Timely delivery management</li>
-        </ul>
-        <a href="/service6" class="service-action-btn">View Portfolio →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fixed CTA Buttons -->
-  <div class="fixed-cta">
-    <a href="https://wa.me/917303199114" class="cta-button whatsapp-btn" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="tel:+917303199114" class="cta-button call-btn" aria-label="Call">
-      <i class="fas fa-phone"></i>
-    </a>
+  <div id="demoPopupOverlay" style="display: none;">
   </div>
 
   <script>
-    // Loading Screen
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        document.getElementById('loadingScreen').style.opacity = '0';
-        setTimeout(() => {
-          document.getElementById('loadingScreen').style.display = 'none';
-        }, 500);
-      }, 1000);
-    });
-
-    // Scroll Animation for Service Cards
-    function checkScroll() {
-      const cards = document.querySelectorAll('.service-card');
-      const triggerBottom = window.innerHeight * 0.8;
-
-      cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        
-        if (cardTop < triggerBottom) {
-          card.classList.add('visible');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', checkScroll);
-    window.addEventListener('load', checkScroll);
-
-    // Smooth Scrolling for Navigation
-    document.querySelectorAll('.luxury-menu a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId.startsWith('#')) {
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 100,
-              behavior: 'smooth'
-            });
-          }
-        } else {
-          window.location.href = targetId;
-        }
-      });
-    });
-
-    // Book Demo Popup
     function openDemoPopup() {
-      // Your existing demo popup code here
-      alert('Opening booking form...');
+      document.getElementById("demoPopupOverlay").style.display = "flex";
     }
 
-    // Parallax Effect
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.luxury-hero');
-      const rate = scrolled * 0.5;
-      
-      if (hero) {
-        hero.style.transform = `translate3d(0, ${rate}px, 0)`;
-      }
-    });
+    function closeDemoPopup() {
+      document.getElementById("demoPopupOverlay").style.display = "none";
+    }
 
-    // Mouse Move Parallax on Images
-    document.querySelectorAll('.service-image').forEach(image => {
-      image.addEventListener('mousemove', function(e) {
-        const width = this.offsetWidth;
-        const height = this.offsetHeight;
-        const mouseX = e.offsetX;
-        const mouseY = e.offsetY;
-        
-        const moveX = (mouseX - width / 2) * 0.01;
-        const moveY = (mouseY - height / 2) * 0.01;
-        
-        this.style.transform = `perspective(1000px) rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
-      });
-      
-      image.addEventListener('mouseleave', function() {
-        this.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
-      });
-    });
+    async function submitDemo() {
+    }
   </script>
 </body>
 </html>
