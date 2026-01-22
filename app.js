@@ -85,19 +85,19 @@ app.get("/services", (req, res) => res.render("services"));
 app.get("/ethnic-fashion-Shoots", (req, res) => {
     res.render("service1");
 })
-app.get("/western-indo-western", (req, res) => {
+app.get("/western-indo-western-shoot", (req, res) => {
     res.render("service2");
 })
-app.get("/designer-collections", (req, res) => {
+app.get("/designer-collections-shoot", (req, res) => {
     res.render("service3");
 })
-app.get("/retail-catalogue", (req, res) => {
+app.get("/retail-catalogue-shoot", (req, res) => {
     res.render("service4");
 })
-app.get("/brand-campaigns-editorials", (req, res) => {
+app.get("/brand-campaigns-editorials-shoot", (req, res) => {
     res.render("service5");
 })
-app.get("/post-production", (req, res) => {
+app.get("/post-production-shoot", (req, res) => {
     res.render("service6");
 });
 
