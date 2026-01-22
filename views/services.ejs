@@ -300,10 +300,11 @@
         font-size: 24px;
       }
     }
-
     .section-header {
       text-align: center;
-      padding: 80px 0 50px;
+      padding: 110px 0 10px;
+      margin-bottom: 0;
+      /* padding-bottom: 0; */
       background: #000;
     }
 
@@ -505,7 +506,7 @@
                         <li>Embroidery, textile, and craftsmanship detailing</li>
                         <li>Editorial and campaign ready visuals</li>
                       </ul>
-                      <a href="/service/ethnic-fashion-shoots" class="service-cta-btn">Explore Service →</a>
+                      <a href="/ethnic-fashion-shoots" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
@@ -532,11 +533,11 @@
                         <li>Campaign and lookbook ready imagery</li>
                         <li>Global campaign aesthetics</li>
                       </ul>
-                      <a href="/service/western-indo-western" class="service-cta-btn">Explore Service →</a>
+                      <a href="/western-indo-western" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80" alt="Indo-Western Fusion Fashion">
+                        <img src="assets/imgs/Pictures/Indo western.jpg" alt="Indo-Western Fusion Fashion">
                       </div>
                     </div>
                   </div>
@@ -558,11 +559,11 @@
                         <li>Cohesive collection presentation</li>
                         <li>Brand aligned storytelling</li>
                       </ul>
-                      <a href="/service/designer-collections" class="service-cta-btn">Explore Service →</a>
+                      <a href="/designer-collections" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1566174053879-31528523f9ae?auto=format&fit=crop&w=800&q=80" alt="Designer Couture Collection">
+                        <img src="assets/imgs/Pictures/Designer Collection(2).jpg" alt="Designer Couture Collection">
                       </div>
                     </div>
                   </div>
@@ -586,11 +587,11 @@
                         <li>Color, fabric and fit accuracy</li>
                         <li>Jewelry and bags shoots</li>
                       </ul>
-                      <a href="/service/retail-catalogue" class="service-cta-btn">Explore Service →</a>
+                      <a href="/retail-catalogue" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Fashion Catalogue E-commerce Shoot">
+                        <img src="assets/imgs/Pictures/Retail & Cat..jpg" alt="Fashion Catalogue E-commerce Shoot">
                       </div>
                     </div>
                   </div>
@@ -613,11 +614,11 @@
                         <li>Influencer led content</li>
                         <li>Behind the scenes coverage</li>
                       </ul>
-                      <a href="/service/brand-campaigns-editorials" class="service-cta-btn">Explore Service →</a>
+                      <a href="/brand-campaigns-editorials" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Fashion Brand Editorial Campaign">
+                        <img src="assets/imgs/Pictures/Brand Campaign(1).jpg" alt="Fashion Brand Editorial Campaign">
                       </div>
                     </div>
                   </div>
@@ -639,11 +640,11 @@
                         <li>Final asset optimization</li>
                         <li>Platform specific delivery</li>
                       </ul>
-                      <a href="/service/post-production" class="service-cta-btn">Explore Service →</a>
+                      <a href="/post-production" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1555066931-bf19c9cb1085?auto=format&fit=crop&w=800&q=80" alt="Photo Retouching Post Production">
+                        <img src="assets/imgs/Pictures/BTS.jpg" alt="Photo Retouching Post Production">
                       </div>
                     </div>
                   </div>
@@ -652,29 +653,135 @@
 
             </div>
           </section>
+  <!-- footer area start  -->
+        <footer class="footer-area">
+          <div class="container">
+            <div class="footer-area-inner  ">
 
-          <section class="main-cta-section " style="margin-left:20px; margin-right:20px;">
+              <div class="footer-cta">
+                <div class="footer-widget-wrapper">
+                  <h2 class="title">London</h2>
+                  <ul class="footer-nav-list">
+                    <li>Baltia Squar, Mark Street, <br>
+                      London</li>
+                  </ul>
+                </div>
+                <div class="footer-widget-wrapper">
+                  <h2 class="title">New York</h2>
+                  <ul class="footer-nav-list">
+                    <li>Nenuya Centre, Elia Street <br>
+                      New York, USA</li>
+                  </ul>
+                </div>
+                <div class="footer-widget-wrapper newsletter">
+                  <form action="/book-demo" method="post" class="subscribe-form" id="subscribeForm">
+  <div class="input-field">
+    <input
+      type="tel"
+      name="mobile"
+      id="subscribeMobile"
+      placeholder="Enter your mobile number"
+      maxlength="10"
+      inputmode="numeric"
+      required
+    >
+
+    <button type="submit" class="subscribe-btn">
+      <img src="/assets/imgs/icon/arrow-light.webp" alt="icon">
+    </button>
+  </div>
+
+  <p id="subscribeError" style="color:red;font-size:13px;display:none;"></p>
+  <p id="subscribeSuccess" style="color:green;font-size:13px;display:none;"></p>
+</form>
+<script>
+  const form = document.getElementById("subscribeForm");
+  const mobileInput = document.getElementById("subscribeMobile");
+  const errorEl = document.getElementById("subscribeError");
+  const successEl = document.getElementById("subscribeSuccess");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // stop default form submit
+
+    const mobile = mobileInput.value.trim();
+
+    errorEl.style.display = "none";
+    successEl.style.display = "none";
+
+    // ✅ SIMPLE validation: number + 10 digits only
+    if (!/^[6-9]\d{9}$/.test(mobile)) {
+      errorEl.innerText = "Enter valid 10 digit mobile number";
+      errorEl.style.display = "block";
+      return;
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ mobile })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Submission failed");
+      }
+
+      // ✅ success from backend
+      successEl.innerText = data.message || "Submitted successfully";
+      successEl.style.display = "block";
+      mobileInput.value = "";
+
+    } catch (err) {
+      errorEl.innerText = err.message || "Server error";
+      errorEl.style.display = "block";
+    }
+  });
+</script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="copyright-area">
+            <div class="container">
+              <div class="copyright-area-inner">
+                <div class="copyright-text">
+                  <p class="text">© 2022 - 2025 | Alrights reserved <br>
+                    Golden Apple Production
+                </div>
+                <ul class="footer-nav-list">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/services">Services</a></li>
+                  <li><a href="/ourwork">Our Work</a></li>
+                  <li><a href="/blogs">Blogs</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="/terms" >terms</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- footer area end  -->
+          <!-- <section class="main-cta-section " style="margin-left:20px; margin-right:20px;">
             <div class="container">
               <h2 class="main-cta-title">Ready to Elevate Your Brand?</h2>
               <p class="main-cta-subtitle">
                 Let's collaborate to create stunning fashion visuals that tell your brand's story. 
                 Our team of experts is ready to bring your vision to life with premium production quality.
               </p>
-              <a href="javascript:void(0)" onclick="openDemoPopup()" class="main-cta-button">
+              <a href="/contact" onclick="openDemoPopup()" class="main-cta-button">
                 Start Your Project Today
               </a>
             </div>
-          </section>
+          </section> -->
 
         </main>
 
-        <footer class="footer-area">
-          <div class="container">
-            <div class="footer-area-inner">
-              <p>© 2022 - 2025 | All rights reserved | Golden Apple Production</p>
-            </div>
-          </div>
-        </footer>
+        
       </div>
     </div>
   </div>
@@ -682,21 +789,5 @@
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
-
-  <div id="demoPopupOverlay" style="display: none;">
-  </div>
-
-  <script>
-    function openDemoPopup() {
-      document.getElementById("demoPopupOverlay").style.display = "flex";
-    }
-
-    function closeDemoPopup() {
-      document.getElementById("demoPopupOverlay").style.display = "none";
-    }
-
-    async function submitDemo() {
-    }
-  </script>
 </body>
 </html>

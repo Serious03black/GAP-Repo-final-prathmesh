@@ -12,10 +12,6 @@
   <!-- Fav Icon -->
   <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
 
-
-
-
-
   <!-- All CSS files -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/all.min.css">
@@ -29,19 +25,15 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
-
-
-
   <link rel="stylesheet" href="assets/css/master-portfolio-carousel.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/master-contact.css">
 
 </head>
+
 <style>
   .portfolio-active {
     width: 100%;
@@ -55,7 +47,6 @@
 
   .swiper-carousel-animate-opacity img {
     width: 100%;
-
     object-fit: cover;
     border-radius: 12px;
   }
@@ -72,46 +63,36 @@
   body.dark h2,
   body.dark h3 {
     color: #caa437;
-    ;
   }
 
-  /* ===== GLOBAL BUTTON OVERRIDE ===== */
+  /* GLOBAL BUTTON OVERRIDE */
   .wc-btn,
   input[type="submit"] {
     width: 220px !important;
-    /* change as needed */
     height: 54px !important;
-    /* change as needed */
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-
     background: #ffffff !important;
     color: #000000 !important;
-
     border: 1px solid #000000 !important;
     border-radius: 50px !important;
-
     font-size: 15px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
-
     transition: all 0.3s ease !important;
   }
 
-  /* Text inside span (for btn-text-flip) */
   .wc-btn span {
-    color: #f7f4f4 !important;
+    color: #000000 !important;
     transition: color 0.3s ease !important;
   }
 
-  /* Icon color */
   .wc-btn i {
     color: #f8f5f5 !important;
     transition: color 0.3s ease !important;
   }
 
-  /* ===== HOVER STATE ===== */
   .wc-btn:hover,
   button:hover,
   a.wc-btn:hover,
@@ -122,7 +103,6 @@
     border-color: #000000 !important;
   }
 
-  /* Hover text + icon */
   .wc-btn:hover span,
   .wc-btn:hover i {
     color: #ffffff !important;
@@ -136,122 +116,53 @@
     <div id="container" class="container-preloader">
       <div class="animation-preloader">
         <div class="spinner"></div>
-        <div class="txt-loading">
-        </div>
+        <div class="txt-loading"></div>
       </div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
     </div>
   </div>
-  <div>
-    <!-- <a
-  href="https://wa.me/917303199114"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
-  style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 58px;
-    height: 58px;
-    background: #ffffff;
-    color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    z-index: 2147483647;
-    font-size: 28px;
-    text-decoration: none;
-  "
->
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-<a
-  href="https://wa.me/917303199114"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
-  style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 58px;
-    height: 58px;
-    background: #ffffff;
-    color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    z-index: 2147483647;
-    font-size: 28px;
-    text-decoration: none;
-  "
->
-  <i class="fa-brands fa-whatsapp"></i>
-</a> -->
-    <!-- Fixed WhatsApp & Call Buttons -->
-    <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
-      <!-- WhatsApp Button - Replace +911234567890 with your number -->
-      <a href="https://wa.me/917303199114" aria-label="WhatsApp Chat" style="
-     width:60px;
-     height:60px;
-     border-radius:50%;
-     display:flex;
-     align-items:center;
-     justify-content:center;
-     background:#22ae06;
-     color:#000;
-     box-shadow:0 6px 20px rgba(0,0,0,0.4);
-     text-decoration:none;
-     transition:all 0.3s ease;
-     font-size:30px;
-   " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,0,0,0.45)'"
-        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.4)'">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
 
-      <!-- Call Now Button - Replace +911234567890 with your number -->
-      <a href="tel:++91 73031 99114" aria-label="Call Now"
-        style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
-        <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
-          <path
-            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-        </svg>
-      </a>
-    </div>
+  <!-- Floating WhatsApp & Call Buttons -->
+  <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
+    <a href="https://wa.me/917303199114" aria-label="WhatsApp Chat" style="
+      width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+      background:#22ae06; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); text-decoration:none;
+      transition:all 0.3s ease; font-size:30px;"
+      onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,0,0,0.45)'"
+      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.4)'">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a href="tel:+917303199114" aria-label="Call Now" style="
+      width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+      background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
   </div>
-  <!-- offcanvas start  -->
+
+  <!-- offcanvas start -->
   <div class="offcanvas-3__area" style="background:#000000; color:#ffffff;">
     <div class="offcanvas-3__inner" style="background:#000000; color:#ffffff;">
-
       <div class="offcanvas-3__meta-wrapper" style="color:#ffffff;">
         <div>
-          <button id="close_offcanvas" class="close-button close-offcanvas" onclick="hideCanvas3()"
-            style="color:#ffffff;">
+          <button id="close_offcanvas" class="close-button close-offcanvas" onclick="hideCanvas3()" style="color:#ffffff;">
             <span style="background:#ffffff;"></span>
             <span style="background:#ffffff;"></span>
           </button>
         </div>
-
         <div>
           <div class="offcanvas-3__meta mb-145 d-none d-md-block" style="color:#ffffff;">
-            <ul>
-
-            </ul>
+            <ul></ul>
           </div>
-
           <div class="offcanvas-3__social d-none d-md-block" style="color:#ffffff;">
             <p class="title" style="color:#ffffff;"></p>
-            <div class="offcanvas-3__social-links">
-
-            </div>
+            <div class="offcanvas-3__social-links"></div>
           </div>
         </div>
       </div>
-
       <div class="offcanvas-3__menu-wrapper" style="background:#000000;">
         <nav class="nav-menu offcanvas-3__menu">
           <ul>
@@ -264,16 +175,12 @@
           </ul>
         </nav>
       </div>
-
     </div>
   </div>
-  <!-- offcanvas end  -->
-
-
+  <!-- offcanvas end -->
 
   <!-- search modal start -->
-  <div class="modal fade" id="search-template" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="search-template" aria-hidden="true">
+  <div class="modal fade" id="search-template" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="search-template" aria-hidden="true">
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -307,17 +214,19 @@
               <li><a href="/ourwork">Our Work</a></li>
               <li><a href="/blogs">Blogs</a></li>
               <li><a href="/contact">Contact</a></li>
-
             </ul>
           </nav>
         </div>
         <div class="header__button">
-          <a class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span
-              data-text="Book Free Demo" style="color:white;">Book Free Demo</span><i class="fa-solid fa-play"></i></a>
+          <a class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()">
+            <span data-text="Book Free Demo" style="color:white;">Book Free Demo</span>
+            <i class="fa-solid fa-play" style="color:black;"></i>
+          </a>
         </div>
         <div class="header__navicon d-xl-none">
           <button onclick="showCanvas3()" class="open-offcanvas">
-            <i class="fa-solid fa-bars"></i></button>
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -329,278 +238,223 @@
     <div id="smooth-content">
       <div class="body-wrapper body-video-production">
 
-        <!-- overlay switcher close  -->
+        <!-- overlay switcher close -->
         <div class="overlay-switcher-close"></div>
 
         <main>
 
           <!-- hero area start -->
-          <!-- hero area start -->
-<section class="hero-area">
-  <!-- Video Background -->
-  <div class="hero-video-wrapper">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      aria-label="Golden Apple Productions Background Video">
-      <source src="assets/videos/heroVideo.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Dark Overlay -->
-  <div class="hero-overlay"></div>
-</section>
-<!-- hero area end -->
-
+          <section class="hero-area">
+            <div class="hero-video-wrapper">
+              <video autoplay muted loop playsinline preload="auto" aria-label="Golden Apple Productions Background Video">
+                <source src="assets/videos/heroVideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="hero-overlay"></div>
+          </section>
           <!-- hero area end -->
+
           <style>
-            /* ===== HERO VIDEO FULL FIX ===== */
-.hero-area {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: #000;
-  margin: 0;
-  padding: 0;
-}
-
-/* Video wrapper */
-.hero-video-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-/* Video element */
-.hero-video-wrapper video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* IMPORTANT */
-  pointer-events: none; /* Disable interactions */
-}
-
-/* Mobile viewport fix */
-@media (max-width: 768px) {
-  .hero-area {
-    height: 100svh; /* modern mobile viewport */
-  }
-}
-
-/* Dark overlay */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
+            .hero-area {
+              position: relative;
+              width: 100%;
+              height: 100vh;
+              overflow: hidden;
+              background: #000;
+              margin: 0;
+              padding: 0;
+            }
+            .hero-video-wrapper {
+              position: absolute;
+              inset: 0;
+              z-index: 0;
+            }
+            .hero-video-wrapper video {
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              pointer-events: none;
+            }
+            @media (max-width: 768px) {
+              .hero-area { height: 100svh; }
+            }
+            .hero-overlay {
+              position: absolute;
+              inset: 0;
+              background: rgba(0, 0, 0, 0.5);
+              z-index: 1;
+            }
           </style>
 
-          <!-- text slider area start  -->
+          <!-- text slider area start -->
           <div class="container large has_fade_anim">
             <div class="text-slider">
               <div class="swiper text-slider-active">
                 <div class="swiper-wrapper">
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Brand Identity & Concept Shoots</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Designer Collection & Couture Shoots</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Showroom Collection & Digital Catalogues</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Behind-the-Scenes (BTS) Narratives</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Luxury Product & Jewellery Shoots</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Ad Films & Commercial Shoots</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">High-End Retouching & Finishing</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Professional Model Portfolios</a></h2>
                     </div>
                   </div>
-
                   <div class="swiper-slide">
                     <div class="text-slider-item">
                       <h2 class="title"><a href="#">Premium Instagram Reels & Influencer Content</a></h2>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
-          <!-- /text slider area end -->
+          <!-- text slider area end -->
 
-          <h1 style="justify-content: center; text-align: center; margin-bottom:0; margin-top:40px;  font-size:5rem; ">
-            Our Services</h1>
+          <h1 style="justify-content: center; text-align: center; margin-bottom:0; margin-top:40px; font-size:5rem;">
+            Our Services
+          </h1>
 
-          <!-- portfolio area start  -->
-          <section class="portfolio-area ">
+          <!-- portfolio area start -->
+          <section class="portfolio-area">
             <div class="container large">
               <div class="portfolio-area-inner pt-0 mt-0">
                 <div id="app" class="portfolio-slider">
-
-                  <!-- Carousel slider -->
                   <div class="swiper portfolio-active">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide has_fade_anim" data-fade-from="bottom">
                         <a href="/service1" class="swiper-carousel-animate-opacity">
                           <img src="assets/imgs/Homeservice/Ethnic.jpg" alt="image">
-                          <div class="slide-content">
-
-                          </div>
-                          <h2 class="title-overlay"
-                            style="justify-content: center; text-align:center;  margin-top:20px;"> Ethnic Fashion Shoots
+                          <div class="slide-content"></div>
+                          <h2 class="title-overlay" style="justify-content: center; text-align:center; margin-top:20px;">
+                            Ethnic Fashion Shoots
                           </h2>
                         </a>
                       </div>
                       <div class="swiper-slide">
                         <a href="/service2" class="swiper-carousel-animate-opacity">
                           <img src="assets/imgs/Homeservice/Western.jpg" alt="image">
-                          <div class="slide-content">
-
-                          </div>
-                          <h2 class="title-overlay"
-                            style="justify-content: center; text-align:center;  margin-top:20px;"> Western &
-                            Indo-Western Shoots</h2>
+                          <div class="slide-content"></div>
+                          <h2 class="title-overlay" style="justify-content: center; text-align:center; margin-top:20px;">
+                            Western & Indo-Western Shoots
+                          </h2>
                         </a>
                       </div>
                       <a href="/service3" class="swiper-slide">
                         <div class="swiper-carousel-animate-opacity">
                           <img src="assets/imgs/Homeservice/DesignerCollection.jpg" alt="image">
-                          <div class="slide-content">
-
-                          </div>
-                          <h2 class="title-overlay"
-                            style="justify-content: center; text-align:center;  margin-top:20px;">Designer Collection & Couture Shoots</h2>
+                          <div class="slide-content"></div>
+                          <h2 class="title-overlay" style="justify-content: center; text-align:center; margin-top:20px;">
+                            Designer Collection & Couture Shoots
+                          </h2>
                         </div>
                       </a>
                       <a href="/service4" class="swiper-slide">
                         <div class="swiper-carousel-animate-opacity">
-                          <img src="assets/imgs/Homeservice/RetailCatShoot.jpg"" alt=" image">
-                          <div class="slide-content">
-
-                          </div>
-                          <h2 class="title-overlay"
-                            style="justify-content: center; text-align:center; margin-top:20px;"> Retail, Store &
-                            Catalogue Shoots</h2>
+                          <img src="assets/imgs/Homeservice/RetailCatShoot.jpg" alt="image">
+                          <div class="slide-content"></div>
+                          <h2 class="title-overlay" style="justify-content: center; text-align:center; margin-top:20px;">
+                            Retail, Store & Catalogue Shoots
+                          </h2>
                         </div>
                       </a>
                       <a href="/service5" class="swiper-slide">
                         <div class="swiper-carousel-animate-opacity">
                           <img src="assets/imgs/Homeservice/BrandCampaignEditorial.jpg" alt="image">
-                          <div class="slide-content">
-
-                          </div>
-                          <h2 class="title-overlay"
-                            style="justify-content: center; text-align:center;  margin-top:20px;">Brand Identity & Concept Shoots</h2>
+                          <div class="slide-content"></div>
+                          <h2 class="title-overlay" style="justify-content: center; text-align:center; margin-top:20px;">
+                            Brand Identity & Concept Shoots
+                          </h2>
                         </div>
                       </a>
                     </div>
                   </div>
                   <div class="slider-nav overflow-hidden">
-                    <div class="portfolio-button-prev nav-icon has_fade_anim" data-fade-from="left" data-on-scroll="0"
-                      data-delay="0.30">
+                    <div class="portfolio-button-prev nav-icon has_fade_anim" data-fade-from="left" data-on-scroll="0" data-delay="0.30">
                       <i class="fa-solid fa-angle-left"></i>Prev
                     </div>
-                    <div class="portfolio-button-next nav-icon has_fade_anim" data-fade-from="right" data-on-scroll="0"
-                      data-delay="0.30">
+                    <div class="portfolio-button-next nav-icon has_fade_anim" data-fade-from="right" data-on-scroll="0" data-delay="0.30">
                       Next<i class="fa-solid fa-angle-right"></i>
                     </div>
                   </div>
-                  <div class="portfolio-pagination has_fade_anim" data-fade-from="bottom" data-fade-offset="0"
-                    data-on-scroll="0" data-delay="0.45"></div>
+                  <div class="portfolio-pagination has_fade_anim" data-fade-from="bottom" data-fade-offset="0" data-on-scroll="0" data-delay="0.45"></div>
                 </div>
               </div>
             </div>
           </section>
           <style>
-          @media (max-width: 400px) {
-    .title-overlay {
-        font-size: 30px !important;
-    }
-}
-           
+            @media (max-width: 400px) {
+              .title-overlay { font-size: 30px !important; }
+            }
           </style>
-          <!-- about area start  -->
+          <!-- portfolio area end -->
+
+          <!-- about area start -->
           <section class="about-area">
             <div class="container">
               <div class="about-area-inner section-spacing-top overflow-hidden">
                 <a class="" data-fade-from="bottom" data-fade-offset="50">
-                  <!-- <img class="show-light" src="assets/imgs/shape/img-s-38.webp" alt="shape image">
-                  <img class="show-dark" src="assets/imgs/shape/img-s-38-light.webp" alt="shape image" height="200px" width="600px" style="margin-left: 0; margin-top: 0;"> -->
                   <a href="/about" style="color: white; font-size: 10vw; font-weight: bolder;"> ABOUT US</a>
                 </a>
                 <div class="section-content">
                   <div class="section-thumb">
-                    <div class="about-thumb has_fade_anim" data-fade-from="top" data-ease="bounce"
-                      style="overflow:hidden;">
-                      <img class="show-light" src="assets/imgs/bghome/b8.png" alt="shape image"
-                        style="transition:transform 0.4s ease; transform-origin:center center;">
-                      <img class="show-dark" src="assets/imgs/bghome/b8.png" alt="shape image"
-                        style="transition:transform 0.4s ease; transform-origin:center center;">
+                    <div class="about-thumb has_fade_anim" data-fade-from="top" data-ease="bounce" style="overflow:hidden;">
+                      <img class="show-light" src="assets/imgs/bghome/b8.png" alt="shape image" style="transition:transform 0.4s ease; transform-origin:center center;">
+                      <img class="show-dark" src="assets/imgs/bghome/b8.png" alt="shape image" style="transition:transform 0.4s ease; transform-origin:center center;">
                     </div>
                   </div>
                   <style>
-                    .about-thumb:hover img {
-                      transform: scale(1.06);
-                    }
+                    .about-thumb:hover img { transform: scale(1.06); }
                   </style>
 
                   <div class="content-last">
                     <div class="section-title-wrapper">
                       <div class="title-wrapper">
-                        <h2 class=" has_text_move_anim" style="font-size: 400%;">
-                         Luxury Collection Presentation
-For Stores, Showrooms, Campaigns, and Brand Platforms
-
+                        <h2 class="has_text_move_anim" style="font-size: 400%;">
+                          Luxury Collection Presentation<br>For Stores, Showrooms, Campaigns, and Brand Platforms
                         </h2>
                       </div>
                     </div>
 
                     <div class="text-wrapper">
-                      <P class="text has_fade_anim" data-fade-from="left" style="color: white; font-size: x-large;">
+                      <p class="text has_fade_anim" data-fade-from="left" style="color: white; font-size: x-large;">
                         We are a creative production house dedicated to presenting luxury fashion collections with clarity, structure, and intent. Our approach focuses on proportion, construction, materiality, and overall collection coherence, enabling brands and stores to communicate both aesthetic quality and commercial relevance with confidence.
-                     By delivering consistent, high-quality imagery across collections, we help strengthen retail credibility, enhance catalogue and showroom communication, and support sustained performance across physical retail and digital platforms.
-                      </P>
+                        By delivering consistent, high-quality imagery across collections, we help strengthen retail credibility, enhance catalogue and showroom communication, and support sustained performance across physical retail and digital platforms.
+                      </p>
                     </div>
 
                     <div class="btn-wrapper has_fade_anim" data-fade-from="left">
@@ -610,522 +464,635 @@ For Stores, Showrooms, Campaigns, and Brand Platforms
                       </a>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
-      </div>
-      </section>
-      <!-- about area end  -->
+          </section>
+          <!-- about area end -->
 
-      <style>
-        .team-area-inner.section-spacing {
-          position: relative;
-          overflow: hidden;
-          background: transparent !important;
-        }
+          <style>
+            .team-area-inner.section-spacing {
+              position: relative;
+              overflow: hidden;
+              background: transparent !important;
+            }
+            .team-area-inner.section-spacing::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: url("assets/imgs/bgeffect/1.gif") center center / cover no-repeat;
+              z-index: 0;
+            }
+            .team-area-inner.section-spacing::after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: rgba(0, 0, 0, 0.55);
+              z-index: 1;
+            }
+            .team-area-inner.section-spacing > * {
+              position: relative;
+              z-index: 2;
+            }
+          </style>
 
-        .team-area-inner.section-spacing::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: url("assets/imgs/bgeffect/1.gif") center center / cover no-repeat;
-          z-index: 0;
-        }
+          <!-- team area start -->
+          <section class="team-area">
+            <div class="container large">
+              <div class="team-area-inner section-spacing">
+                <div class="container">
+                  <div class="section-header">
+                    <div class="section-title-wrapper">
+                      <div class="title-wrapper">
+                        <h2 class="section-title has_text_move_anim">
+                          Our team brings together creative excellence, fashion expertise, and a passion for delivering premium visual experiences.
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
 
-        /* Optional dark overlay for readability */
-        .team-area-inner.section-spacing::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.55);
-          z-index: 1;
-        }
+                  <div class="section-content">
+                    <div class="counter-wrapper-box">
+                      <div class="counter-wrapper has_fade_anim">
+                        <div class="team-count-box">
+                          <h3 class="number wc-counter">15<span>+</span></h3>
+                          <h3 class="title">Years of <br> experience</h3>
+                        </div>
+                        <div class="team-count-box">
+                          <h3 class="number wc-counter">30<span>+</span></h3>
+                          <h3 class="title">Happy <br> clients</h3>
+                        </div>
+                        <div class="team-count-box">
+                          <h3 class="number wc-counter">120<span>+</span></h3>
+                          <h3 class="title">Projects <br> completed</h3>
+                        </div>
+                        <div class="team-count-box">
+                          <h3 class="number wc-counter">18</h3>
+                          <h3 class="title">Creative <br> professionals</h3>
+                        </div>
+                      </div>
+                    </div>
 
-        /* Bring content above GIF */
-        .team-area-inner.section-spacing>* {
-          position: relative;
-          z-index: 2;
-        }
-      </style>
+                    <div class="content-last has_fade_anim">
+                      <h3 class="title">
+                        <span>Creativity</span>
+                        <span>Collaboration</span>
+                        <span>Craft</span>
+                      </h3>
 
-      <!-- team area start  -->
-      <section class="team-area">
-        <div class="container large">
-          <div class="team-area-inner section-spacing">
-            <div class="container">
-              <div class="section-header">
-                <div class="section-title-wrapper">
-                  <div class="title-wrapper">
-                    <h2 class="section-title has_text_move_anim">
-                      Our team brings together creative excellence, fashion expertise,
-                      and a passion for delivering premium visual experiences.
-                    </h2>
+                      <div class="text-wrapper">
+                        <p class="text" style="color: white;">
+                          Creativity Collaboration Craft<br>
+                          Our strength lies in a highly coordinated in house team that brings structure, consistency, and clarity to every production. We manage the entire creative workflow, from pre production planning and talent coordination to shoot execution and post production, ensuring seamless delivery across all stages.<br><br>
+                          Each project is approached with precision and discipline, balancing creative expression with operational excellence. This integrated process allows us to maintain a strong visual narrative while meeting timelines, budgets, and brand expectations without compromise. We value partnerships built on trust, alignment, and repeat collaboration.
+                        </p>
+                      </div>
+
+                      <div class="btn-wrapper">
+                        <a href="/contact" class="wc-btn wc-btn-primary btn-text-flip">
+                          <span data-text="Get started">Get started</span>
+                          <i class="fa-solid fa-play"></i>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+          <!-- team area end -->
 
-              <div class="section-content">
-                <div class="counter-wrapper-box">
-                  <div class="counter-wrapper has_fade_anim">
-                    <div class="team-count-box">
-                      <h3 class="number wc-counter">15<span>+</span></h3>
-                      <h3 class="title">Years of <br> experience</h3>
-                    </div>
-                    <div class="team-count-box">
-                      <h3 class="number wc-counter">30<span>+</span></h3>
-                      <h3 class="title">Happy <br> clients</h3>
-                    </div>
-                    <div class="team-count-box">
-                      <h3 class="number wc-counter">120<span>+</span></h3>
-                      <h3 class="title">Projects <br> completed</h3>
-                    </div>
-                    <div class="team-count-box">
-                      <h3 class="number wc-counter">18</h3>
-                      <h3 class="title">Creative <br> professionals</h3>
+          <!-- ==================== FIXED CONTACT FORM SECTION ==================== -->
+          <section class="contact-form-section mt-5" style="background: #121212; position: relative; z-index: 1;">
+            <div class="container">
+              <div class="contact-area-inner section-spacing">
+                <div class="section-header" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper">
+                      <h2 class="large has_fade_anim" style="color: #caa437; font-size: 3.5rem; margin-bottom: 1rem;">
+                        We’ve been waiting for you!
+                      </h2>
                     </div>
                   </div>
-                </div>
-
-                <div class="content-last has_fade_anim">
-                  <h3 class="title">
-                    <span>Creativity</span>
-                    <span>Collaboration</span>
-                    <span>Craft</span>
-                  </h3>
-
                   <div class="text-wrapper">
-                    <p class="text" style="color: white;">
-                    Creativity Collaboration Craft
-Our strength lies in a highly coordinated in house team that brings structure, consistency, and clarity to every production. We manage the entire creative workflow, from pre production planning and talent coordination to shoot execution and post production, ensuring seamless delivery across all stages.
-
-Each project is approached with precision and discipline, balancing creative expression with operational excellence. This integrated process allows us to maintain a strong visual narrative while meeting timelines, budgets, and brand expectations without compromise. We value partnerships built on trust, alignment, and repeat collaboration.
-
+                    <p style="color: white; font-size: 1.3rem; max-width: 700px; margin: 0 auto;">
+                      Collaborate with top-tier creative talent, agile production management, and seamless end-to-end involvement—crafted for fashion and brand excellence.
                     </p>
                   </div>
+                </div>
 
-                  <div class="btn-wrapper">
-                    <a href="/contact" class="wc-btn wc-btn-primary btn-text-flip">
-                      <span data-text="Get started">Get started</span>
-                      <i class="fa-solid fa-play"></i>
-                    </a>
+                <div class="section-content" style="display: flex; flex-wrap: wrap; gap: 60px; justify-content: center; margin-top: 60px; position: relative; z-index: 2;">
+                  <!-- Left: Contact Info -->
+                  <div class="info-box has_fade_anim" style="flex: 1; min-width: 300px; max-width: 400px; color: white;">
+                    <div class="text-wrapper">
+                      <p class="text" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        We’d love to hear from you. Tell us how we can help bring your next visual campaign to life.
+                      </p>
+                    </div>
+                    <ul class="contact-list" style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 1.8;">
+                      <li><a href="tel:+917303199114" style="color: #caa437; text-decoration: none;">+91 73031 99114</a></li>
+                      <li><a href="mailto:hello@goldenappleproductions.in" style="color: #caa437; text-decoration: none;">hello@goldenappleproductions.in</a></li>
+                      <li>230 Alaska Street, Dunasia<br>QC (USA) H8R 1A1</li>
+                    </ul>
+                  </div>
+
+                  <!-- Right: Multi-step Form -->
+                  <div style="flex: 1; min-width: 350px; max-width: 550px;">
+                    <div class="form-container">
+
+                      <h2 style="color: #caa437;">Get in Touch</h2>
+
+                      <div class="steps-indicator">
+                        <div class="step-dot active" id="dot1"></div>
+                        <div class="step-dot" id="dot2"></div>
+                      </div>
+
+                      <form class="glass-form" action="/contact" method="POST" id="contactForm">
+
+                        <!-- Step 1 -->
+                        <div class="step step-1" id="step1">
+                          <div class="glass-formfield">
+                            <input type="text" name="name" placeholder="Name*" required>
+                          </div>
+                          <div class="glass-formfield">
+                            <input type="email" name="email" placeholder="Email*" required>
+                          </div>
+                          <div class="glass-formfield">
+                            <input type="tel" name="phone" placeholder="Phone (10 digits)*" maxlength="10" pattern="[0-9]{10}" required>
+                          </div>
+                          <div class="glass-formfield">
+                            <div class="custom-select-wrapper">
+                              <select name="subject" required>
+                                <option value="" disabled selected>Select Service *</option>
+                                <option>Fashion Shoot</option>
+                                <option>Brand Campaign</option>
+                                <option>Product Photography</option>
+                                <option>Video Production</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="btn-container">
+                            <button type="button" class="btn-next" onclick="nextStep()">Next →</button>
+                          </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="step step-2 hidden" id="step2">
+                          <div class="glass-formfield">
+                            <input type="text" name="budget" placeholder="Your Budget">
+                          </div>
+                          <div class="glass-formfield">
+                            <input type="text" name="membership" placeholder="GAP Membership (optional)">
+                          </div>
+                          <div class="glass-formfield">
+                            <input type="url" name="website" placeholder="Website / Instagram Link">
+                          </div>
+                          <div class="glass-formfield">
+                            <input type="text" name="location" placeholder="Your Location">
+                          </div>
+                          <div class="glass-formfield">
+                            <textarea name="message" placeholder="Your Requirement*" required></textarea>
+                          </div>
+
+                          <div class="btn-container">
+                            <button type="button" class="btn-back" onclick="prevStep()">← Back</button>
+                            <button type="submit" class="btn-submit">Send Message</button>
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== FORM CSS (isolated) ==================== -->
+          <style>
+            .contact-form-section .form-container {
+              width: 100%;
+              max-width: 550px;
+              padding: 40px 28px;
+              background: rgba(255, 255, 255, 0.07);
+              backdrop-filter: blur(16px);
+              -webkit-backdrop-filter: blur(16px);
+              border-radius: 24px;
+              border: 1px solid rgba(202, 164, 55, 0.18);
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+                          inset 0 0 20px rgba(202, 164, 55, 0.04);
+              position: relative;
+              overflow: hidden;
+            }
+
+            .contact-form-section .glass-formfield {
+              margin-bottom: 22px;
+              position: relative;
+            }
+
+            .contact-form-section input,
+            .contact-form-section textarea {
+              width: 100%;
+              padding: 14px 16px;
+              background: rgba(255, 255, 255, 0.06);
+              border: 1px solid rgba(202, 164, 55, 0.25);
+              border-radius: 12px;
+              color: white;
+              font-size: 1rem;
+              transition: all 0.3s ease;
+            }
+
+            .contact-form-section input:focus,
+            .contact-form-section textarea:focus {
+              outline: none;
+              border-color: #caa437;
+              box-shadow: 0 0 0 3px rgba(202, 164, 55, 0.15);
+              background: rgba(255, 255, 255, 0.09);
+            }
+
+            .contact-form-section input::placeholder,
+            .contact-form-section textarea::placeholder {
+              color: rgba(240, 240, 240, 0.5);
+            }
+
+            .contact-form-section textarea {
+              min-height: 110px;
+              resize: vertical;
+            }
+
+            .contact-form-section h2 {
+              text-align: center;
+              color: #caa437;
+              font-size: 1.9rem;
+              margin-bottom: 28px;
+              font-weight: 600;
+              letter-spacing: 0.5px;
+            }
+
+            .contact-form-section .steps-indicator {
+              display: flex;
+              justify-content: center;
+              gap: 12px;
+              margin-bottom: 32px;
+            }
+
+            .contact-form-section .step-dot {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: rgba(202, 164, 55, 0.3);
+              transition: all 0.4s ease;
+            }
+
+            .contact-form-section .step-dot.active {
+              background: #caa437;
+              box-shadow: 0 0 12px rgba(202, 164, 55, 0.6);
+              transform: scale(1.3);
+            }
+
+            .contact-form-section .btn-container {
+              display: flex;
+              gap: 12px;
+              margin-top: 28px;
+            }
+
+            .contact-form-section button {
+              flex: 1;
+              padding: 14px;
+              border: none;
+              border-radius: 12px;
+              font-size: 1rem;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.3s ease;
+            }
+
+            .contact-form-section .btn-next {
+              background: linear-gradient(135deg, #caa437, #d4b850);
+              color: #000;
+              box-shadow: 0 6px 20px rgba(202, 164, 55, 0.35);
+            }
+
+            .contact-form-section .btn-next:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 10px 30px rgba(202, 164, 55, 0.5);
+            }
+
+            .contact-form-section .btn-submit {
+              background: #caa437;
+              color: #000;
+              font-weight: 700;
+              box-shadow: 0 6px 20px rgba(202, 164, 55, 0.4);
+            }
+
+            .contact-form-section .btn-submit:hover {
+              background: #d4b850;
+              transform: translateY(-2px);
+            }
+
+            .contact-form-section .btn-back {
+              background: rgba(255, 255, 255, 0.08);
+              color: #caa437;
+              border: 1px solid rgba(202, 164, 55, 0.4);
+            }
+
+            .contact-form-section .btn-back:hover {
+              background: rgba(202, 164, 55, 0.15);
+            }
+
+            .contact-form-section .hidden {
+              display: none !important;
+            }
+
+            /* Custom select fix inside this section only */
+            .contact-form-section .custom-select-wrapper {
+              position: relative;
+              width: 100%;
+            }
+
+            .contact-form-section .custom-select-wrapper select {
+              width: 100%;
+              padding: 14px 40px 14px 16px;
+              background: rgba(255,255,255,0.06);
+              border: 1px solid rgba(202, 164, 55, 0.25);
+              border-radius: 12px;
+              color: white;
+              font-size: 1rem;
+              appearance: none;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              cursor: pointer;
+            }
+
+            .contact-form-section .custom-select-wrapper select:focus {
+              outline: none;
+              border-color: #caa437;
+              box-shadow: 0 0 0 3px rgba(202, 164, 55, 0.25);
+            }
+
+            .contact-form-section .custom-select-wrapper::after {
+              content: "▼";
+              position: absolute;
+              right: 16px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: #caa437;
+              font-size: 0.9rem;
+              pointer-events: none;
+            }
+
+            .contact-form-section .custom-select-wrapper select option {
+              background: #111111 !important;
+              color: #ffffff !important;
+              padding: 10px 16px;
+            }
+
+            .contact-form-section .custom-select-wrapper select option:hover,
+            .contact-form-section .custom-select-wrapper select option:focus {
+              background: #222222 !important;
+              color: #ffffff !important;
+            }
+
+            .contact-form-section .custom-select-wrapper select option:checked {
+              background: #caa437 !important;
+              color: #000000 !important;
+            }
+
+            @media (max-width: 480px) {
+              .contact-form-section .form-container {
+                padding: 32px 20px;
+              }
+              .contact-form-section h2 {
+                font-size: 1.7rem;
+              }
+            }
+          </style>
+
+          <!-- ==================== FORM JAVASCRIPT ==================== -->
+          <script>
+            let idleTimer = null;
+            const IDLE_TIMEOUT = 600000; // 10 min
+
+            function nextStep() {
+              document.getElementById("step1").classList.add("hidden");
+              document.getElementById("step2").classList.remove("hidden");
+              document.getElementById("dot1").classList.remove("active");
+              document.getElementById("dot2").classList.add("active");
+              startIdleTimer();
+              setupIdleResetListeners();
+            }
+
+            function prevStep() {
+              document.getElementById("step2").classList.add("hidden");
+              document.getElementById("step1").classList.remove("hidden");
+              document.getElementById("dot2").classList.remove("active");
+              document.getElementById("dot1").classList.add("active");
+              clearTimeout(idleTimer);
+              removeIdleResetListeners();
+            }
+
+            function startIdleTimer() {
+              clearTimeout(idleTimer);
+              idleTimer = setTimeout(autoSubmit, IDLE_TIMEOUT);
+            }
+
+            function autoSubmit() {
+              const messageInput = document.querySelector('#contactForm [name="message"]');
+              if (!messageInput.value.trim()) {
+                messageInput.value = "Partial submission: User became idle after filling basic information.";
+              }
+              document.getElementById("contactForm").submit();
+            }
+
+            function setupIdleResetListeners() {
+              const step2Inputs = document.querySelectorAll('#step2 input, #step2 select, #step2 textarea');
+              step2Inputs.forEach(input => {
+                input.addEventListener('input', startIdleTimer);
+                input.addEventListener('change', startIdleTimer);
+              });
+              document.addEventListener('keydown', startIdleTimer);
+              document.addEventListener('mousemove', startIdleTimer);
+            }
+
+            function removeIdleResetListeners() {
+              const step2Inputs = document.querySelectorAll('#step2 input, #step2 select, #step2 textarea');
+              step2Inputs.forEach(input => {
+                input.removeEventListener('input', startIdleTimer);
+                input.removeEventListener('change', startIdleTimer);
+              });
+              document.removeEventListener('keydown', startIdleTimer);
+              document.removeEventListener('mousemove', startIdleTimer);
+            }
+
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
+              e.preventDefault();
+              clearTimeout(idleTimer);
+
+              const name = document.querySelector('#contactForm [name="name"]').value.trim();
+              const email = document.querySelector('#contactForm [name="email"]').value.trim();
+              const phone = document.querySelector('#contactForm [name="phone"]').value.trim();
+              const subject = document.querySelector('#contactForm [name="subject"]').value;
+              const website = document.querySelector('#contactForm [name="website"]').value.trim();
+              const message = document.querySelector('#contactForm [name="message"]').value.trim();
+
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              const phoneRegex = /^[6-9]\d{9}$/;
+              const urlRegex = /^(https?:\/\/)?([\w\-]+\.)+[a-z]{2,}(\/.*)?$/i;
+
+              if (!name || !email || !phone || !subject || !message) {
+                alert("Please fill all required fields.");
+                return;
+              }
+
+              if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+              }
+
+              if (!phoneRegex.test(phone)) {
+                alert("Phone number must be 10 digits.");
+                return;
+              }
+
+              if (website && !urlRegex.test(website)) {
+                alert("Please enter a valid website or Instagram URL.");
+                return;
+              }
+
+              this.submit();
+            });
+          </script>
+          <!-- ==================== END FIXED FORM ==================== -->
+
+          <style>
+            .clients-logos.marquee-container {
+              overflow: hidden;
+              padding: 40px 0;
+              white-space: nowrap;
+              position: relative;
+            }
+
+            .marquee-track {
+              display: inline-flex;
+              align-items: center;
+              animation: scroll-logos 40s linear infinite;
+              gap: 60px;
+            }
+
+            .marquee-track img {
+              height: 80px;
+              max-width: none;
+              flex-shrink: 0;
+              object-fit: contain;
+            }
+
+            .clients-logos.marquee-container:hover .marquee-track {
+              animation-play-state: paused;
+            }
+
+            @keyframes scroll-logos {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+
+            .clients-logos.marquee-container::before,
+            .clients-logos.marquee-container::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              width: 150px;
+              height: 100%;
+              z-index: 1;
+              pointer-events: none;
+            }
+
+            .clients-logos.marquee-container::before { left: 0; }
+            .clients-logos.marquee-container::after { right: 0; }
+          </style>
+
+          <!-- clients area start -->
+          <section class="clients-area" style="background-color: black;">
+            <div class="container">
+              <div class="clinets-area-inner section-spacing-top">
+                <div class="section-header">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper">
+                      <h2 class="section-title has_fade_anim" data-fade-from="bottom" data-fade-offset="50">
+                        We Worked with top agency world-wide
+                      </h2>
+                    </div>
                   </div>
                 </div>
 
+                <div class="clients-logos marquee-container">
+                  <div class="marquee-track">
+                    <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
+                    <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
+                    <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
+                    <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
+                    <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
+                    <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
+                    <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
+                    <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
+                    <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
+                    <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
+                    <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
+                    <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
+
+                    <!-- Duplicate for seamless loop -->
+                    <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
+                    <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
+                    <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
+                    <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
+                    <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
+                    <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
+                    <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
+                    <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
+                    <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
+                    <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
+                    <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
+                    <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
+                  </div>
+                </div>
               </div>
+            </div>
+          </section>
+          <!-- clients area end -->
+
+        </main>
+
+        <!-- footer area start -->
+        <footer class="footer-area">
+          <div class="container">
+            <div class="copyright-area-inner">
+              <div class="copyright-text">
+                <p class="text">© 2024-25 - Golden Apple Production</p>
+              </div>
+              <ul class="footer-nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/ourwork">Our Work</a></li>
+                <li><a href="/blogs">Blogs</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/terms">Terms</a></li>
+              </ul>
+              <ul class="social-links">
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/golden.apple.productions/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+              </ul>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- team area end  -->
+        </footer>
+        <!-- footer area end -->
 
-
-
-
-      <!-- contact area start  -->
-      <section class="contact-area mt-5" style="background-color:#121212;">
-        <div class="container">
-          <div class="contact-area-inner section-spacing">
-            <div class="section-header" style="display: flex; flex-direction:column;;">
-              <div class="section-title-wrapper">
-                <div class="title-wrapper">
-                  <h2 class="large has_fade_anim" style="color: #caa437; font-size: 400%;">We’ve been
-                    waiting for you!</h2>
-                </div>
-              </div>
-              <div class="text-wrapper">
-                <p class="" style="color: white !important; font-size: 150%;">Collaborate with top-tier creative talent,
-                  agile production management,
-                  and seamless end-to-end involvement—crafted for fashion and brand excellence.</p>
-              </div>
-            </div>
-            <div class="section-content">
-              <div class="info-box has_fade_anim">
-                <div class="text-wrapper">
-                  <p class="text">We’d love to hear from you.
-                    Tell us how we can help bring your next visual campaign to life.</p>
-                </div>
-                <ul class="contact-list">
-                  <li><a href="tel:+881750660600">+91 73031 99114</a></li>
-                  <li><a href="#">hello@goldenappleproductions.in</a></li>
-                  <li>230 alaska street dunasia <br>
-                    QC (USA) H8R 1A1</li>
-                </ul>
-              </div>
-              <div class="contact-wrap has_fade_anim" data-delay="0.30" ">
-                <form id=" contactForm" action="/contact" method="POST"
-                style="background-color:#0e1621; padding:50px;border: 1px solid white;  color:rgb(0, 0, 0); ">
-
-                <div class="contact-formwrap">
-
-                  <div class="contact-formfield">
-                    <input type="text" name="name" id="Name" placeholder="Name*" required>
-                  </div>
-
-                  <div class="contact-formfield">
-                    <input type="email" name="email" id="Email" placeholder="Email*" required>
-                  </div>
-
-                  <div class="contact-formfield">
-                    <input type="tel" name="phone" id="Phone" placeholder="Phone (10 digits)*" maxlength="10" required>
-                  </div>
-
-                  <div class="contact-formfield">
-                    <select name="subject" id="Subject" required>
-                      <option value="">Select Service *</option>
-                      <option value="Fashion Shoot">Fashion Shoot</option>
-                      <option value="Brand Campaign">Brand Campaign</option>
-                      <option value="Product Photography">Product Photography</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-
-                  <div class="contact-formfield">
-                    <input type="text" name="budget" id="budget" placeholder="Your Budget">
-                  </div>
-                  <div class="contact-formfield">
-                    <input type="text" name="membership" id="membership" placeholder="GAP Membership (optional)">
-                  </div>
-                  <div class="contact-formfield">
-                    <input type="url" name="website" id="Website" placeholder="Website / Instagram Link">
-                  </div>
-                  <div class="contact-formfield">
-                    <input name="location" id="location" placeholder="Your location"></input>
-                  </div>
-                  <div class="contact-formfield messages">
-                    <textarea name="message" id="Message" placeholder="Your Requirment*" required></textarea>
-                  </div>
-
-                </div>
-
-                <div class="submit-btn">
-                  <button type="submit" class="wc-btn wc-btn-primary btn-text-flip">
-                    <span data-text="Send Message">Send Message</span>
-                  </button>
-                </div>
-
-                </form>
-              </div>
-              <style>
-                /* ===== MINIMAL COLOR SET ===== */
-                :root {
-                  --line: rgba(255, 255, 255, 0.35);
-                  --text: #f1f1f1;
-                  --muted: rgba(255, 255, 255, 0.6);
-                }
-
-                /* FORM */
-                #contactForm {
-                  background: rgba(14, 22, 33, 0.9);
-                  border: 1px solid rgba(255, 255, 255, 0.15);
-                }
-
-                /* INPUTS */
-                #contactForm input,
-                #contactForm textarea,
-                #contactForm select {
-                  width: 100%;
-                  padding: 14px 0;
-                  background: transparent;
-                  border: none;
-                  color: var(--text);
-                  font-size: 15px;
-                  letter-spacing: 0.4px;
-                  border: 1px solid #caa33780;
-                  border-radius: 5px;
-                }
-
-                /* PLACEHOLDER */
-                #contactForm input::placeholder,
-                #contactForm textarea::placeholder {
-                  color: var(--muted);
-
-                }
-
-                /* TEXTAREA */
-                #contactForm textarea {
-                  min-height: 120px;
-                  resize: none;
-                }
-
-
-                /* FIELD LINE */
-                .contact-formfield {
-                  margin-bottom: 26px;
-                  border-bottom: 1px solid var(--line);
-                }
-
-                /* SELECT */
-                #contactForm select {
-                  appearance: none;
-                  cursor: pointer;
-                }
-
-                #contactForm select option {
-                  background: #0e1621;
-                  color: #fff;
-                }
-
-                /* BUTTON */
-                .wc-btn-primary {
-                  background: transparent !important;
-                  border: 1px solid var(--line) !important;
-                  color: var(--text) !important;
-                }
-
-                .wc-btn-primary:hover {
-                  background: #030303 !important;
-                  color: #000 !important;
-                }
-              </style>
-            </div>
-          </div>
-        </div>
-
-      </section>
-      <!-- contact area end  -->
-
-      <style>
-        .clients-logos.marquee-container {
-          overflow: hidden;
-          padding: 40px 0;
-          /* Adjust vertical padding as needed */
-          white-space: nowrap;
-          position: relative;
-        }
-
-        .marquee-track {
-          display: inline-flex;
-          align-items: center;
-          animation: scroll-logos 40s linear infinite;
-          /* Adjust 40s for speed (lower = faster) */
-          gap: 60px;
-          /* Space between logos – adjust as needed */
-        }
-
-        .marquee-track img {
-          height: 80px;
-          /* Set a uniform height for logos – adjust to fit your design */
-          max-width: none;
-          /* Prevent shrinking */
-          flex-shrink: 0;
-          object-fit: contain;
-        }
-
-        /* Pause on hover (optional but recommended for accessibility) */
-        .clients-logos.marquee-container:hover .marquee-track {
-          animation-play-state: paused;
-        }
-
-        /* Smooth infinite scroll keyframes */
-        @keyframes scroll-logos {
-          0% {
-            transform: translateX(0);
-          }
-
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        /* Optional: Fade edges for a polished look */
-        .clients-logos.marquee-container::before,
-        .clients-logos.marquee-container::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          width: 150px;
-          height: 100%;
-          z-index: 1;
-          pointer-events: none;
-        }
-
-        .clients-logos.marquee-container::before {
-          left: 0;
-        }
-
-        .clients-logos.marquee-container::after {
-          right: 0;
-        }
-      </style>
-
-      <!-- clients area start  -->
-
-      <section class="clients-area" style="background-color: black;">
-        <div class="container">
-          <div class="clinets-area-inner section-spacing-top">
-            <div class="section-header">
-              <div class="section-title-wrapper">
-                <div class="title-wrapper">
-                  <h2 class="section-title has_fade_anim" data-fade-from="bottom" data-fade-offset="50">
-                    We Worked with top agency world-wide
-                  </h2>
-                </div>
-              </div>
-            </div>
-
-            <!-- Combined into one infinite scrolling row -->
-            <div class="clients-logos marquee-container">
-              <div class="marquee-track">
-                <!-- Original logos -->
-                <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
-                <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
-                <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
-                <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
-                <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
-                <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
-                <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
-                <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
-                <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
-                <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
-
-                <!-- Duplicated logos for seamless infinite loop -->
-                <img src="assets/imgs/cligo/Ashe.jpg" alt="Ashe">
-                <img src="assets/imgs/cligo/Bharat.jpg" alt="Bharat">
-                <img src="assets/imgs/cligo/iPAM.jpg" alt="iPAM" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/Label Garry.jpg" alt="Label Garry">
-                <img src="assets/imgs/cligo/VPM Coworking.jpg" alt="VPM Coworking" style="border-radius: 50%;">
-                <img src="assets/imgs/cligo/VPM Garden Hall.jpg" alt="VPM Garden Hall">
-                <img src="assets/imgs/cligo/Lahot Lifestyle.jpg" alt="Lahot Lifestyle">
-                <img src="assets/imgs/cligo/Manjinder.png" alt="Manjinder">
-                <img src="assets/imgs/cligo/Rampkiraani.jpg" alt="Rampkiraani">
-                <img src="assets/imgs/cligo/Rare Penguin.jpg" alt="Rare Penguin">
-                <img src="assets/imgs/cligo/rclosetboutique.png" alt="R Closet Boutique">
-                <img src="assets/imgs/cligo/TaaniDesignz.jpg" alt="Taani Designz">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- clients area end  -->
-
-
-
-
-
-
-      </main>
-
-
-
-      <style>
-        /* ===== Footer Dark Theme ===== */
-        .footer-area {
-          background-color: #0f0f0f;
-          padding: 30px 0;
-          border-top: 1px solid #1f1f1f;
-        }
-
-        /* layout fix */
-        .footer-area .copyright-area-inner {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 20px;
-        }
-
-        /* copyright text */
-        .footer-area .copyright-text .text {
-          color: #ffffff;
-          font-size: 14px;
-          margin: 0;
-        }
-
-        /* footer navigation */
-        .footer-area .footer-nav-list {
-          display: flex;
-          gap: 18px;
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .footer-area .footer-nav-list li a {
-          color: #cfcfcf;
-          font-size: 14px;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .footer-area .footer-nav-list li a:hover {
-          color: #ffffff;
-        }
-
-        /* social icons */
-        .footer-area .social-links {
-          display: flex;
-          gap: 14px;
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .footer-area .social-links li a {
-          width: 36px;
-          height: 36px;
-          background: #161616;
-          color: #ffffff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          font-size: 14px;
-          transition: all 0.3s ease;
-        }
-
-        .footer-area .social-links li a:hover {
-          background: #ffffff;
-          color: #0f0f0f;
-          transform: translateY(-2px);
-        }
-
-        /* responsive fix */
-        @media (max-width: 768px) {
-          .footer-area .copyright-area-inner {
-            flex-direction: column;
-            text-align: center;
-          }
-        }
-      </style>
-
-
-      <!-- footer area start  -->
-      <footer class="footer-area">
-        <div class="container">
-          <div class="copyright-area-inner">
-            <div class="copyright-text">
-              <p class="text">© 2024-25 - Golden Apple Production</p>
-            </div>
-            <ul class="footer-nav-list">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/ourwork">Our Work</a></li>
-              <li><a href="/blogs">Blogs</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li><a href="/terms">Terms</a></li>
-            </ul>
-            <ul class="social-links">
-              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-              <li><a href="https://www.instagram.com/golden.apple.productions/"><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
-      <!-- footer area end  -->
-
+      </div>
     </div>
   </div>
-  </div>
-
-
 
   <!-- All JS files -->
   <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -1146,7 +1113,6 @@ Each project is approached with precision and discipline, balancing creative exp
   <script src="assets/js/offcanvas.js"></script>
 
   <script>
-
     // text slider 
     if ('.text-slider-active') {
       var text_slider_active = new Swiper(".text-slider-active", {
@@ -1189,110 +1155,27 @@ Each project is approached with precision and discipline, balancing creative exp
         freeMode: true,
         watchSlidesProgress: true,
         breakpoints: {
-          576: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          576: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 3 },
         },
       });
       var test_thumb = new Swiper(".testimonial-slide-content", {
         spaceBetween: 30,
-        thumbs: {
-          swiper: test_content,
-        },
+        thumbs: { swiper: test_content },
       });
     }
-
-
-
   </script>
+
   <!-- Book Free Demo Popup -->
-  <div id="demoPopupOverlay" style="
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2147483646;
-">
-
-    <div style="
-    background: #ffffff;
-    width: 90%;
-    max-width: 420px;
-    padding: 30px;
-    border-radius: 14px;
-    position: relative;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    z-index: 2147483647;
-    font-family: inherit;
-  ">
-
-      <!-- Close Icon -->
-      <span onclick="closeDemoPopup()" style="
-      position: absolute;
-      top: 12px;
-      right: 14px;
-      font-size: 18px;
-      cursor: pointer;
-      color: #999;
-    ">✕</span>
-
-      <h3 style="
-      margin-bottom: 20px;
-      color: #000;
-      font-size: 22px;
-      font-weight: 600;
-    ">
-        Book Free Demo
-      </h3>
-
-      <input type="tel" id="demoMobile" placeholder="Enter mobile number" maxlength="10" style="
-        width: 100%;
-        padding: 14px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-        outline: none;
-        margin-bottom: 10px;
-      " />
-
-      <p id="demoError" style="
-      color: red;
-      font-size: 14px;
-      display: none;
-      margin-bottom: 10px;
-    ">
-        Please enter a valid 10-digit mobile number
-      </p>
-
-      <p id="demoSuccess" style="
-      color: green;
-      font-size: 14px;
-      display: none;
-      margin-bottom: 10px;
-    ">
-      </p>
-
-      <button id="demoSubmitBtn" onclick="submitDemo()" style="
-        width: 100%;
-        padding: 14px;
-        background: #000;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-      ">
-        Submit
-      </button>
-
+  <div id="demoPopupOverlay" style="position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; z-index:2147483646;">
+    <div style="background:#ffffff; width:90%; max-width:420px; padding:30px; border-radius:14px; position:relative; box-shadow:0 20px 50px rgba(0,0,0,0.3); z-index:2147483647; font-family:inherit;">
+      <span onclick="closeDemoPopup()" style="position:absolute; top:12px; right:14px; font-size:18px; cursor:pointer; color:#999;">✕</span>
+      <h3 style="margin-bottom:20px; color:#000; font-size:22px; font-weight:600;">Book Free Demo</h3>
+      <input type="tel" id="demoMobile" placeholder="Enter mobile number" maxlength="10" style="width:100%; padding:14px; border-radius:8px; border:1px solid #ccc; font-size:16px; outline:none; margin-bottom:10px;" />
+      <p id="demoError" style="color:red; font-size:14px; display:none; margin-bottom:10px;">Please enter a valid 10-digit mobile number</p>
+      <p id="demoSuccess" style="color:green; font-size:14px; display:none; margin-bottom:10px;"></p>
+      <button id="demoSubmitBtn" onclick="submitDemo()" style="width:100%; padding:14px; background:#000; color:#fff; border:none; border-radius:8px; font-size:16px; cursor:pointer;">Submit</button>
     </div>
   </div>
 
@@ -1317,7 +1200,6 @@ Each project is approached with precision and discipline, balancing creative exp
       error.style.display = "none";
       success.style.display = "none";
 
-      // Frontend validation
       if (!/^[6-9]\d{9}$/.test(mobile)) {
         error.innerText = "Please enter a valid 10-digit mobile number";
         error.style.display = "block";
@@ -1330,30 +1212,22 @@ Each project is approached with precision and discipline, balancing creative exp
       try {
         const res = await fetch("/book-demo", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ mobile })
         });
 
         const data = await res.json();
 
-        if (!res.ok) {
-          throw new Error(data.error || "Something went wrong");
-        }
+        if (!res.ok) throw new Error(data.error || "Something went wrong");
 
         if (data.success) {
           success.innerText = data.message;
           success.style.display = "block";
-
-          setTimeout(() => {
-            closeDemoPopup();
-          }, 2000);
+          setTimeout(() => closeDemoPopup(), 2000);
         } else {
           error.innerText = data.message || "Already registered";
           error.style.display = "block";
         }
-
       } catch (err) {
         error.innerText = err.message || "Server error. Try again.";
         error.style.display = "block";
@@ -1363,15 +1237,11 @@ Each project is approached with precision and discipline, balancing creative exp
       }
     }
   </script>
-  <!-- Swiper Core -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-  <!-- Effect Carousel -->
+  <!-- Swiper Core + Effect Carousel -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="assets/js/effect-carousel.min.js"></script>
 
-  <!-- Your custom init -->
-  <script src="assets/js/portfolio-carousel-init.js"></script>
-  <!-- portfolio area end  -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const swiper = new Swiper(".portfolio-active", {
@@ -1381,100 +1251,26 @@ Each project is approached with precision and discipline, balancing creative exp
         centeredSlides: true,
         slidesPerView: "auto",
         loop: true,
-
         carouselEffect: {
           opacityStep: 0.25,
           scaleStep: 0.2,
           sideSlides: 3,
         },
-
         navigation: {
           nextEl: ".portfolio-button-next",
           prevEl: ".portfolio-button-prev",
         },
-
         pagination: {
           el: ".portfolio-pagination",
           clickable: true,
         },
-
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
         }
       });
     });
-
   </script>
-
-  <script>
-    function openDemoPopup() {
-      document.getElementById("demoPopupOverlay").style.display = "flex";
-    }
-
-    function closeDemoPopup() {
-      document.getElementById("demoPopupOverlay").style.display = "none";
-      document.getElementById("demoError").style.display = "none";
-      document.getElementById("demoMobile").value = "";
-    }
-
-    function submitDemo() {
-      const mobile = document.getElementById("demoMobile").value.trim();
-      const error = document.getElementById("demoError");
-
-      if (!/^[6-9]\d{9}$/.test(mobile)) {
-        error.style.display = "block";
-        return;
-      }
-
-      error.style.display = "none";
-
-      // For now just success behavior
-      alert("Thank you! We will contact you soon.");
-      closeDemoPopup();
-    }
-  </script>
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("Name").value.trim();
-      const email = document.getElementById("Email").value.trim();
-      const phone = document.getElementById("Phone").value.trim();
-      const subject = document.getElementById("Subject").value;
-      const website = document.getElementById("Website").value.trim();
-      const message = document.getElementById("Message").value.trim();
-
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const phoneRegex = /^[6-9]\d{9}$/;
-      const urlRegex = /^(https?:\/\/)?([\w\-]+\.)+[a-z]{2,}(\/.*)?$/i;
-
-      if (!name || !email || !phone || !subject || !message) {
-        alert("Please fill all required fields.");
-        return;
-      }
-
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-      }
-
-      if (!phoneRegex.test(phone)) {
-        alert("Phone number must be 10 digits.");
-        return;
-      }
-
-      if (website && !urlRegex.test(website)) {
-        alert("Please enter a valid website or Instagram URL.");
-        return;
-      }
-
-      // Submit form if all good
-      this.submit();
-    });
-  </script>
-
 
 </body>
-
 </html>

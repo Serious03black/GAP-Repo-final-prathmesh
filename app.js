@@ -82,22 +82,22 @@ app.get("/", (req, res) => res.render("home"));
 app.get("/about", (req, res) => res.render("about"));
 app.get("/services", (req, res) => res.render("services"));
 
-app.get("/service1", (req, res) => {
+app.get("/ethnic-fashion-Shoots", (req, res) => {
     res.render("service1");
 })
-app.get("/service2", (req, res) => {
+app.get("/western-indo-western", (req, res) => {
     res.render("service2");
 })
-app.get("/service3", (req, res) => {
+app.get("/designer-collections", (req, res) => {
     res.render("service3");
 })
-app.get("/service4", (req, res) => {
+app.get("/retail-catalogue", (req, res) => {
     res.render("service4");
 })
-app.get("/service5", (req, res) => {
+app.get("/brand-campaigns-editorials", (req, res) => {
     res.render("service5");
 })
-app.get("/service6", (req, res) => {
+app.get("/post-production", (req, res) => {
     res.render("service6");
 });
 
