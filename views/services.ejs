@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/master-services.css">
 
-   <style>
-/* ==========================================================================
-   Service Section – Landscape on desktop, stacked on mobile
+  <style>/* ==========================================================================
+   Service Section – Simple vertical landscape layout
    ========================================================================== */
 .service-zigzag {
   position: relative;
@@ -42,7 +41,7 @@
   z-index: 1;
 }
 
-/* Card */
+/* Each service card – landscape (side by side) */
 .service-item-zigzag {
   background: rgba(20, 20, 20, 0.92);
   border-radius: 16px;
@@ -51,9 +50,9 @@
   position: relative;
   z-index: 2;
   border: 1px solid rgba(202, 164, 55, 0.25);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: all 0.35s ease;
   backdrop-filter: blur(8px);
-  max-width: 1100px;
+  max-width: 1100px;                  /* wider card for better landscape feel */
   margin-left: auto;
   margin-right: auto;
 }
@@ -64,16 +63,17 @@
   box-shadow: 0 12px 30px rgba(202, 164, 55, 0.18);
 }
 
-/* Desktop layout: image left + content right */
+/* Always landscape: image + text side by side */
 .service-row {
   display: flex;
   align-items: center;
   gap: 40px;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap;                  /* force side-by-side on larger screens */
 }
 
+/* Image on left, text on right – consistent for all */
 .service-image-wrapper {
-  flex: 0 0 45%;
+  flex: 0 0 45%;                      /* fixed width portion for image */
   max-width: 480px;
   border-radius: 12px;
   overflow: hidden;
@@ -85,7 +85,7 @@
 .service-image-wrapper::before {
   content: "";
   display: block;
-  padding-top: 75%;                   /* ≈4:3 landscape on desktop */
+  padding-top: 75%;                   /* landscape friendly ≈ 4:3 or 16:9 feel */
 }
 
 .service-image {
@@ -102,7 +102,7 @@
 .service-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;                  /* cover = fills nicely in landscape */
   object-position: center;
   transition: transform 0.5s ease;
 }
@@ -111,29 +111,86 @@
   transform: scale(1.05);
 }
 
+/* Text/content on right */
 .service-content {
   flex: 1;
 }
 
-/* ───────────────────────────────────────────────
-   MOBILE – images become visible + full width
-   ─────────────────────────────────────────────── */
+/* Inner elements */
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(202, 164, 55, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border: 2px solid #caa437;
+}
+
+.service-icon i {
+  font-size: 28px;
+  color: #caa437;
+}
+
+.service-title {
+  font-size: 26px;
+  margin-bottom: 16px;
+  color: #caa437;
+  font-weight: 600;
+}
+
+.service-features-zigzag {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.service-features-zigzag li {
+  color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 24px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.service-features-zigzag li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: #caa437;
+  font-size: 14px;
+}
+
+.service-cta-btn {
+  background: transparent;
+  color: #caa437;
+  border: 2px solid #caa437;
+  padding: 10px 26px;
+  border-radius: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13.5px;
+}
+
+.service-cta-btn:hover {
+  background: #caa437;
+  color: #000;
+  transform: translateX(4px);
+}
+
+/* Mobile – stack vertically when screen is small */
 @media (max-width: 991px) {
-  .service-row {
+ .service-row {
     flex-direction: column;
-    gap: 24px;
   }
 
-  .service-image-wrapper {
-    flex: 0 0 auto;
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .service-image-wrapper::before {
-    padding-top: 66.67%;              /* better mobile proportion (≈3:2) */
-    /* You can change to 75% or 80% if you prefer wider images on mobile */
-  }
 
   .service-item-zigzag {
     padding: 24px;
@@ -142,13 +199,7 @@
 
   .service-title {
     font-size: 24px;
-  }
-
-  /* Remove side offset on mobile */
-  .service-item-zigzag:nth-child(odd),
-  .service-item-zigzag:nth-child(even) {
-    transform: translateX(0) !important;
-  }
+  } 
 }
 
 @media (max-width: 576px) {
@@ -159,39 +210,50 @@
   .service-title {
     font-size: 22px;
   }
+} 
+/* Zigzag effect for service cards */
+.service-item-zigzag:nth-child(odd) {
+  transform: translateX(-60px);
 }
 
-/* Zigzag offset – only on desktop */
-@media (min-width: 992px) {
-  .service-item-zigzag:nth-child(odd) {
-    transform: translateX(-60px);
-  }
+.service-item-zigzag:nth-child(even) {
+  transform: translateX(60px);
+}
 
+/* Hover ke time smooth feel */
+.service-item-zigzag {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Hover pe thoda upar + zigzag maintain */
+.service-item-zigzag:hover {
+  transform: translateY(-6px);
+}
+
+/* Mobile pe zigzag hata de – sab seedha */
+@media (max-width: 991px) {
+  .service-item-zigzag:nth-child(odd),
   .service-item-zigzag:nth-child(even) {
-    transform: translateX(60px);
+    transform: translateX(0);
   }
 }
-
-/* ==========================================================================
-   Section Header
-   ========================================================================== */
 .section-header {
   background-color: #000;
-  margin-top: 80px;
-  text-align: center;
+  margin-top: 80px;          /* upar se space – adjust kar sakta hai */
+  text-align: center;        /* center align text */
 }
 
 .section-header .container {
-  background-color: #000;
-  max-width: 900px;
+   background-color: #000;
+  max-width: 900px;          /* content ko center aur tight banane ke liye */
   margin: 0 auto;
 }
-</style>
+</style> 
 </head>
 
 <body class="font-heading-beatricetrial-regular-2 dark" style="font-family:'Montserrat', sans-serif !important; background-color: #000 !important;">
   <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
-    <a href="https://wa.me/917300031017"
+    <a target="_blank" href="https://wa.me/917300031017"
        aria-label="WhatsApp Chat"
        style="
          width:60px;
@@ -209,7 +271,7 @@
        ">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a href="tel:+917300031017" aria-label="Call Now" 
+    <a target="_blank" href="tel:+917300031017" aria-label="Call Now" 
        style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
       <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -243,12 +305,12 @@
       <div class="offcanvas-3__menu-wrapper" style="background:#000000;">
         <nav class="nav-menu offcanvas-3__menu">
           <ul>
-            <li><a href="/" style="color:#ffffff;">Home</a></li>
-            <li><a href="/about" style="color:#ffffff;">About</a></li>
-            <li><a href="/services" style="color:#ffffff;">Services</a></li>
-            <li><a href="/ourwork" style="color:#ffffff;">Our Work</a></li>
-            <li><a href="/blogs" style="color:#ffffff;">Blogs</a></li>
-            <li><a href="/contact" style="color:#ffffff;">Contact</a></li>
+            <li><a target="_blank" href="/" style="color:#ffffff;">Home</a></li>
+            <li><a target="_blank" href="/about" style="color:#ffffff;">About</a></li>
+            <li><a target="_blank" href="/services" style="color:#ffffff;">Services</a></li>
+            <li><a target="_blank" href="/ourwork" style="color:#ffffff;">Our Work</a></li>
+            <li><a target="_blank" href="/blogs" style="color:#ffffff;">Blogs</a></li>
+            <li><a target="_blank" href="/contact" style="color:#ffffff;">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -281,7 +343,7 @@
     <div class="container large">
       <div class="header-area__inner">
         <div class="header__logo">
-          <a href="/">
+          <a target="_blank" href="/">
             <img class="show-light mt-1" src="assets/imgs/logo/logo.png" width="70px" alt="Site Logo">
             <img class="show-dark mt-1" src="assets/imgs/logo/logo-light.png" width="70px" alt="Site Logo">
           </a>
@@ -289,18 +351,18 @@
         <div class="header__nav pos-center">
           <nav class="main-menu">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/ourwork">Our Work</a></li>
-              <li><a href="/blogs">Blogs</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a target="_blank" href="/">Home</a></li>
+              <li><a target="_blank" href="/about">About</a></li>
+              <li><a target="_blank" href="/services">Services</a></li>
+              <li><a target="_blank" href="/ourwork">Our Work</a></li>
+              <li><a target="_blank" href="/blogs">Blogs</a></li>
+              <li><a target="_blank" href="/contact">Contact</a></li>
 
             </ul>
           </nav>
         </div>
         <div class="header__button">
-          <a class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span
+          <a target="_blank" class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span
               data-text="Book Free Demo" style="color:rgb(0, 0, 0);">Book Free Demo</span><i class="fa-solid fa-play"></i></a>
         </div>
         <div class="header__navicon d-xl-none">
@@ -345,7 +407,7 @@
                         <li>Embroidery, textile, and craftsmanship detailing</li>
                         <li>Editorial and campaign ready visuals</li>
                       </ul>
-                      <a href="/ethnic-fashion-shoots" class="service-cta-btn">Explore Service →</a>
+                      <a target="_blank" href="/ethnic-fashion-shoots" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
@@ -372,7 +434,7 @@
                         <li>Campaign and lookbook ready imagery</li>
                         <li>Global campaign aesthetics</li>
                       </ul>
-                      <a href="/western-indo-western-shoot" class="service-cta-btn">Explore Service →</a>
+                      <a target="_blank" href="/western-indo-western-shoot" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
@@ -398,7 +460,7 @@
                         <li>Cohesive collection presentation</li>
                         <li>Brand aligned storytelling</li>
                       </ul>
-                      <a href="/designer-collections-shoot" class="service-cta-btn">Explore Service →</a>
+                      <a target="_blank" href="/designer-collections-shoot" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
@@ -426,7 +488,7 @@
                         <li>Color, fabric and fit accuracy</li>
                         <li>Jewelry and bags shoots</li>
                       </ul>
-                      <a href="/retail-catalogue-shoot" class="service-cta-btn">Explore Service →</a>
+                      <a target="_blank" href="/retail-catalogue-shoot" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
@@ -453,7 +515,7 @@
                         <li>Influencer led content</li>
                         <li>Behind the scenes coverage</li>
                       </ul>
-                      <a href="/brand-campaigns-editorials-shoot" class="service-cta-btn">Explore Service →</a>
+                      <a target="_blank" href="/brand-campaigns-editorials-shoot" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
@@ -479,7 +541,7 @@
                         <li>Final asset optimization</li>
                         <li>Platform specific delivery</li>
                       </ul>
-                      <a href="/post-production-shoot" class="service-cta-btn">Explore Service →</a>
+                      <a target="_blank" href="/post-production-shoot" class="service-cta-btn">Explore Service →</a>
                     </div>
                     <div class="service-image-wrapper">
                       <div class="service-image">
@@ -589,16 +651,16 @@
               <div class="copyright-area-inner">
                 <div class="copyright-text">
                   <p class="text">© 2026 – 2027  | Alrights reserved <br>
-                    Golden Apple Production
+                    Golden Apple Productions
                 </div>
                 <ul class="footer-nav-list">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/services">Services</a></li>
-                  <li><a href="/ourwork">Our Work</a></li>
-                  <li><a href="/blogs">Blogs</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                  <li><a href="/terms" >T&C, Privacy Policy</a></li>
+                  <li><a target="_blank" href="/">Home</a></li>
+                  <li><a target="_blank" href="/about">About</a></li>
+                  <li><a target="_blank" href="/services">Services</a></li>
+                  <li><a target="_blank" href="/ourwork">Our Work</a></li>
+                  <li><a target="_blank" href="/blogs">Blogs</a></li>
+                  <li><a target="_blank" href="/contact">Contact</a></li>
+                  <li><a target="_blank" href="/terms" >T&C, Privacy Policy</a></li>
                 </ul>
               </div>
             </div>
@@ -612,7 +674,7 @@
                 Let's collaborate to create stunning fashion visuals that tell your brand's story. 
                 Our team of experts is ready to bring your vision to life with premium production quality.
               </p>
-              <a href="/contact" onclick="openDemoPopup()" class="main-cta-button">
+              <a target="_blank" href="/contact" onclick="openDemoPopup()" class="main-cta-button">
                 Start Your Project Today
               </a>
             </div>

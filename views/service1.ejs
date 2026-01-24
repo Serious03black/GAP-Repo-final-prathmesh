@@ -192,7 +192,30 @@
           <!-- service details area start  -->
           <section class="service-details-area">
             <div class="container">
-
+<style>
+     .hero-area {
+              position: relative;
+              width: 100%;
+              height: 100vh;
+              overflow: hidden;
+              background: #000;
+              margin: 0;
+              padding: 0;
+            }
+            .hero-video-wrapper {
+              position: absolute;
+              inset: 0;
+              z-index: 0;
+            }
+            .hero-video-wrapper video {
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              pointer-events: none;
+            }
+</style>
               <!-- Hero Video -->
               <div class="thumb-main">
                 <div class="thumb-main">
@@ -510,7 +533,7 @@
               <div class="copyright-area-inner">
                 <div class="copyright-text">
                   <p class="text">© 2026 – 2027  | Alrights reserved <br>
-                    Golden Apple Production
+                    Golden Apple Productions
                 </div>
                 <ul class="footer-nav-list">
                   <li><a href="/">Home</a></li>
