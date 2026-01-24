@@ -19,331 +19,177 @@
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/master-services.css">
 
-  <style>
-    .golden-gradient {
-      background: linear-gradient(135deg, #caa437 0%, #ffd700 50%, #caa437 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+   <style>
+/* ==========================================================================
+   Service Section – Landscape on desktop, stacked on mobile
+   ========================================================================== */
+.service-zigzag {
+  position: relative;
+  padding: 80px 0;
+  background: #000;
+  overflow: hidden;
+}
 
-    .golden-border {
-      border: 2px solid #caa437;
-    }
+.service-zigzag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(202, 164, 55, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 80% 20%, rgba(202, 164, 55, 0.04) 0%, transparent 60%);
+  z-index: 1;
+}
 
-    .golden-bg {
-      background: #caa437;
-      color: #000 !important;
-    }
+/* Card */
+.service-item-zigzag {
+  background: rgba(20, 20, 20, 0.92);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(202, 164, 55, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  backdrop-filter: blur(8px);
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .golden-bg:hover {
-      background: #ffd700;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(202, 164, 55, 0.3);
-    }
+.service-item-zigzag:hover {
+  transform: translateY(-6px);
+  border-color: #caa437;
+  box-shadow: 0 12px 30px rgba(202, 164, 55, 0.18);
+}
 
-    .service-zigzag {
-      position: relative;
-      padding: 100px 0;
-      background: #000;
-      overflow: hidden;
-    }
+/* Desktop layout: image left + content right */
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
 
-    .service-zigzag::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 20% 50%, rgba(202, 164, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(202, 164, 55, 0.05) 0%, transparent 50%);
-      z-index: 1;
-    }
+.service-image-wrapper {
+  flex: 0 0 45%;
+  max-width: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
 
-    .service-item-zigzag {
-      background: rgba(20, 20, 20, 0.9);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 100px;
-      position: relative;
-      z-index: 2;
-      border: 1px solid rgba(202, 164, 55, 0.2);
-      transition: all 0.4s ease;
-      backdrop-filter: blur(10px);
-    }
+.service-image-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 75%;                   /* ≈4:3 landscape on desktop */
+}
 
-    .service-item-zigzag:hover {
-      transform: translateY(-10px);
-      border-color: #caa437;
-      box-shadow: 0 20px 40px rgba(202, 164, 55, 0.15);
-    }
+.service-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #111 0%, #000 100%);
+}
 
-    .service-item-zigzag:nth-child(even) {
-      margin-left: 50px;
-    }
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
 
-    .service-item-zigzag:nth-child(odd) {
-      margin-right: 50px;
-    }
+.service-item-zigzag:hover .service-image img {
+  transform: scale(1.05);
+}
 
-    .service-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-    }
+.service-content {
+  flex: 1;
+}
 
-    .service-content {
-      flex: 1;
-      min-width: 300px;
-    }
+/* ───────────────────────────────────────────────
+   MOBILE – images become visible + full width
+   ─────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .service-row {
+    flex-direction: column;
+    gap: 24px;
+  }
 
-    .service-image-wrapper {
-      flex: 1;
-      min-width: 300px;
-      border-radius: 15px;
-      overflow: hidden;
-      position: relative;
-    }
+  .service-image-wrapper {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
 
-    .service-image-wrapper::before {
-      content: "";
-      display: block;
-      padding-top: 75%;          /* ≈4:3 ratio – change to 56.25% for 16:9 if you prefer wider */
-    }
+  .service-image-wrapper::before {
+    padding-top: 66.67%;              /* better mobile proportion (≈3:2) */
+    /* You can change to 75% or 80% if you prefer wider images on mobile */
+  }
 
-    .service-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+  .service-item-zigzag {
+    padding: 24px;
+    margin-bottom: 50px;
+  }
 
-    .service-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.5s ease;
-    }
+  .service-title {
+    font-size: 24px;
+  }
 
-    .service-item-zigzag:hover .service-image img {
-      transform: scale(1.05);
-    }
-
-    .service-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, rgba(202, 164, 55, 0.1), transparent);
-      pointer-events: none;
-    }
-
-    .service-icon {
-      width: 70px;
-      height: 70px;
-      background: rgba(202, 164, 55, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 25px;
-      border: 2px solid #caa437;
-    }
-
-    .service-icon i {
-      font-size: 32px;
-      color: #caa437;
-    }
-
-    .service-title {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #caa437;
-      font-weight: 600;
-    }
-
-    .service-features-zigzag {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 30px 0;
-    }
-
-    .service-features-zigzag li {
-      color: #fff;
-      margin-bottom: 12px;
-      position: relative;
-      padding-left: 25px;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .service-features-zigzag li::before {
-      content: '✦';
-      position: absolute;
-      left: 0;
-      color: #caa437;
-      font-size: 14px;
-    }
-
-    .service-cta-btn {
-      background: transparent;
-      color: #caa437;
-      border: 2px solid #caa437;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 14px;
-    }
-
-    .service-cta-btn:hover {
-      background: #caa437;
-      color: #000;
-      transform: translateX(5px);
-    }
-
-    .main-cta-section {
-      background: linear-gradient(135deg, #000 0%, #111 100%);
-      padding: 80px 0;
-      text-align: center;
-      position: relative;
-      margin-top: 50px;
-    }
-
-    .main-cta-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0,50 Q250,0 500,50 T1000,50" fill="none" stroke="%23caa437" stroke-width="0.5" opacity="0.1"/></svg>');
-      background-size: cover;
-    }
-
-    .main-cta-title {
-      font-size: 42px;
-      color: #fff;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .main-cta-subtitle {
-      font-size: 18px;
-      color: #aaa;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-
-    .main-cta-button {
-      background: linear-gradient(135deg, #caa437 0%, #ffd700 100%);
-      color: #000;
-      padding: 18px 45px;
-      border-radius: 35px;
-      font-size: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(202, 164, 55, 0.3);
-    }
-
-    .main-cta-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(202, 164, 55, 0.4);
-      color: #000;
-    }
-
-    /* Mobile fixes */
-    @media (max-width: 991px) {
-      .service-item-zigzag {
-        padding: 30px;
-        margin-bottom: 80px;
-      }
-
-      .service-item-zigzag:nth-child(even),
-      .service-item-zigzag:nth-child(odd) {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-      }
-
-      .service-row {
-        flex-direction: column;
-        gap: 30px;
-      }
-
-      .service-title {
-        font-size: 26px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .service-item-zigzag {
-        padding: 25px 20px;
-      }
-
-      .service-title {
-        font-size: 24px;
-      }
-    }
-    .section-header {
-      text-align: center;
-      padding: 110px 0 10px;
-      margin-bottom: 0;
-      /* padding-bottom: 0; */
-      background: #000;
-    }
-
-    .section-title-main {
-      font-size: 48px;
-      color: #caa437;
-      margin-bottom: 20px;
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title-main::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #caa437, transparent);
-    }
-@media (max-width: 1199.98px) {
-  .header__nav.pos-center {
-    display: none !important;
+  /* Remove side offset on mobile */
+  .service-item-zigzag:nth-child(odd),
+  .service-item-zigzag:nth-child(even) {
+    transform: translateX(0) !important;
   }
 }
-    .section-subtitle {
-      font-size: 18px;
-      color: #fff;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-    }
-  </style>
+
+@media (max-width: 576px) {
+  .service-item-zigzag {
+    padding: 20px;
+  }
+
+  .service-title {
+    font-size: 22px;
+  }
+}
+
+/* Zigzag offset – only on desktop */
+@media (min-width: 992px) {
+  .service-item-zigzag:nth-child(odd) {
+    transform: translateX(-60px);
+  }
+
+  .service-item-zigzag:nth-child(even) {
+    transform: translateX(60px);
+  }
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+.section-header {
+  background-color: #000;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.section-header .container {
+  background-color: #000;
+  max-width: 900px;
+  margin: 0 auto;
+}
+</style>
 </head>
 
-<body class="font-heading-beatricetrial-regular-2 dark" style="font-family:'Montserrat', sans-serif !important">
-
+<body class="font-heading-beatricetrial-regular-2 dark" style="font-family:'Montserrat', sans-serif !important; background-color: #000 !important;">
   <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
     <a href="https://wa.me/917300031017"
        aria-label="WhatsApp Chat"
@@ -363,7 +209,6 @@
        ">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-
     <a href="tel:+917300031017" aria-label="Call Now" 
        style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
       <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
@@ -371,7 +216,6 @@
       </svg>
     </a>
   </div>
-
   <!-- offcanvas start  -->
   <div class="offcanvas-3__area" style="background:#000000; color:#ffffff;">
     <div class="offcanvas-3__inner" style="background:#000000; color:#ffffff;">
@@ -384,23 +228,18 @@
             <span style="background:#ffffff;"></span>
           </button>
         </div>
-
         <div>
           <div class="offcanvas-3__meta mb-145 d-none d-md-block" style="color:#ffffff;">
             <ul>
-
             </ul>
           </div>
-
           <div class="offcanvas-3__social d-none d-md-block" style="color:#ffffff;">
             <p class="title" style="color:#ffffff;"></p>
             <div class="offcanvas-3__social-links">
-
             </div>
           </div>
         </div>
       </div>
-
       <div class="offcanvas-3__menu-wrapper" style="background:#000000;">
         <nav class="nav-menu offcanvas-3__menu">
           <ul>
@@ -438,7 +277,7 @@
   <!-- search modal end -->
 
   <!-- Header area start -->
-  <header class="header-area">
+  <header class="header-area" style="background-color: black;">
     <div class="container large">
       <div class="header-area__inner">
         <div class="header__logo">
@@ -481,7 +320,7 @@
 
           <section class="section-header">
             <div class="container">
-              <h1 class="section-title-main golden-gradient">Our exclusive services</h1>
+              <h1 class="section-title-main golden-gradient " style="color: #caa437;">Our exclusive services</h1>
               <p class="section-subtitle">
                 We collaborate with designers, fashion labels, and creative brands to deliver structured, premium fashion production services with clarity, consistency, and editorial excellence.
               </p>
@@ -749,7 +588,7 @@
             <div class="container">
               <div class="copyright-area-inner">
                 <div class="copyright-text">
-                  <p class="text">© 2022 - 2025 | Alrights reserved <br>
+                  <p class="text">© 2026 – 2027  | Alrights reserved <br>
                     Golden Apple Production
                 </div>
                 <ul class="footer-nav-list">
@@ -759,7 +598,7 @@
                   <li><a href="/ourwork">Our Work</a></li>
                   <li><a href="/blogs">Blogs</a></li>
                   <li><a href="/contact">Contact</a></li>
-                  <li><a href="/terms" >terms</a></li>
+                  <li><a href="/terms" >T&C, Privacy Policy</a></li>
                 </ul>
               </div>
             </div>

@@ -200,29 +200,57 @@ body.dark h3 {
   <div class="container">
 
     <!-- Hero Video -->
-    <div class="thumb-main">
-      <div class="thumb-main">
-        <video
-          id="heroVideo"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-        >
-          <source src="https://res.cloudinary.com/dpztzthmz/video/upload/v1769099187/HeroVideo_d0f959.mp4">
-        </video>
+    <div class="hero-video-container">
+  <video id="heroVideo" autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dpztzthmz/video/upload/v1769099187/HeroVideo_d0f959.mp4" type="video/mp4">
+  </video>
+</div>
 
-        <script>
-          const v = document.getElementById("heroVideo");
-          document.addEventListener("click", () => {
-            v.muted = false;
-            v.play();
-          }, { once: true });
-        </script>
-      </div>
-    </div>
+<script>
+  // Optional: unmute on first user interaction (good practice)
+  const v = document.getElementById("heroVideo");
+  document.addEventListener("click", () => {
+    v.muted = false;
+    v.play();
+  }, { once: true });
+</script>
 
+<style>
+  /* Reset default margins */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .hero-video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;           /* ← full viewport height */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  #heroVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;       /* ← this is the magic line */
+  }
+
+  /* Optional: make it look good on mobile too */
+  @media (max-width: 768px) {
+    #heroVideo {
+      object-fit: cover;
+    }
+  }
+</style>
     <!-- Title + Features -->
     <div class="section-title-box">
       <div class="section-title-wrapper">
@@ -517,7 +545,7 @@ body.dark h3 {
                         <div class="container">
                             <div class="copyright-area-inner">
                                 <div class="copyright-text">
-                                    <p class="text">© 2022 - 2025 | Alrights reserved <br>
+                                    <p class="text">© 2026 – 2027  | Alrights reserved <br>
                                         Golden Apple Production
                                 </div>
                                 <ul class="footer-nav-list">
@@ -527,7 +555,7 @@ body.dark h3 {
                                     <li><a href="/ourwork">Our Work</a></li>
                                     <li><a href="/blogs">Blogs</a></li>
                                     <li><a href="/contact">Contact</a></li>
-                                    <li><a href="/terms" >terms</a></li>
+                                    <li><a href="/terms" >T&C, Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
