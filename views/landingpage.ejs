@@ -242,74 +242,91 @@
         <!-- Right side - Updated Multi-step Form -->
         <div class="contact-wrap has_fade_anim" data-delay="0.30" style="flex: 1; min-width: 350px; max-width: 550px;">
 
-          <div class="form-container">
+       <div class="form-container">
 
-            <h2 style="color:#caa437; text-align:center; margin-bottom:30px;">Get in Touch</h2>
+    <h2>Get in Touch</h2>
 
-            <div class="steps-indicator" style="text-align:center; margin-bottom:30px;">
-              <div class="step-dot active" id="dot1"></div>
-              <div class="step-dot" id="dot2"></div>
-            </div>
+    <div class="steps-indicator">
+      <div class="step-dot active" id="dot1"></div>
+      <div class="step-dot" id="dot2"></div>
+    </div>
 
-            <form class="glass-form" action="/contact" method="POST" id="contactForm">
+  <form class="glass-form" action="/contact" method="POST" id="contactForm" novalidate>
 
-              <!-- Step 1 -->
-              <div class="step step-1" id="step1">
-                <div class="glass-formfield">
-                  <input type="text" name="name" placeholder="Name*" required>
-                </div>
-                <div class="glass-formfield">
-                  <input type="email" name="email" placeholder="Email*" required>
-                </div>
-                <div class="glass-formfield">
-                  <input type="tel" name="phone" placeholder="Phone (10 digits)*" maxlength="10" pattern="[0-9]{10}" required>
-                </div>
-                <div class="glass-formfield">
-                  <div class="custom-select-wrapper">
-                    <select name="subject" required>
-                      <option value="" disabled selected>Select Service *</option>
-                      <option>Fashion Shoot</option>
-                      <option>Brand Campaign</option>
-                      <option>Product Photography</option>
-                      <option>Video Production</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
+    <!-- Progress Dots -->
+    <div class="step-dots">
+      <span id="dot1" class="dot active"></span>
+      <span id="dot2" class="dot"></span>
+    </div>
 
-                <div class="btn-container">
-                  <button type="button" class="btn-next" onclick="nextStep()">Next →</button>
-                </div>
-              </div>
+    <!-- Step 1 -->
+          <div class="step step-1" id="step1">
+      <div class="glass-formfield">
+        <input type="text" name="name" placeholder="Name*" required minlength="2">
+        <div class="error-message">Name must be at least 2 characters</div>
+      </div>
 
-              <!-- Step 2 -->
-              <div class="step step-2 hidden" id="step2">
-                <div class="glass-formfield">
-                  <input type="text" name="budget" placeholder="Your Budget">
-                </div>
-                <div class="glass-formfield">
-                  <input type="text" name="membership" placeholder="GAP Membership (optional)">
-                </div>
-                <div class="glass-formfield">
-                  <input type="url" name="website" placeholder="Website / Instagram Link">
-                </div>
-                <div class="glass-formfield">
-                  <input type="text" name="location" placeholder="Your Location">
-                </div>
-                <div class="glass-formfield">
-                  <textarea name="message" placeholder="Your Requirement*" required></textarea>
-                </div>
+      <div class="glass-formfield">
+        <input type="email" name="email" placeholder="Email*" required>
+        <div class="error-message">Please enter a valid email address</div>
+      </div>
 
-                <div class="btn-container">
-                  <button type="button" class="btn-back" onclick="prevStep()">← Back</button>
-                  <button type="submit" class="btn-submit">Submit</button>
-                </div>
-              </div>
+      <div class="glass-formfield">
+        <input type="tel" name="phone" placeholder="Phone (10 digits)*" maxlength="10" required>
+        <div class="error-message">Phone must be exactly 10 digits starting with 6–9</div>
+      </div>
 
-            </form>
+      <div class="glass-formfield">
+          <div class="custom-select-wrapper">
+                              <select name="subject" required>
+                                <option value="" disabled selected>Select Service *</option>
+                                <option>Fashion Shoot</option>
+                                <option>Brand Campaign</option>
+                                <option>Product Photography</option>
+                                <option>Video Production</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+        <div class="error-message">Please select a service</div>
+      </div>
 
-          </div>
+      <div class="btn-container">
+        <button type="button" class="btn-next" id="nextBtn">Next →</button>
+      </div>
+    </div>
 
+    <!-- Step 2 -->
+    <div class="step step-2 hidden" id="step2">
+      <div class="glass-formfield">
+        <input type="text" name="budget" placeholder="Your Budget (optional)">
+      </div>
+
+      <div class="glass-formfield">
+        <input type="text" name="membership" placeholder="GAP Membership (optional)">
+      </div>
+
+      <div class="glass-formfield">
+        <input type="url" name="website" placeholder="Website / Instagram Link (optional)">
+        <div class="error-message">Please enter a valid URL</div>
+      </div>
+
+      <div class="glass-formfield">
+        <input type="text" name="location" placeholder="Your Location (optional)">
+      </div>
+
+      <div class="glass-formfield">
+        <textarea name="message" placeholder="Your Requirement*" required rows="5"></textarea>
+        <div class="error-message">Please describe your requirement (minimum 10 characters)</div>
+      </div>
+
+      <div class="btn-container">
+        <button type="button" class="btn-back" onclick="prevStep()">← Back</button>
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+    </div>
+
+  </form>
+  </div>
         </div>
 
       </div>
@@ -320,6 +337,24 @@
 
 <!-- ==================== Required CSS for this form only ==================== -->
 <style>
+  .glass-formfield .error-message {
+    display: none;
+    color: #ff5555;
+    font-size: 0.82rem;
+    margin-top: 6px;
+}
+
+.glass-formfield.touched.invalid .error-message {
+    display: block;
+}
+
+.glass-formfield.touched.invalid input,
+.glass-formfield.touched.invalid select,
+.glass-formfield.touched.invalid textarea {
+    border-color: #ff5555 !important;
+    background: rgba(255, 85, 85, 0.08);
+    box-shadow: 0 0 0 3px rgba(255, 85, 85, 0.18);
+}
   .form-container {
     width: 100%;
     max-width: 550px;
@@ -449,48 +484,213 @@
 
 <!-- ==================== Required JS for this form only ==================== -->
 <script>
-  function nextStep() {
-    document.getElementById("step1").classList.add("hidden");
-    document.getElementById("step2").classList.remove("hidden");
-    document.getElementById("dot1").classList.remove("active");
-    document.getElementById("dot2").classList.add("active");
-  }
+    let idleTimer = null;
+    const IDLE_TIMEOUT = 600000; // 10 minutes
 
-  function prevStep() {
-    document.getElementById("step2").classList.add("hidden");
-    document.getElementById("step1").classList.remove("hidden");
-    document.getElementById("dot2").classList.remove("active");
-    document.getElementById("dot1").classList.add("active");
-  }
+    // ─── Validate single field ───────────────────────────────────────
+    function validateField(field) {
+        if (!field) return false;
 
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+        const wrapper = field.closest('.glass-formfield');
+        if (!wrapper) return false;
 
-    const name    = this.querySelector('[name="name"]').value.trim();
-    const email   = this.querySelector('[name="email"]').value.trim();
-    const phone   = this.querySelector('[name="phone"]').value.trim();
-    const subject = this.querySelector('[name="subject"]').value;
-    const message = this.querySelector('[name="message"]').value.trim();
+        let isValid = field.checkValidity(); // uses HTML5 (required, type=email, pattern, etc.)
 
-    if (!name || !email || !phone || !subject || !message) {
-      alert("Please fill all required fields.");
-      return;
+        // Custom / stronger validation for PHONE
+        if (field.name === 'phone' && field.value.trim()) {
+            const phoneRegex = /^[6-9]\d{9}$/;
+            isValid = phoneRegex.test(field.value);
+            field.setCustomValidity(isValid ? '' : 'Invalid phone');
+        }
+
+        // Stronger EMAIL check (optional - HTML5 type="email" is already good, but we can tighten)
+        if (field.name === 'email' && field.value.trim()) {
+            // Very common strict-ish regex (catches most real-world mistakes)
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            isValid = emailRegex.test(field.value);
+            field.setCustomValidity(isValid ? '' : 'Invalid email');
+        }
+
+        // Name min length
+        if (field.name === 'name' && field.value.trim()) {
+            isValid = field.value.trim().length >= 2;
+        }
+
+        // Message min length
+        if (field.name === 'message' && field.value.trim()) {
+            isValid = field.value.trim().length >= 10;
+        }
+
+        // Apply invalid class (error visibility depends on .touched in CSS)
+        wrapper.classList.toggle('invalid', !isValid);
+
+        return isValid;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
+    // ─── Mark field as touched & re-validate ─────────────────────────
+    function markTouchedAndValidate(field) {
+        if (!field) return;
+
+        const wrapper = field.closest('.glass-formfield');
+        if (wrapper) {
+            wrapper.classList.add('touched');
+            validateField(field);
+        }
     }
 
-    if (!/^[6-9]\d{9}$/.test(phone)) {
-      alert("Phone number must be 10 digits starting with 6-9.");
-      return;
+    // ─── Check if Step 1 is valid (for Next button) ──────────────────
+    function canGoToNextStep() {
+        const requiredFields = document.querySelectorAll('#step1 [required]');
+        return Array.from(requiredFields).every(field => {
+            const wrapper = field.closest('.glass-formfield');
+            return validateField(field) && wrapper?.classList.contains('touched');
+        });
     }
 
-    // If everything is okay → submit
-    this.submit();
-  });
-</script>
+    // ─── Enable/disable Next button ──────────────────────────────────
+    function updateNextButtonState() {
+        const nextBtn = document.getElementById('nextBtn');
+        if (!nextBtn) return;
+
+        if (canGoToNextStep()) {
+            nextBtn.classList.add('enabled');
+        } else {
+            nextBtn.classList.remove('enabled');
+        }
+    }
+
+    // ─── Live check while typing (updates validity, but no error shown yet) ──
+    function liveValidate(e) {
+        validateField(e.target);
+        if (e.target.closest('#step1')) {
+            updateNextButtonState();
+        }
+    }
+
+    // ─── When user leaves field via blur ─────────────────────────────
+    function onBlurHandler(e) {
+        markTouchedAndValidate(e.target);
+        if (e.target.closest('#step1')) {
+            updateNextButtonState();
+        }
+    }
+
+    // ─── When focusing NEW field → validate/mark PREVIOUS field ─────
+    let lastFocused = null;
+
+    document.addEventListener('focusin', (e) => {
+        const newField = e.target;
+
+        if (lastFocused && lastFocused !== newField) {
+            if (['INPUT', 'SELECT', 'TEXTAREA'].includes(lastFocused.tagName)) {
+                markTouchedAndValidate(lastFocused);
+                if (lastFocused.closest('#step1')) {
+                    updateNextButtonState();
+                }
+            }
+        }
+
+        lastFocused = newField;
+    });
+
+    // Attach listeners to all relevant fields
+    document.querySelectorAll('input, select, textarea').forEach(field => {
+        field.addEventListener('input', liveValidate);
+        field.addEventListener('blur', onBlurHandler);
+
+        if (field.tagName === 'SELECT') {
+            field.addEventListener('change', () => {
+                markTouchedAndValidate(field);
+                updateNextButtonState();
+            });
+        }
+    });
+
+    // Next button click
+    document.getElementById('nextBtn')?.addEventListener('click', () => {
+        // Force touch + validate all step 1 fields
+        document.querySelectorAll('#step1 input, #step1 select').forEach(f => {
+            markTouchedAndValidate(f);
+        });
+
+        if (canGoToNextStep()) {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('dot1')?.classList.remove('active');
+            document.getElementById('dot2')?.classList.add('active');
+            startIdleTimer();
+            setupIdleResetListeners();
+        }
+    });
+
+    function prevStep() {
+        document.getElementById('step2').classList.add('hidden');
+        document.getElementById('step1').classList.remove('hidden');
+        document.getElementById('dot2')?.classList.remove('active');
+        document.getElementById('dot1')?.classList.add('active');
+        clearTimeout(idleTimer);
+        removeIdleResetListeners();
+    }
+
+    // Idle timer ──────────────────────────────────────────────────────
+    function startIdleTimer() {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(autoSubmit, IDLE_TIMEOUT);
+    }
+
+    function autoSubmit() {
+        const messageInput = document.querySelector('[name="message"]');
+        if (messageInput && !messageInput.value.trim()) {
+            messageInput.value = "Partial submission: User became idle after filling basic information.";
+        }
+        document.getElementById('contactForm')?.submit();
+    }
+
+    function setupIdleResetListeners() {
+        const step2Fields = document.querySelectorAll('#step2 input, #step2 textarea');
+        step2Fields.forEach(field => {
+            field.addEventListener('input', startIdleTimer);
+            field.addEventListener('change', startIdleTimer);
+        });
+        document.addEventListener('keydown', startIdleTimer);
+        document.addEventListener('mousemove', startIdleTimer);
+    }
+
+    function removeIdleResetListeners() {
+        const step2Fields = document.querySelectorAll('#step2 input, #step2 textarea');
+        step2Fields.forEach(field => {
+            field.removeEventListener('input', startIdleTimer);
+            field.removeEventListener('change', startIdleTimer);
+        });
+        document.removeEventListener('keydown', startIdleTimer);
+        document.removeEventListener('mousemove', startIdleTimer);
+    }
+
+    // Final submit protection
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        clearTimeout(idleTimer);
+
+        // Force validation on everything
+        document.querySelectorAll('input[required], select[required], textarea[required]').forEach(f => {
+            markTouchedAndValidate(f);
+        });
+
+        const isStep1Valid = canGoToNextStep();
+        const messageField = document.querySelector('[name="message"]');
+        const messageValid = messageField ? validateField(messageField) : true;
+
+        if (!isStep1Valid || !messageValid) {
+            alert('Please fix the highlighted fields before submitting.');
+            return;
+        }
+
+        this.submit();
+    });
+
+    // Initial state
+    updateNextButtonState();
+</script> 
 
 <!-- ==================== END – Sirf yeh section paste kar dena ==================== -->
 
@@ -889,8 +1089,8 @@
               <li><a target="_blank" href="/about">about</a></li>
               <li><a target="_blank" href="/services">services</a></li>
               <li><a target="_blank" href="/contact">Contact</a></li>
-              <li><a target="_blank" href="/terms">terms</a></li>
-            </ul>
+<li><a target="_blank" href="/terms">Terms and Condition</a></li>
+                <li><a target="_blank" href="/PrivacyPoicy">Privacy Policy</a></li>              </ul>
           </div>
         </div>
       </div>

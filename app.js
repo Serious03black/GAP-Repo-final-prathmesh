@@ -104,6 +104,9 @@ app.get("/post-production-shoot", (req, res) => {
 app.get("/terms", (req, res) => {
     res.render("terms");
 });
+app.get("/PrivacyPolicy", (req, res) => {
+    res.render("PP");
+});
 
 
 app.get("/landingpage", (req, res)=>{
