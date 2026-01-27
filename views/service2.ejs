@@ -59,7 +59,7 @@ body.dark h3 {
       </a>
 
       <!-- Call Now Button - Replace +911234567890 with your number -->
-      <a target="_blank" href="tel:++91 73031 99114" aria-label="Call Now"
+      <a target="_blank" href="tel:++91 7300031017" aria-label="Call Now"
         style="width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
         <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
           <path
@@ -195,44 +195,54 @@ body.dark h3 {
 
                 <main>
 
-                   <!-- service details area start  -->
+                  <!-- service details area start  -->
 <section class="service-details-area">
+
+  <!-- ===== HERO VIDEO (FULL WIDTH) ===== -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-fullwidth {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-fullwidth video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* same landscape feel */
+      pointer-events: none;
+    }
+  </style>
+
+  <div class="hero-fullwidth">
+    <video
+      id="heroVideo"
+      autoplay
+      muted
+      loop
+      playsinline
+      controls
+    >
+      <source src="https://res.cloudinary.com/dpztzthmz/video/upload/v1769099187/HeroVideo_d0f959.mp4">
+    </video>
+  </div>
+
+  <script>
+    const v = document.getElementById("heroVideo");
+    document.addEventListener("click", () => {
+      v.muted = false;
+      v.play();
+    }, { once: true });
+  </script>
+
+  <!-- ===== REST CONTENT (UNCHANGED) ===== -->
   <div class="container">
-
-    <!-- Hero Video -->
-    <div class="thumb-main">
-      <div class="thumb-main">
-        <video
-          id="heroVideo"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-        >
-          <source src="https://res.cloudinary.com/dpztzthmz/video/upload/v1769099187/HeroVideo_d0f959.mp4">
-        </video>
-<style>.thumb-main {
-  width: 100%;
-  height: 100vh;           /* full screen landscape */
-  overflow: hidden;
-}
-
-#heroVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;      /* 🔥 landscape feel */
-}
-</style>
-        <script>
-          const v = document.getElementById("heroVideo");
-          document.addEventListener("click", () => {
-            v.muted = false;
-            v.play();
-          }, { once: true });
-        </script>
-      </div>
-    </div>
 
     <!-- Title + Features -->
     <div class="section-title-box">
@@ -246,33 +256,29 @@ body.dark h3 {
       </div>
 
       <div class="feature-list has_fade_anim" data-on-scroll="0" data-delay="0.45">
-        <ul>
-          <li>Contemporary fashion shoots</li>
-          <li>Fusion silhouettes & modern styling</li>
-          <li>Clean, structured compositions</li>
-        </ul>
-        <ul>
-          <li>Global campaign aesthetics</li>
-          <li>Modern editorial narratives</li>
-          <li>Campaign & lookbook ready imagery</li>
-        </ul>
-      </div>
+  <ul>
+    <li>Contemporary fashion shoots</li>
+    <li>Fusion silhouettes and modern styling</li>
+    <li>Clean and structured compositions</li>
+  </ul>
+  <ul>
+    <li>Global campaign aesthetics</li>
+    <li>Campaign and lookbook ready imagery</li>
+  </ul>
+</div>
+
     </div>
 
     <!-- Description -->
     <div class="text-wrapper has_fade_anim">
       <p class="text">
-        Our western and indo-western shoots are crafted for modern labels and fusion collections
-        seeking globally relevant visuals. We focus on clean styling, structured compositions,
-        and refined narratives that align with evolving fashion sensibilities and international
-        brand standards.
+      Our western and indo-western shoots are crafted for modern labels and fusion collections seeking globally relevant visuals. We focus on clean styling, structured compositions, and refined narratives aligned with evolving fashion sensibilities.
+
       </p>
 
       <p class="text">
-        From contemporary western silhouettes to fusion designs blending tradition and modernity,
-        our visuals remain polished, expressive, and brand aligned. Each shoot is designed to
-        deliver consistent, high-impact imagery suitable for campaigns, lookbooks, digital
-        platforms, and brand communication.
+        From contemporary western silhouettes to fusion designs blending tradition and modernity, our visuals remain polished, expressive, and brand aligned.
+
       </p>
     </div>
 
@@ -285,152 +291,102 @@ body.dark h3 {
         <div class="working-steps">
 
           <div class="working-step">
-            <h2 class="title">
-              Creative Direction <br>
-              & Styling
-            </h2>
-            <!-- <p class="text">
-              Defining contemporary visual language, styling direction, and mood aligned with
-              modern and fusion fashion aesthetics.
-            </p> -->
+            <h2 class="title">Creative Direction <br>& Styling</h2>
           </div>
 
           <div class="working-step">
-            <h2 class="title">
-              Concept Development <br>
-              & Planning
-            </h2>
-            <!-- <p class="text">
-              Structuring concepts, compositions, locations, and shoot flow to ensure a clean,
-              cohesive, and globally relevant visual outcome.
-            </p> -->
+            <h2 class="title">Concept Development <br>& Planning</h2>
           </div>
 
           <div class="working-step">
-            <h2 class="title">
-              Shoot Execution <br>
-              & Production
-            </h2>
-            <!-- <p class="text">
-              Professional shoot execution with precise lighting, framing, and direction to
-              highlight silhouettes, textures, and modern detailing.
-            </p> -->
+            <h2 class="title">Shoot Execution <br>& Production</h2>
           </div>
 
           <div class="working-step">
-            <h2 class="title">
-              Post-Production <br>
-              & Final Delivery
-            </h2>
-            <!-- <p class="text">
-              Advanced retouching, color grading, and final optimization for campaign, lookbook,
-              e-commerce, and digital platform usage.
-            </p> -->
+            <h2 class="title">Post-Production <br>& Final Delivery</h2>
           </div>
 
         </div>
       </div>
     </div>
   </div>
-<style>
 
-</style>
-   <!-- Gallery -->
-<div class="image-scroller-wrapper">
-  <div class="image-scroller-track">
-    <!-- Your 8–10 images (you can add more) -->
-    <img src="assets/imgs/Pictures/Indo western.jpg" alt="Ethnic Fashion 1" loading="lazy">
-    <img src="assets/imgs/Pictures/Indo western(1).jpg" alt="Ethnic Fashion 2" loading="lazy">
-    <img src="assets/imgs/Pictures/Indo western(2).jpg" alt="Ethnic Fashion 3" loading="lazy">
-    <!-- <img src="assets/imgs/Pictures/Indo western(3).jpg" alt="Ethnic Fashion 4" loading="lazy"> -->
-   
-    <img src="assets/imgs/Pictures/Western & Indo western .jpg" alt="Ethnic Fashion 1" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western(1).jpg" alt="Ethnic Fashion 2" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western(2).jpg" alt="Ethnic Fashion 3" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western(3).jpg" alt="Ethnic Fashion 4" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western(4).jpg" alt="Ethnic Fashion 4" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western(5).jpg" alt="Ethnic Fashion 4" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western(6).jpg" alt="Ethnic Fashion 4" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western(7).jpg" alt="Ethnic Fashion 4" loading="lazy">
-   
+  <!-- Gallery -->
+  <div class="image-scroller-wrapper">
+    <div class="image-scroller-track">
 
-  <img src="assets/imgs/Pictures/Western & Indo western .jpg" alt="Ethnic Fashion 1" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western (1).jpg" alt="Ethnic Fashion 2" loading="lazy">
-    <img src="assets/imgs/Pictures/Western & Indo western (2).jpg" alt="Ethnic Fashion 3" loading="lazy">
-    <!-- You can stop duplicating after 10–12 total if you want shorter code -->
+      <img src="assets/imgs/Pictures/Indo western.jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Indo western(1).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Indo western(2).jpg" loading="lazy">
+
+      <img src="assets/imgs/Pictures/Western & Indo western .jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western(1).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western(2).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western(3).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western(4).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western(5).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western(6).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western(7).jpg" loading="lazy">
+
+      <!-- duplicate for infinite scroll -->
+      <img src="assets/imgs/Pictures/Western & Indo western .jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western (1).jpg" loading="lazy">
+      <img src="assets/imgs/Pictures/Western & Indo western (2).jpg" loading="lazy">
+
+    </div>
   </div>
-</div>
 
-<style>
-  .image-scroller-wrapper {
-  width: 100%;
-  overflow: hidden;
-  margin: 3rem 0;
-  position: relative;
-  padding: 1rem 0;
-}
+  <style>
+    .image-scroller-wrapper {
+      width: 100%;
+      overflow: hidden;
+      margin: 3rem 0;
+      position: relative;
+      padding: 1rem 0;
+    }
 
-.image-scroller-track {
-  display: flex;
-  gap: 2rem;
-  animation: infiniteScroll 60s linear infinite;
-  width: max-content;
-  will-change: transform;
-}
+    .image-scroller-track {
+      display: flex;
+      gap: 2rem;
+      animation: infiniteScroll 60s linear infinite;
+      width: max-content;
+      will-change: transform;
+    }
 
-.image-scroller-track img {
-  height: 340px;
-  width: auto;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
-  flex-shrink: 0;
-  transition: all 0.4s ease;
-  background: #111; /* fallback color */
-}
+    .image-scroller-track img {
+      height: 340px;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+      flex-shrink: 0;
+      transition: all 0.4s ease;
+    }
 
-.image-scroller-track img:hover {
-  transform: scale(1.08) translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-}
+    .image-scroller-track img:hover {
+      transform: scale(1.08) translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
 
-/* Infinite smooth scrolling */
-@keyframes infiniteScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+    @keyframes infiniteScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-/* Pause when hovering the whole container */
-.image-scroller-wrapper:hover .image-scroller-track {
-  animation-play-state: paused;
-}
+    .image-scroller-wrapper:hover .image-scroller-track {
+      animation-play-state: paused;
+    }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .image-scroller-track img {
-    height: 280px;
-    gap: 1.5rem;
-  }
-}
+    @media (max-width: 1024px) {
+      .image-scroller-track img { height: 280px; }
+    }
 
-@media (max-width: 768px) {
-  .image-scroller-track img {
-    height: 220px;
-    gap: 1rem;
-  }
-}
+    @media (max-width: 768px) {
+      .image-scroller-track img { height: 220px; }
+    }
 
-@media (max-width: 480px) {
-  .image-scroller-track img {
-    height: 180px;
-  }
-}
-</style>
-
+    @media (max-width: 480px) {
+      .image-scroller-track img { height: 180px; }
+    }
+  </style>
 
 </section>
 <!-- service details area end  -->
@@ -447,110 +403,113 @@ body.dark h3 {
 
 
                   <!-- footer area start  -->
-        <footer class="footer-area">
-          <div class="container">
-            <div class="footer-area-inner  ">
+       <footer class="footer-area">
+                    <div class="container">
+                        <div class="footer-area-inner  ">
 
-              <div class="footer-cta">
-                <div class="footer-widget-wrapper">
-                  <h2 class="title">London</h2>
-                  <ul class="footer-nav-list">
-                    <li>Baltia Squar, Mark Street, <br>
-                      London</li>
-                  </ul>
-                </div>
-                <div class="footer-widget-wrapper">
-                  <h2 class="title">New York</h2>
-                  <ul class="footer-nav-list">
-                    <li>Nenuya Centre, Elia Street <br>
-                      New York, USA</li>
-                  </ul>
-                </div>
-                <div class="footer-widget-wrapper newsletter">
-                  <form action="/book-demo" method="post" class="subscribe-form" id="subscribeForm">
-                    <div class="input-field">
-                      <input type="tel" name="mobile" id="subscribeMobile" placeholder="Enter your mobile number"
-                        maxlength="10" inputmode="numeric" required>
+                            <div class="footer-cta">
+                                <div class="footer-widget-wrapper">
+                                    <h2 class="title">Explore Exclusive Benefits</h2>
+                                    
+                                </div>
+                                <div class="footer-widget-wrapper">
+                                    <h2 class="title"></h2>
+                                    <ul class="footer-nav-list">
+                                       
+                                    </ul>
+                                </div>
+                                <div class="footer-widget-wrapper newsletter">
+                                     <form action="/book-demo" method="post" class="subscribe-form" id="subscribeForm">
+  <div class="input-field">
+    <input
+      type="tel"
+      name="mobile"
+      id="subscribeMobile"
+      placeholder="Enter your mobile number"
+      maxlength="10"
+      inputmode="numeric"
+      required
+    >
 
-                      <button type="submit" class="subscribe-btn">
-                        <img src="/assets/imgs/icon/arrow-light.webp" alt="icon">
-                      </button>
+    <button type="submit" class="subscribe-btn">
+      <img src="/assets/imgs/icon/arrow-light.webp" alt="icon">
+    </button>
+  </div>
+
+  <p id="subscribeError" style="color:red;font-size:13px;display:none;"></p>
+  <p id="subscribeSuccess" style="color:green;font-size:13px;display:none;"></p>
+</form>
+<script>
+  const form = document.getElementById("subscribeForm");
+  const mobileInput = document.getElementById("subscribeMobile");
+  const errorEl = document.getElementById("subscribeError");
+  const successEl = document.getElementById("subscribeSuccess");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // stop default form submit
+
+    const mobile = mobileInput.value.trim();
+
+    errorEl.style.display = "none";
+    successEl.style.display = "none";
+
+    // ✅ SIMPLE validation: number + 10 digits only
+    if (!/^[6-9]\d{9}$/.test(mobile)) {
+      errorEl.innerText = "Enter valid 10 digit mobile number";
+      errorEl.style.display = "block";
+      return;
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ mobile })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Submission failed");
+      }
+
+      // ✅ success from backend
+      successEl.innerText = data.message || "Submitted successfully";
+      successEl.style.display = "block";
+      mobileInput.value = "";
+
+    } catch (err) {
+      errorEl.innerText = err.message || "Server error";
+      errorEl.style.display = "block";
+    }
+  });
+</script>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <p id="subscribeError" style="color:red;font-size:13px;display:none;"></p>
-                    <p id="subscribeSuccess" style="color:green;font-size:13px;display:none;"></p>
-                  </form>
-                  <script>
-                    const form = document.getElementById("subscribeForm");
-                    const mobileInput = document.getElementById("subscribeMobile");
-                    const errorEl = document.getElementById("subscribeError");
-                    const successEl = document.getElementById("subscribeSuccess");
-
-                    form.addEventListener("submit", async function (e) {
-                      e.preventDefault(); // stop default form submit
-
-                      const mobile = mobileInput.value.trim();
-
-                      errorEl.style.display = "none";
-                      successEl.style.display = "none";
-
-                      // ✅ SIMPLE validation: number + 10 digits only
-                      if (!/^[6-9]\d{9}$/.test(mobile)) {
-                        errorEl.innerText = "Enter valid 10 digit mobile number";
-                        errorEl.style.display = "block";
-                        return;
-                      }
-
-                      try {
-                        const res = await fetch(form.action, {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json"
-                          },
-                          body: JSON.stringify({ mobile })
-                        });
-
-                        const data = await res.json();
-
-                        if (!res.ok) {
-                          throw new Error(data.error || "Submission failed");
-                        }
-
-                        // ✅ success from backend
-                        successEl.innerText = data.message || "Submitted successfully";
-                        successEl.style.display = "block";
-                        mobileInput.value = "";
-
-                      } catch (err) {
-                        errorEl.innerText = err.message || "Server error";
-                        errorEl.style.display = "block";
-                      }
-                    });
-                  </script>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="copyright-area">
-            <div class="container">
-              <div class="copyright-area-inner">
-                <div class="copyright-text">
-                  <p class="text">© 2026 – 2027  | Alrights reserved <br>
-                    Golden Apple Productions
-                </div>
-                <ul class="footer-nav-list">
-                  <li><a target="_blank" href="/">Home</a></li>
-                  <li><a target="_blank" href="/about">About</a></li>
-                  <li><a target="_blank" href="/services">Services</a></li>
-                  <li><a target="_blank" href="/ourwork">Our Work</a></li>
-                  <li><a target="_blank" href="/blogs">Blogs</a></li>
-                  <li><a target="_blank" href="/contact">Contact</a></li>
-<li><a target="_blank" href="/terms">T & C</li>
-                <li><a target="_blank" href="/PrivacyPoicy">Privacy Policy</a></li>                  </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+                    <div class="copyright-area">
+                        <div class="container">
+                            <div class="copyright-area-inner">
+                                <div class="copyright-text">
+                                    <p class="text">© 2026 – 2027  | Alrights reserved <br>
+                                        Golden Apple Productions
+                                </div>
+                                <ul class="footer-nav-list">
+                                    <li><a target="_blank" href="/">Home</a></li>
+                                    <li><a target="_blank" href="/about">About</a></li>
+                                    <li><a target="_blank" href="/services">Services</a></li>
+                                    <li><a target="_blank" href="/ourwork">Our Work</a></li>
+                                    <li><a target="_blank" href="/blogs">Blogs</a></li>
+                                    <li><a target="_blank" href="/contact">Contact</a></li>
+<li><a target="_blank" href="/terms">T & C</a></li>
+                <li><a target="_blank" href="/PrivacyPolicy">Privacy Policy</a></li>                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
 
 
             </div>
