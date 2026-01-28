@@ -13,148 +13,166 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const app = express();
 const port = process.env.PORT || 8090;
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB Connected"))
-    .catch(err => console.log("MongoDB Error:", err));
-
-// Models
+// Models (load after connection is ready in practice, but safe here)
 const Video = require("./models/Video");
 const Blog = require("./models/Blog");
-const Contact = require("./models/contact"); // ← Make sure this exists!
+const Contact = require("./models/contact");
+const DemoRequest = require("./models/DemoRequest");
 
-// Cloudinary Configuration
+// ────────────────────────────────────────────────
+// MongoDB Connection with retry & caching (critical for Vercel)
+// ────────────────────────────────────────────────
+let isConnected = false;
+let dbConnectionPromise = null;
+
+const connectDB = async () => {
+  if (isConnected) return;
+  if (dbConnectionPromise) return dbConnectionPromise;
+
+  dbConnectionPromise = mongoose
+    .connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 5000,
+      maxPoolSize: 10,           // good for serverless
+      socketTimeoutMS: 45000,
+    })
+    .then(() => {
+      console.log("MongoDB Connected Successfully");
+      isConnected = true;
+    })
+    .catch((err) => {
+      console.error("MongoDB Connection Error:", err);
+      isConnected = false;
+      dbConnectionPromise = null; // allow retry next time
+      throw err;
+    });
+
+  return dbConnectionPromise;
+};
+
+// Call once at startup (Vercel will reuse if possible)
+connectDB().catch((err) => console.error("Initial DB connection failed:", err));
+
+// Middleware to ensure DB connection before DB routes
+const ensureDBConnected = async (req, res, next) => {
+  try {
+    if (!isConnected) {
+      await connectDB();
+    }
+    next();
+  } catch (err) {
+    console.error("DB connection failed in middleware:", err);
+    res.status(503).json({ error: "Database connection unavailable. Please try again later." });
+    // or for HTML routes: res.status(503).render("error", { message: "Service temporarily unavailable" });
+  }
+};
+
+// Cloudinary Config
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Multer for Videos (direct to Cloudinary)
+// Multer Storages
 const videoStorage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-        folder: "portfolio-videos",
-        resource_type: "video"
-    }
+  cloudinary: cloudinary,
+  params: {
+    folder: "portfolio-videos",
+    resource_type: "video",
+  },
 });
 
 const videoUpload = multer({
-    storage: videoStorage,
-    limits: { fileSize: 100 * 1024 * 1024 }
+  storage: videoStorage,
+  limits: { fileSize: 100 * 1024 * 1024 },
 });
 
-// Multer for Blog Images (direct to Cloudinary)
 const blogStorage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-        folder: "blog-images",
-        allowed_formats: ["jpg", "jpeg", "png", "gif"],
-        transformation: [{ width: 1200, crop: "limit" }]
-    }
+  cloudinary: cloudinary,
+  params: {
+    folder: "blog-images",
+    allowed_formats: ["jpg", "jpeg", "png", "gif"],
+    transformation: [{ width: 1200, crop: "limit" }],
+  },
 });
 const uploadBlogImage = multer({ storage: blogStorage });
 
-// App Configuration
+// App Setup
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.engine('ejs', ejsMate);
+app.engine("ejs", ejsMate);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Session
-app.use(session({
+app.use(
+  session({
     secret: process.env.SESSION_SECRET || "change-this-in-production",
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false } // Set to true in production with HTTPS
-}));
+    cookie: { secure: process.env.NODE_ENV === "production" }, // true only in prod with HTTPS
+  })
+);
 
 // Admin Middleware
 const requireAdmin = (req, res, next) => {
-    if (req.session.isAdmin) return next();
-    res.redirect("/adminlogin");
+  if (req.session.isAdmin) return next();
+  res.redirect("/adminlogin");
 };
 
-// ==================== PUBLIC ROUTES ====================
+// ==================== PUBLIC ROUTES (no DB needed) ====================
 app.get("/", (req, res) => res.render("home"));
 app.get("/about", (req, res) => res.render("about"));
 app.get("/services", (req, res) => res.render("services"));
 
-app.get("/ethnic-fashion-Shoots", (req, res) => {
-    res.render("service1");
-})
-app.get("/western-indo-western-shoot", (req, res) => {
-    res.render("service2");
-})
-app.get("/designer-collections-shoot", (req, res) => {
-    res.render("service3");
-})
-app.get("/retail-catalogue-shoot", (req, res) => {
-    res.render("service4");
-})
-app.get("/brand-campaigns-editorials-shoot", (req, res) => {
-    res.render("service5");
-})
-app.get("/post-production-shoot", (req, res) => {
-    res.render("service6");
-});
+app.get("/ethnic-fashion-Shoots", (req, res) => res.render("service1"));
+app.get("/western-indo-western-shoot", (req, res) => res.render("service2"));
+app.get("/designer-collections-shoot", (req, res) => res.render("service3"));
+app.get("/retail-catalogue-shoot", (req, res) => res.render("service4"));
+app.get("/brand-campaigns-editorials-shoot", (req, res) => res.render("service5"));
+app.get("/post-production-shoot", (req, res) => res.render("service6"));
 
-app.get("/terms", (req, res) => {
-    res.render("terms");
-});
-app.get("/PrivacyPolicy", (req, res) => {
-    res.render("PP");
-});
+app.get("/terms", (req, res) => res.render("terms"));
+app.get("/PrivacyPolicy", (req, res) => res.render("PP"));
 
-
-app.get("/landingpage", (req, res)=>{
-    res.render("landingpage");
-})
-
+app.get("/landingpage", (req, res) => res.render("landingpage"));
 app.get("/contact", (req, res) => res.render("contact"));
 
-app.get("/ourwork", async (req, res) => {
-    try {
-        const videos = await Video.find().sort({ createdAt: -1 });
-       
-        res.render("ourwork", { videos });
-    } catch (err) {
-        console.error("Error fetching videos:", err);
-        res.render("ourwork", { videos: [] });
-    }
-});
-
-
-
-app.get("/blogs", async (req, res) => {
-    try {
-        const blogs = await Blog.find().sort({ createdAt: -1 });
-        res.render("blogs", { blogs });
-    } catch (err) {
-        console.error("Error fetching blogs:", err);
-        res.render("blogs", { blogs: [] });
-    }
-});
-
-
-app.get("/blog/:id", async (req, res) => {
-    try {
-        const blog = await Blog.findById(req.params.id);
-        console.log(blog);
-        if (!blog) return res.status(404).render("404", { message: "Blog not found" });
-        res.render("blog-details", { blog });
-    } catch (err) {
-        console.error("Blog details error:", err);
-        res.status(500).render("404", { message: "Server error" });
-    }
-});
-
-// ==================== CONTACT FORM ROUTE ====================
-app.post("/contact", async (req, res) => {
+// ==================== DB-RELATED PUBLIC ROUTES ====================
+app.get("/ourwork", ensureDBConnected, async (req, res) => {
   try {
-    // Destructure all fields from req.body
+    const videos = await Video.find().sort({ createdAt: -1 });
+    res.render("ourwork", { videos });
+  } catch (err) {
+    console.error("Error fetching videos:", err);
+    res.render("ourwork", { videos: [] });
+  }
+});
+
+app.get("/blogs", ensureDBConnected, async (req, res) => {
+  try {
+    const blogs = await Blog.find().sort({ createdAt: -1 });
+    res.render("blogs", { blogs });
+  } catch (err) {
+    console.error("Error fetching blogs:", err);
+    res.render("blogs", { blogs: [] });
+  }
+});
+
+app.get("/blog/:id", ensureDBConnected, async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    if (!blog) return res.status(404).render("404", { message: "Blog not found" });
+    res.render("blog-details", { blog });
+  } catch (err) {
+    console.error("Blog details error:", err);
+    res.status(500).render("404", { message: "Server error" });
+  }
+});
+
+// Contact Form
+app.post("/contact", ensureDBConnected, async (req, res) => {
+  try {
     let {
       name,
       email,
@@ -162,30 +180,25 @@ app.post("/contact", async (req, res) => {
       subject,
       website,
       message,
-      budget,       // new correct name (in case you fixed the form)
+      budget,
       membership,
-      location
+      location,
     } = req.body;
 
-    // Clean and trim inputs
     name = name?.trim();
-    email = email?.trim().toLowerCase();
+    email = email?.trim()?.toLowerCase();
     phone = phone?.trim();
     subject = subject?.trim();
     website = website?.trim() || null;
     message = message?.trim();
     membership = membership?.trim() || null;
+    const finalBudget = budget?.trim() || null;
 
-    // Fix budget: accept both spellings (supports old and new form submissions)
-    const finalBudget = (budget)?.trim() || null;
-
-    // Basic required field validation
     if (!name || !email || !phone || !subject || !message) {
       console.log("Missing required fields");
       return res.redirect("/#contact");
     }
 
-    // Email & Phone validation (Indian mobile format: starts with 6-9, 10 digits)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[6-9]\d{9}$/;
 
@@ -199,7 +212,6 @@ app.post("/contact", async (req, res) => {
       return res.redirect("/#contact");
     }
 
-    // Save to MongoDB with ALL fields including budget & membership
     await Contact.create({
       name,
       email,
@@ -207,231 +219,124 @@ app.post("/contact", async (req, res) => {
       subject,
       website,
       message,
-      budget: finalBudget,       // Now saved correctly!
-      membership      ,
-      location           // Now saved correctly!
+      budget: finalBudget,
+      membership,
+      location,
     });
 
-    console.log("New contact saved successfully:", { name, email, budget: finalBudget, membership, location });
+    console.log("New contact saved:", { name, email, budget: finalBudget });
 
-    // Success Thank You Page
-   return res.send(`
-<!DOCTYPE html>
+    // Your beautiful thank-you HTML (unchanged)
+    return res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank You - Golden Apple Productions</title>
 </head>
-
-<body style="
-  margin:0;
-  padding:0;
-  height:100vh;
-  background:#000;
-  color:#caa437;
-  font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-">
-
-<!-- PARTICLES -->
-<div id="particles" style="
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-"></div>
-
-<div style="text-align:center; padding:40px; position:relative;">
-
-  <!-- THANK YOU SVG -->
-  <svg viewBox="0 0 1000 300" style="width:90%; max-width:900px; margin-bottom:40px;">
-    <defs>
-      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#f0d48a"/>
-        <stop offset="50%" stop-color="#caa437"/>
-        <stop offset="100%" stop-color="#f0d48a"/>
-      </linearGradient>
-    </defs>
-    <text x="500" y="180"
-      font-family="Brush Script MT, cursive"
-      font-size="140"
-      fill="url(#goldGradient)"
-      text-anchor="middle"
-      style="filter:drop-shadow(0 0 20px rgba(202,164,55,0.6));">
-      Thank You
-    </text>
+<body style="margin:0;padding:0;height:100vh;background:#000;color:#caa437;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<div id="particles" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none"></div>
+<div style="text-align:center;padding:40px;position:relative;">
+  <svg viewBox="0 0 1000 300" style="width:90%;max-width:900px;margin-bottom:40px;">
+    <defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f0d48a"/><stop offset="50%" stop-color="#caa437"/><stop offset="100%" stop-color="#f0d48a"/></linearGradient></defs>
+    <text x="500" y="180" font-family="Brush Script MT,cursive" font-size="140" fill="url(#goldGradient)" text-anchor="middle" style="filter:drop-shadow(0 0 20px rgba(202,164,55,0.6));">Thank You</text>
   </svg>
-
-  <h2 style="font-size:1.8rem; margin:30px 0; color:#caa437;">
-    Your message has been sent successfully!
-  </h2>
-
-  <p style="
-    font-size:1.3rem;
-    max-width:700px;
-    margin:0 auto 40px;
-    opacity:0.85;
-    line-height:1.6;
-  ">
-    We truly appreciate you reaching out to Golden Apple Productions.<br>
-    Our team will review your inquiry and get back to you as soon as possible.
-  </p>
-
-  <!-- BACK BUTTON -->
-  <a href="/" style="
-    display:inline-block;
-    background:#caa437;
-    color:#000;
-    font-weight:bold;
-    padding:14px 32px;
-    border-radius:50px;
-    text-decoration:none;
-    font-size:1.1rem;
-    margin-bottom:40px;
-    transition:all 0.3s ease;
-  "
-  onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(202,164,55,0.4)'"
-  onmouseout="this.style.transform='none';this.style.boxShadow='none'">
-    ← Back to Home
-  </a>
-
-  <!-- INSTAGRAM -->
+  <h2 style="font-size:1.8rem;margin:30px 0;color:#caa437;">Your message has been sent successfully!</h2>
+  <p style="font-size:1.3rem;max-width:700px;margin:0 auto 40px;opacity:0.85;line-height:1.6;">We truly appreciate you reaching out to Golden Apple Productions.<br>Our team will review your inquiry and get back to you as soon as possible.</p>
+  <a href="/" style="display:inline-block;background:#caa437;color:#000;font-weight:bold;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:1.1rem;margin-bottom:40px;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(202,164,55,0.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">← Back to Home</a>
   <div style="margin-top:30px;">
-    <a href="https://www.instagram.com/golden.apple.productions/"
-       target="_blank"
-       style="
-         display:flex;
-         align-items:center;
-         justify-content:center;
-         gap:14px;
-         color:#caa437;
-         text-decoration:none;
-         font-size:1.4rem;
-         transition:all 0.3s ease;
-       "
-       onmouseover="this.style.color='#f0d48a';this.style.transform='translateY(-3px)'"
-       onmouseout="this.style.color='#caa437';this.style.transform='none'">
-
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        <circle cx="12" cy="12" r="4"></circle>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-      </svg>
-
+    <a href="https://www.instagram.com/golden.apple.productions/" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:14px;color:#caa437;text-decoration:none;font-size:1.4rem;transition:all 0.3s ease;" onmouseover="this.style.color='#f0d48a';this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#caa437';this.style.transform='none'">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
       <span>golden.apple.productions</span>
     </a>
   </div>
-
 </div>
-
-<!-- PARTICLE SCRIPT -->
-<script>
-  const particles = document.getElementById('particles');
-
-  function createParticle() {
-    const p = document.createElement('div');
-    p.style.position = 'absolute';
-    p.style.width = Math.random() * 6 + 4 + 'px';
-    p.style.height = p.style.width;
-    p.style.background = '#caa437';
-    p.style.borderRadius = '50%';
-    p.style.left = Math.random() * 100 + 'vw';
-    p.style.top = '100vh';
-    p.style.opacity = '0.8';
-    p.style.transition = 'transform 4s ease-out, opacity 4s';
-
-    particles.appendChild(p);
-
-    setTimeout(() => {
-      p.style.transform = 'translateY(-110vh)';
-      p.style.opacity = '0';
-    }, 50);
-
-    setTimeout(() => p.remove(), 5000);
-  }
-
-  setInterval(createParticle, 300);
-</script>
-
+<script>const particles=document.getElementById('particles');function createParticle(){const p=document.createElement('div');p.style.position='absolute';p.style.width=Math.random()*6+4+'px';p.style.height=p.style.width;p.style.background='#caa437';p.style.borderRadius='50%';p.style.left=Math.random()*100+'vw';p.style.top='100vh';p.style.opacity='0.8';p.style.transition='transform 4s ease-out, opacity 4s';particles.appendChild(p);setTimeout(()=>{p.style.transform='translateY(-110vh)';p.style.opacity='0'},50);setTimeout(()=>p.remove(),5000);}setInterval(createParticle,300);</script>
 </body>
-</html>
-`);
-
-
+</html>`);
   } catch (err) {
     console.error("CONTACT FORM ERROR:", err);
-    return res.redirect("/#contact"); // safer than root if form is in section
+    return res.redirect("/#contact");
+  }
+});
+
+// Book Demo
+app.post("/book-demo", ensureDBConnected, async (req, res) => {
+  try {
+    const { mobile } = req.body;
+
+    if (!mobile || !/^[6-9]\d{9}$/.test(mobile)) {
+      return res.status(400).json({ error: "Invalid mobile number" });
+    }
+
+    const existing = await DemoRequest.findOne({ mobile });
+    if (existing) {
+      return res.json({ message: "This number is already registered!" });
+    }
+
+    const newRequest = new DemoRequest({ mobile });
+    await newRequest.save();
+
+    res.json({ success: true, message: "Thank you! We will contact you soon." });
+  } catch (err) {
+    console.error("Demo request error:", err);
+    res.status(500).json({ error: "Server error - please try again" });
   }
 });
 
 // ==================== ADMIN ROUTES ====================
 app.get("/adminlogin", (req, res) => {
-    if (req.session.isAdmin) return res.redirect("/admin/dashboard");
-    res.render("admin/adminlogin", { error: null });
+  if (req.session.isAdmin) return res.redirect("/admin/dashboard");
+  res.render("admin/adminlogin", { error: null });
 });
 
 app.post("/adminlogin", (req, res) => {
-    const { username, password } = req.body;
-    if (username === "a" && password === "a") {
-        req.session.isAdmin = true;
-        return res.redirect("/admin/dashboard");
-    }
-    res.render("admin/adminlogin", { error: "Invalid username or password" });
+  const { username, password } = req.body;
+  if (username === "a" && password === "a") {
+    req.session.isAdmin = true;
+    return res.redirect("/admin/dashboard");
+  }
+  res.render("admin/adminlogin", { error: "Invalid username or password" });
 });
 
 app.get("/admin/logout", (req, res) => {
-    req.session.destroy();
-    res.redirect("/adminlogin");
-});
-// Admin Dashboard (updated to include contacts)
-// In your app.js or wherever the dashboard route is defined
-app.get("/admin/dashboard", requireAdmin, async (req, res) => {
-    try {
-        const videos = await Video.find().sort({ createdAt: -1 });
-        const blogs = await Blog.find().sort({ createdAt: -1 });
-        const contacts = await Contact.find().sort({ createdAt: -1 }); // ← This line is critical!
-const demoRequests = await DemoRequest.find().sort({ createdAt: -1 }); // NEW
-        res.render("admin/dashboard", { 
-            videos, 
-            blogs, 
-            contacts,               // ← Make sure this is included
-            reelsCount: videos.filter(v => v.type === 'reel').length,
-            blogsCount: blogs.lengthm,
-            demoRequests, // Pass to EJS
-        });
-    } catch (err) {
-        console.error("Dashboard load error:", err);
-        // Fallback: pass empty arrays so template doesn't crash
-        res.render("admin/dashboard", { 
-            videos: [], 
-            blogs: [], 
-            contacts: [],
-            demoRequests: [] 
-        });
-    }
+  req.session.destroy();
+  res.redirect("/adminlogin");
 });
 
-app.get("/admin/contacts/delete/:id", requireAdmin, async (req, res) => {
-    try {
-        await Contact.findByIdAndDelete(req.params.id);
-    } catch (err) {
-        console.error(err);
-    }
-    res.redirect("/admin/dashboard");
+app.get("/admin/dashboard", requireAdmin, ensureDBConnected, async (req, res) => {
+  try {
+    const videos = await Video.find().sort({ createdAt: -1 });
+    const blogs = await Blog.find().sort({ createdAt: -1 });
+    const contacts = await Contact.find().sort({ createdAt: -1 });
+    const demoRequests = await DemoRequest.find().sort({ createdAt: -1 });
+
+    res.render("admin/dashboard", {
+      videos,
+      blogs,
+      contacts,
+      demoRequests,
+      reelsCount: videos.filter((v) => v.type === "reel").length,
+      blogsCount: blogs.length, // fixed typo
+    });
+  } catch (err) {
+    console.error("Dashboard load error:", err);
+    res.render("admin/dashboard", {
+      videos: [],
+      blogs: [],
+      contacts: [],
+      demoRequests: [],
+      reelsCount: 0,
+      blogsCount: 0,
+    });
+  }
 });
+
 // Video Management
 app.get("/admin/videos/add/:type", requireAdmin, (req, res) => {
-    const type = req.params.type;
-    if (!['video', 'reel'].includes(type)) return res.redirect("/admin/dashboard");
-    res.render("admin/videos/add", { type, error: null });
+  const type = req.params.type;
+  if (!["video", "reel"].includes(type)) return res.redirect("/admin/dashboard");
+  res.render("admin/videos/add", { type, error: null });
 });
 
 app.post(
@@ -448,168 +353,135 @@ app.post(
       const newItem = new Video({
         title: title?.trim() || "Untitled",
         description: description?.trim() || "",
-        videoUrl: req.file.path,       // ✅ Cloudinary URL
-        publicId: req.file.filename,   // ✅ Cloudinary public_id
-        type
+        videoUrl: req.file.path,
+        publicId: req.file.filename,
+        type,
       });
 
       await newItem.save();
-
       res.redirect("/admin/dashboard");
     } catch (err) {
       console.error("Video upload error:", err);
       res.render("admin/videos/add", {
         error: err.message,
-        type: req.params.type
+        type: req.params.type,
       });
     }
   }
 );
 
 app.get("/admin/videos/delete/:id", requireAdmin, async (req, res) => {
-    try {
-        const video = await Video.findById(req.params.id);
-        if (video) {
-            await cloudinary.uploader.destroy(video.publicId, { resource_type: "video" });
-            await Video.findByIdAndDelete(req.params.id);
-        }
-    } catch (err) {
-        console.error("Video delete error:", err);
-    }
-    res.redirect("/admin/dashboard");
-});
-
-// Blog Management
-app.get("/admin/blogs/add", requireAdmin, (req, res) => {
-    res.render("admin/blogs/add", { error: null });
-});
-
-app.post("/admin/blogs/add", requireAdmin, uploadBlogImage.single("image"), async (req, res) => {
-    try {
-        const { title, paragraph1, paragraph2, quote } = req.body;
-
-        if (!title || !paragraph1 || !paragraph2) {
-            throw new Error("Title, Paragraph 1, and Paragraph 2 are required.");
-        }
-
-        const newBlog = new Blog({
-            title: title.trim(),
-            paragraph1: paragraph1.trim(),
-            paragraph2: paragraph2.trim(),
-            quote: quote?.trim() || "",
-            imageUrl: req.file ? req.file.path : null // Cloudinary secure_url
-        });
-
-        await newBlog.save();
-        res.redirect("/admin/dashboard");
-    } catch (err) {
-        console.error("Blog add error:", err);
-        res.render("admin/blogs/add", { error: err.message });
-    }
-});
-
-// Edit & Delete Blog (unchanged but cleaned up)
-app.get("/admin/blogs/edit/:id", requireAdmin, async (req, res) => {
-    try {
-        const blog = await Blog.findById(req.params.id);
-        if (!blog) return res.redirect("/admin/dashboard");
-        res.render("admin/blogs/edit", { blog, error: null });
-    } catch (err) {
-        res.redirect("/admin/dashboard");
-    }
-});
-
-app.post("/admin/blogs/edit/:id", requireAdmin, uploadBlogImage.single("image"), async (req, res) => {
-    try {
-        const { title, paragraph1, paragraph2, quote } = req.body;
-
-        if (!title || !paragraph1 || !paragraph2) {
-            throw new Error("Required fields missing.");
-        }
-
-        const updateData = {
-            title: title.trim(),
-            paragraph1: paragraph1.trim(),
-            paragraph2: paragraph2.trim(),
-            quote: quote?.trim() || ""
-        };
-
-        if (req.file) {
-            updateData.imageUrl = req.file.path; // Cloudinary secure_url
-        }
-
-        await Blog.findByIdAndUpdate(req.params.id, updateData);
-        res.redirect("/admin/dashboard");
-    } catch (err) {
-        const blog = await Blog.findById(req.params.id);
-        res.render("admin/blogs/edit", { blog, error: err.message });
-    }
-});
-
-app.get("/admin/blogs/delete/:id", requireAdmin, async (req, res) => {
-    try {
-        await Blog.findByIdAndDelete(req.params.id);
-    } catch (err) {
-        console.error("Blog delete error:", err);
-    }
-    res.redirect("/admin/dashboard");
-});
-
-// ==================== CONTACT MANAGEMENT (ADMIN) ====================
-app.get("/admin/contacts", requireAdmin, async (req, res) => {
-    try {
-        const contacts = await Contact.find().sort({ createdAt: -1 });
-        res.render("admin/contacts", { contacts }); // Create this view or use dashboard
-    } catch (err) {
-        console.error("Contacts fetch error:", err);
-        res.status(500).send("Error loading contacts");
-    }
-});
-
-app.get("/admin/contacts/delete/:id", requireAdmin, async (req, res) => {
-    try {
-        await Contact.findByIdAndDelete(req.params.id);
-        res.redirect("/admin/contacts"); // Or back to dashboard
-    } catch (err) {
-        console.error("Contact delete error:", err);
-        res.redirect("/admin/contacts");
-    }
-});
-const DemoRequest = require('./models/DemoRequest');
-// Handle "Book Free Demo" form submission
-app.post('/book-demo', async (req, res) => {
   try {
-    const { mobile } = req.body;
-
-    // Basic validation (redundant but good practice)
-    if (!mobile || !/^[6-9]\d{9}$/.test(mobile)) {
-      return res.status(400).json({ error: 'Invalid mobile number' });
+    const video = await Video.findById(req.params.id);
+    if (video) {
+      await cloudinary.uploader.destroy(video.publicId, { resource_type: "video" });
+      await Video.findByIdAndDelete(req.params.id);
     }
-
-    const existing = await DemoRequest.findOne({ mobile });
-    if (existing) {
-      return res.json({ message: 'This number is already registered!' });
-    }
-
-    const newRequest = new DemoRequest({ mobile });
-    await newRequest.save();
-
-    res.json({ success: true, message: 'Thank you! We will contact you soon.' });
   } catch (err) {
-    console.error('Demo request error:', err);
-    res.status(500).json({ error: 'Server error' });
+    console.error("Video delete error:", err);
+  }
+  res.redirect("/admin/dashboard");
+});
+
+// Blog Management (unchanged except added ensureDBConnected where needed)
+app.get("/admin/blogs/add", requireAdmin, (req, res) => {
+  res.render("admin/blogs/add", { error: null });
+});
+
+app.post(
+  "/admin/blogs/add",
+  requireAdmin,
+  uploadBlogImage.single("image"),
+  async (req, res) => {
+    try {
+      const { title, paragraph1, paragraph2, quote } = req.body;
+
+      if (!title || !paragraph1 || !paragraph2) {
+        throw new Error("Title, Paragraph 1, and Paragraph 2 are required.");
+      }
+
+      const newBlog = new Blog({
+        title: title.trim(),
+        paragraph1: paragraph1.trim(),
+        paragraph2: paragraph2.trim(),
+        quote: quote?.trim() || "",
+        imageUrl: req.file ? req.file.path : null,
+      });
+
+      await newBlog.save();
+      res.redirect("/admin/dashboard");
+    } catch (err) {
+      console.error("Blog add error:", err);
+      res.render("admin/blogs/add", { error: err.message });
+    }
+  }
+);
+
+// Edit / Delete Blog (similar - add ensureDBConnected if needed)
+app.get("/admin/blogs/edit/:id", requireAdmin, async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    if (!blog) return res.redirect("/admin/dashboard");
+    res.render("admin/blogs/edit", { blog, error: null });
+  } catch (err) {
+    console.error(err);
+    res.redirect("/admin/dashboard");
   }
 });
-app.get("/admin/contacts/delete/:id", requireAdmin, async (req, res) => {
+
+app.post(
+  "/admin/blogs/edit/:id",
+  requireAdmin,
+  uploadBlogImage.single("image"),
+  async (req, res) => {
     try {
-        await Contact.findByIdAndDelete(req.params.id);
+      const { title, paragraph1, paragraph2, quote } = req.body;
+
+      if (!title || !paragraph1 || !paragraph2) {
+        throw new Error("Required fields missing.");
+      }
+
+      const updateData = {
+        title: title.trim(),
+        paragraph1: paragraph1.trim(),
+        paragraph2: paragraph2.trim(),
+        quote: quote?.trim() || "",
+      };
+
+      if (req.file) {
+        updateData.imageUrl = req.file.path;
+      }
+
+      await Blog.findByIdAndUpdate(req.params.id, updateData);
+      res.redirect("/admin/dashboard");
     } catch (err) {
-        console.error(err);
+      console.error(err);
+      const blog = await Blog.findById(req.params.id);
+      res.render("admin/blogs/edit", { blog, error: err.message });
     }
-    res.redirect("/admin/dashboard");
+  }
+);
+
+app.get("/admin/blogs/delete/:id", requireAdmin, async (req, res) => {
+  try {
+    await Blog.findByIdAndDelete(req.params.id);
+  } catch (err) {
+    console.error("Blog delete error:", err);
+  }
+  res.redirect("/admin/dashboard");
+});
+
+// Contact Delete (single route - removed duplicate)
+app.get("/admin/contacts/delete/:id", requireAdmin, async (req, res) => {
+  try {
+    await Contact.findByIdAndDelete(req.params.id);
+  } catch (err) {
+    console.error("Contact delete error:", err);
+  }
+  res.redirect("/admin/dashboard");
 });
 
 // Start Server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });

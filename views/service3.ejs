@@ -216,7 +216,7 @@
           </nav>
         </div>
         <div class="header__button">
-          <a target="_blank" class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span
+          <a  class="wc-btn wc-btn-primary btn-text-flip" href="javascript:void(0)" onclick="openDemoPopup()"><span
               data-text="Book Free Demo">Book Free Demo</span><i class="fa-solid fa-play"></i></a>
         </div>
         <div class="header__navicon d-xl-none">
@@ -296,11 +296,35 @@
   }
 </style>
               <!-- Title + Features -->
+ <style>
+      .section1{
+        margin-top: 2%;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 130px;
+      }
+      .feature-list{
+       color: white;
+       font-size: 20px;
+       display: flex;
+       gap: 20PX;
+       line-height: 40PX;
+      flex-wrap: wrap !important;
+      }
+      .feature-list ul li::before {
+  content: "- ";
+}@media (max-width:1388px) {
+   .section1{
+        gap: 20px;
+      }
+  
+}
 
-   <div class="section-title-box">
-                <div class="section-title-wrapper">
+    </style>
+   <div class="section1">
+                <div class="section">
                   <div class="title-wrapper">
-                    <h1 class="section-title has_fade_anim" data-on-scroll="0">
+                    <h1 class="section-title has_fade_anim"style="font-size: 59px  !important;" data-on-scroll="0">
                       Designer Collection <br>
                       Shoots
                     </h1>

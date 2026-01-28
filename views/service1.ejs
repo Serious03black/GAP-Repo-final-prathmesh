@@ -246,18 +246,44 @@
                   </script>
                 </div>
               </div>
+ <style>
+      .section1{
+        margin-top: 2%;
+        display: flex ;
+        flex-wrap: wrap;
+        gap: 130px;
+        flex-direction: row;
+      }
+      .feature-list{
+       color: white;
+       font-size: 20px;
+       display: flex;
+       gap: 20PX;
+      flex-direction: row;
 
+       line-height: 40PX;
+      flex-wrap: wrap !important;
+      }
+      .feature-list ul li::before {
+  content: "- ";
+}@media (max-width:1388px) {
+   .section1{
+        gap: 20px;
+      }
+  
+}
+
+    </style>
               <!-- Title + Features -->
-              <div class="section-title-box">
-                <div class="section-title-wrapper">
-                  <div class="title-wrapper">
-                    <h1 class="section-title has_fade_anim" data-on-scroll="0">
+              <div class="section1  ">
+                <div class="section">
+                  <div class="title">
+                    <h1 class="section-title has_fade_anim" style="font-size: 59px  !important;" data-on-scroll="0">
                       Ethnic Fashion <br>
                       Shoots
                     </h1>
                   </div>
                 </div>
-
                 <div class="feature-list has_fade_anim" data-on-scroll="0" data-delay="0.45">
                   <ul>
                     <li>Bridal & couture productions</li>
@@ -265,8 +291,7 @@
                     <li>Heritage inspired storytelling</li>
                   </ul>
                   <ul>
-                    <li>Embroidery, textile, and craftsmanship detailing
-</li>
+                    <li>Embroidery, textile, and craftsmanship detailing</li>
                     <li>Editorial & campaign ready visuals</li>
                   </ul>
                 </div>
