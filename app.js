@@ -269,10 +269,10 @@ app.post("/book-demo", ensureDBConnected, async (req, res) => {
       return res.status(400).json({ error: "Invalid mobile number" });
     }
 
-    const existing = await DemoRequest.findOne({ mobile });
-    if (existing) {
-      return res.json({ message: "This number is already registered!" });
-    }
+    // const existing = await DemoRequest.findOne({ mobile });
+    // if (existing) {
+    //   return res.json({ message: "This number is already registered!" });
+    // }
 
     const newRequest = new DemoRequest({ mobile });
     await newRequest.save();
