@@ -219,7 +219,7 @@
               <!-- Hero Video -->
               <div class="thumb-main">
                 <div class="thumb-main">
-                  <video id="heroVideo" autoplay muted loop playsinline controls>
+                  <video id="heroVideo" autoplay muted loop>
                 <source src="https://res.cloudinary.com/dpztzthmz/video/upload/v1769099187/HeroVideo_d0f959.mp4" type="video/mp4" />
                   </video>
                   <style>
@@ -240,7 +240,7 @@
                   <script>
                     const v = document.getElementById("heroVideo");
                     document.addEventListener("click", () => {
-                      v.muted = false;
+                      
                       v.play();
                     }, { once: true });
                   </script>

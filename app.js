@@ -135,7 +135,7 @@ app.get("/post-production-shoot", (req, res) => res.render("service6"));
 app.get("/terms", (req, res) => res.render("terms"));
 app.get("/PrivacyPolicy", (req, res) => res.render("PP"));
 
-app.get("/landingpage", (req, res) => res.render("landingpage"));
+app.get("/premium-shoot", (req, res) => res.render("landingpage"));
 app.get("/contact", (req, res) => res.render("contact"));
 
 // ==================== DB-RELATED PUBLIC ROUTES ====================
@@ -235,6 +235,25 @@ app.post("/contact", ensureDBConnected, async (req, res) => {
 <title>Thank You - Golden Apple Productions</title>
 </head>
 <body style="margin:0;padding:0;height:100vh;background:#000;color:#caa437;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;display:flex;align-items:center;justify-content:center;overflow:hidden">
+  <!-- Floating WhatsApp & Call Buttons -->
+  <div style="position:fixed; bottom:30px; right:30px; display:flex; flex-direction:column; gap:15px; z-index:1000;">
+    <a target="_blank" href="https://wa.me/917300031017" aria-label="WhatsApp Chat" style="
+      width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+      background:#22ae06; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); text-decoration:none;
+      transition:all 0.3s ease; font-size:30px;"
+      onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,0,0,0.45)'"
+      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.4)'">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a target="_blank" href="tel:+917300031017" aria-label="Call Now" style="
+      width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+      background:#caa437; color:#000; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:all 0.3s ease; text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px; height:28px;">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+  </div>
 <div id="particles" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none"></div>
 <div style="text-align:center;padding:40px;position:relative;">
   <svg viewBox="0 0 1000 300" style="width:90%;max-width:900px;margin-bottom:40px;">
